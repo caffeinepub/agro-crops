@@ -1,54 +1,144 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Add Customer Details in Cart and Government Schemes Page",
+  "title": "Add multi-language support (English, Hindi, Marathi) with language switcher",
   "requirements": [
     {
-      "id": "REQ-23",
-      "summary": "Add customer details form in cart drawer with validation and success confirmation",
+      "id": "REQ-29",
+      "summary": "Create LanguageContext with language state management, localStorage persistence, and translation function",
       "acceptanceCriteria": [
-        "The cart sheet drawer displays a 'Customer Details' form section when there is at least one item in the cart.",
-        "The form contains three fields: Full Name (text input), Delivery Address (textarea), and Phone Number (numeric input).",
-        "The 'Proceed to Checkout' button is disabled or shows a validation error if any field is empty.",
-        "On successful form submission, a success message is displayed and the cart is cleared.",
-        "The customer details form is not visible when the cart is empty.",
-        "The styling of the form is consistent with the existing green eco-friendly theme."
+        "LanguageContext is created and exported from frontend/src/contexts/LanguageContext.tsx",
+        "Supports three language codes: 'en' (English), 'hi' (Hindi), 'mr' (Marathi)",
+        "Selected language is persisted in localStorage and restored on page reload",
+        "useLanguage hook returns language, setLanguage, and t(key) translation function",
+        "t(key) falls back to English if a translation key is missing for the selected language"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/Header.tsx",
-          "operation": "modify",
-          "description": "Inside the cart Sheet component's SheetContent, below the cart items list and before the total price section, add a conditional Customer Details form section that renders only when cart.items.length > 0. Include three form fields: Full Name (text input), Delivery Address (textarea with 3 rows), and Phone Number (numeric input with maxLength 10). Add local state to manage form values and validation errors. Include a 'Proceed to Checkout' button that validates all fields are non-empty before submission. On successful validation, display a success message using a toast or alert ('Order placed successfully! We will contact you shortly.'), then call clearCart() from CartContext. Style the form section with consistent spacing, borders, and the green theme colors matching the existing cart UI. Use Tailwind utility classes for form inputs with focus rings in green-600."
+          "path": "frontend/src/contexts/LanguageContext.tsx",
+          "operation": "create",
+          "description": "Create a React context that manages the currently selected language state ('en', 'hi', or 'mr'), persists it to localStorage under the key 'agro-crops-language', and provides a useLanguage hook returning { language, setLanguage, t } where t(key) retrieves the translated string from the translations object for the current language, falling back to English if the key is missing in the selected language."
         }
       ]
     },
     {
-      "id": "REQ-24",
-      "summary": "Create Government Schemes page with 6 Indian agricultural schemes and navigation link",
+      "id": "REQ-30",
+      "summary": "Create comprehensive translations file with English, Hindi, and Marathi strings for all UI text",
       "acceptanceCriteria": [
-        "A new route '/schemes' is registered in App.tsx and renders the GovernmentSchemes page.",
-        "The page displays at least 6 government scheme cards.",
-        "Each card contains: scheme name, description, key benefits (bullet list), and eligibility note.",
-        "Cards animate with slideUp on scroll entry using the existing AnimatedSection component.",
-        "A 'Government Schemes' link is added to the Header navigation bar and navigates to '/schemes'.",
-        "The page header has a green gradient consistent with other pages (e.g., About page header style).",
-        "The page is accessible only to authenticated users (consistent with other main routes)."
+        "Translations file exports a translations object keyed by language code (en, hi, mr)",
+        "All three languages have translation entries for navigation labels",
+        "All three languages have translation entries for common button labels and form field labels",
+        "All three languages have translation entries for major section titles across all pages",
+        "Hindi and Marathi translations use proper Unicode Devanagari script"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/pages/GovernmentSchemes.tsx",
+          "path": "frontend/src/utils/translations.ts",
           "operation": "create",
-          "description": "Create a new page component that displays detailed information about 6 Indian government schemes for farmers: PM-KISAN (Pradhan Mantri Kisan Samman Nidhi), PMFBY (Pradhan Mantri Fasal Bima Yojana), Kisan Credit Card (KCC) Scheme, National Mission for Sustainable Agriculture (NMSA), Soil Health Card Scheme, and PM Krishi Sinchayee Yojana (PMKSY). Structure the page with a hero header section using a green gradient (bg-gradient-to-r from-green-700 to-green-500) matching the About page style, with title 'Government Schemes for Farmers' and subtitle. Below the header, render a grid of scheme cards (grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6) inside a container with max-w-7xl mx-auto px-4 py-12. Each card should be wrapped in the AnimatedSection component with animation='slideUp' and include: scheme name as heading, 2-3 sentence description, key benefits as a bulleted list (ul with list-disc), and an eligibility note in smaller text. Style cards with white background, rounded borders, shadow, and hover effects consistent with the existing site theme. Use the green-600/green-700 colors for accents and headings."
-        },
+          "description": "Export a translations object structured as { en: {...}, hi: {...}, mr: {...} } containing translation keys covering: navigation labels (Home, About, Techniques, Farm, Shop, Cattle, Equipment, Contact, Government Schemes, Logout, Login, Signup, Cart), hero section text (main headline, subheadings on Home page), section titles (Benefits of Organic Farming, Our Mission, Our Vision, Future Scope, Location-Based Crop Suggestions, Government Schemes, Organic Livestock Farming Guide, Farm Equipment & Machinery, Organic Farming Techniques, Organic Product Shop, Why Choose Organic Farming, Contact Us, Get in Touch, Team Members), button labels (Add to Cart, View Details, Explore Categories, Watch Tutorial, Sign Up, Verify OTP, Submit, Proceed to Checkout, Clear Cart, Remove, Search, Filter by Category, All Categories), form field labels (Name, Email, Message, Mobile Number, Full Name, Delivery Address, Phone Number, Enter 4-digit OTP, Quantity), status messages (Order placed successfully, Incorrect OTP please try again, Contact form submitted successfully, Added to cart, Removed from cart), and other common UI text (Search products, Search crops, Search animals, Search equipment, No items in cart, Total, Items, Category, Season, Soil Type, Benefits, Eligibility, Description). Hindi and Marathi translations must use proper Devanagari Unicode characters."
+        }
+      ]
+    },
+    {
+      "id": "REQ-31",
+      "summary": "Add LanguageSwitcher component to Header and wrap App with LanguageProvider",
+      "acceptanceCriteria": [
+        "A language switcher control is visible in the Header on all pages (including authenticated pages)",
+        "The switcher shows all three options: EN (English), हि (Hindi), म (Marathi)",
+        "Clicking a language option immediately updates all translated text across the current page",
+        "The active/selected language is visually highlighted in the switcher",
+        "The language switcher is accessible on both desktop and mobile (hamburger menu or inline)",
+        "LanguageProvider wraps the App in frontend/src/App.tsx"
+      ],
+      "file_operations": [
         {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Import the new GovernmentSchemes page component at the top of the file. In the main routes array (within the authGuardedRoutes group), add a new route object with path: '/schemes' and element: <GovernmentSchemes />. Position this route after the existing authenticated routes (e.g., after '/techniques') to maintain alphabetical or logical ordering."
+          "path": "frontend/src/components/LanguageSwitcher.tsx",
+          "operation": "create",
+          "description": "Create a language switcher component that uses the useLanguage hook to get the current language and setLanguage function. Render a dropdown or button group (using shadcn/ui DropdownMenu or Select if desired) displaying three options: 'EN' (English), 'हि' (Hindi), 'म' (Marathi). Highlight the currently selected language visually. On selecting a language, call setLanguage with the corresponding code ('en', 'hi', 'mr'). Ensure the component is styled consistently with the app's green/eco theme and works on both desktop and mobile."
         },
         {
           "path": "frontend/src/components/Header.tsx",
           "operation": "modify",
-          "description": "In the desktop navigation links section (the nav element with space-x-8 flex items), add a new Link component pointing to '/schemes' with text 'Government Schemes'. Position it logically in the navigation order (e.g., after 'About' or 'Contact'). Ensure the Link uses the same Tailwind classes as other navigation links (text-gray-700 hover:text-green-600 transition-colors font-medium) for visual consistency. Also add the same link to the mobile navigation menu (if present) within the Sheet or mobile menu structure."
+          "description": "Import and integrate the LanguageSwitcher component into the Header. Place it in the top-right area of the header, next to or near the Login/Logout button and cart icon. For mobile view, include it in the mobile navigation menu (Sheet) so it remains accessible. Replace hardcoded navigation labels ('Home', 'About', 'Techniques', etc.) with t(key) calls using the useLanguage hook. Replace 'Cart' text and 'Login'/'Logout' button text with translated equivalents using t(). Ensure the cart sheet's customer detail form labels (Full Name, Delivery Address, Phone Number) and button labels (Proceed to Checkout, Clear Cart) are also replaced with t() calls."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Import the LanguageProvider from frontend/src/contexts/LanguageContext.tsx. Wrap the entire app component tree (inside QueryClientProvider and InternetIdentityProvider, around the CartProvider and RouterProvider) with LanguageProvider so that language state is globally available to all pages and components."
+        }
+      ]
+    },
+    {
+      "id": "REQ-32",
+      "summary": "Apply t(key) translation function across all major page components and the Footer",
+      "acceptanceCriteria": [
+        "Switching to Hindi renders all major UI labels, section titles, and button text in Hindi (Devanagari)",
+        "Switching to Marathi renders all major UI labels, section titles, and button text in Marathi (Devanagari)",
+        "Switching back to English restores all English text",
+        "Language switch takes effect immediately without a page reload",
+        "Static contact information (email, phone) and product/crop names are not translated (remain in English/numerals)",
+        "No hardcoded English strings remain in the major translated UI sections"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Home.tsx",
+          "operation": "modify",
+          "description": "Import useLanguage hook and destructure the t function. Replace hardcoded English text with t(key) calls for: hero section headline and subheading, 'Why Choose Organic Farming' title, each benefit card title and description, 'Location-Based Crop Suggestions' title and description, 'Government Schemes' title and link text ('View All Schemes'), and 'Future Scope' section title and card descriptions. Keep crop names, region names, and scheme names in English."
+        },
+        {
+          "path": "frontend/src/pages/About.tsx",
+          "operation": "modify",
+          "description": "Import useLanguage hook and use t() for: the hero section title and subtitle, stats labels ('Happy Farmers', 'Organic Farms', 'Products', 'Countries'), 'Our Mission' and 'Our Vision' headings and their descriptions, 'Meet Our Team' heading, team member role labels (CEO & Founder, Chief Agricultural Officer, Head of Marketing, Lead Developer), 'Join Us' section title and description, and 'Contact Us' heading. Keep team member names, email, phone, and address in English."
+        },
+        {
+          "path": "frontend/src/pages/Techniques.tsx",
+          "operation": "modify",
+          "description": "Import useLanguage and apply t() to: the page hero title and subtitle ('Master Sustainable Farming Practices'), each technique card title (Composting, Natural Pest Control, Crop Rotation, Mulching, Green Manuring, Drip Irrigation, Vermicomposting, Biofertilizers, Intercropping), and their descriptions and benefits. Keep technique names consistent or translate only if translations are available."
+        },
+        {
+          "path": "frontend/src/pages/Farm.tsx",
+          "operation": "modify",
+          "description": "Import useLanguage and use t() for: page hero title and subtitle ('Organic Crop Cultivation Guide'), search placeholder ('Search crops...'), table headers (Crop, Season, Soil Type, Benefits, Cultivation Tips), 'Benefits of Organic Farming' section title, and each benefit description. Keep crop names in English."
+        },
+        {
+          "path": "frontend/src/pages/Shop.tsx",
+          "operation": "modify",
+          "description": "Import useLanguage and apply t() to: page hero title and subtitle ('Organic Product Shop'), 'All Categories' filter option, category names (Seeds, Vegetables, Fertilizers), search placeholder ('Search products...'), 'Add to Cart' button text, wishlist toggle label or tooltip if any, and 'No products found' message if present. Keep product names and prices in English/numerals."
+        },
+        {
+          "path": "frontend/src/pages/Cattle.tsx",
+          "operation": "modify",
+          "description": "Import useLanguage and use t() for: page hero title and subtitle ('Organic Livestock Farming Guide'), search placeholder ('Search animals...'), animal card labels (Food, Care, View Details), 'Benefits of Organic Livestock Farming' section title, and benefit descriptions. Keep animal breed names in English."
+        },
+        {
+          "path": "frontend/src/pages/Equipment.tsx",
+          "operation": "modify",
+          "description": "Import useLanguage and apply t() to: page hero title and subtitle ('Farm Equipment & Machinery'), 'All Categories' filter option, category names (Land Preparation, Sowing & Planting, Irrigation, Harvesting, Post-Harvest), search placeholder ('Search equipment...'), equipment card labels (Category, Specifications, Usage, Watch Tutorial), and any descriptive text. Keep equipment names in English."
+        },
+        {
+          "path": "frontend/src/pages/Contact.tsx",
+          "operation": "modify",
+          "description": "Import useLanguage and use t() for: page hero title and subtitle ('Contact Us', 'Get in Touch'), form labels (Name, Email, Message), 'Submit' button text, 'Contact Information' heading, and labels for Email, Phone, Address. Keep the actual email address, phone number, and physical address text in English/numerals."
+        },
+        {
+          "path": "frontend/src/pages/GovernmentSchemes.tsx",
+          "operation": "modify",
+          "description": "Import useLanguage and use t() for: page hero title and subtitle ('Government Schemes for Farmers'), each scheme card's 'Description', 'Benefits', and 'Eligibility' section headings. Keep scheme names (PM-KISAN, PMFBY, KCC, etc.) and their detailed content in English, as these are official program names and specific technical details."
+        },
+        {
+          "path": "frontend/src/pages/Signup.tsx",
+          "operation": "modify",
+          "description": "Import useLanguage and use t() for: page title ('Sign Up'), form label ('Mobile Number'), placeholder text ('Enter your 10-digit mobile number'), 'Continue' or 'Sign Up' button text, and any validation or helper text. Keep numeric input format unchanged."
+        },
+        {
+          "path": "frontend/src/pages/OtpVerification.tsx",
+          "operation": "modify",
+          "description": "Import useLanguage and use t() for: page title ('OTP Verification'), instruction text ('Enter the 4-digit OTP sent to your mobile'), input placeholder if any, 'Verify' button text, success message ('OTP verified successfully'), error message ('Incorrect OTP, please try again'), and any resend OTP link text. Keep the OTP input numeric format unchanged."
+        },
+        {
+          "path": "frontend/src/components/Footer.tsx",
+          "operation": "modify",
+          "description": "Import useLanguage and use t() for: 'Quick Links' heading, each navigation link label (Home, About, Techniques, Farm, Shop, Cattle, Equipment, Contact, Government Schemes), 'Contact Us' heading, and labels for Email, Phone, Location. Keep the actual email, phone number, and address text in English/numerals. Keep the brand name 'Agro Crops' and tagline untranslated or translate the tagline if a translation key exists."
         }
       ]
     }

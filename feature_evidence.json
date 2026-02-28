@@ -2,10 +2,10 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-add-a-customer-details-section-inside-the-cart-drawer-in-the-header-s-cart-sheet-component-frontend-src-components-header-tsx-below-the-list-of-cart-items-render-a-form-with-fields-for-full-name-delivery-address-textarea-and-phone-number-the-form-should-only-be-visible-when-the-cart-has-at-least-one-item-include-a-proceed-to-checkout-button-at-the-bottom-that-validates-all-three-fields-are-filled-before-submitting-on-successful-validation-show-a-success-confirmation-message-e-g-order-placed-successfully-we-will-contact-you-shortly-and-clear-the-cart-no-backend-integration-is-required-simulate-order-placement-with-local-state",
-      "featureTitle": "Add a Customer Details section inside the cart drawer (in the Header's cart Sheet component, frontend/src/components/Header.tsx). Below the list of cart items, render a form with fields for: Full Name, Delivery Address (textarea), and Phone Number. The form should only be visible when the cart has at least one item. Include a 'Proceed to Checkout' button at the bottom that validates all three fields are filled before submitting. On successful validation, show a success confirmation message (e.g., 'Order placed successfully! We will contact you shortly.') and clear the cart. No backend integration is required — simulate order placement with local state.",
+      "featureId": "feature-create-a-languagecontext-frontend-src-contexts-languagecontext-tsx-that-manages-the-currently-selected-language-english-hindi-marathi-persists-the-selection-to-localstorage-and-exposes-a-uselanguage-hook-returning-language-setlanguage-t-where-t-key-returns-the-translated-string-for-the-current-language",
+      "featureTitle": "Create a LanguageContext (frontend/src/contexts/LanguageContext.tsx) that manages the currently selected language (English, Hindi, Marathi), persists the selection to localStorage, and exposes a useLanguage hook returning { language, setLanguage, t } where t(key) returns the translated string for the current language.",
       "files": [
-        "frontend/src/components/Header.tsx"
+        "frontend/src/contexts/LanguageContext.tsx"
       ],
       "components": [
         "authorization@4.0.0",
@@ -16,17 +16,15 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-23"
+        "REQ-29"
       ],
       "confidence": "high"
     },
     {
-      "featureId": "feature-create-a-dedicated-government-schemes-page-frontend-src-pages-governmentschemes-tsx-accessible-at-the-route-schemes-the-page-should-display-detailed-information-cards-for-at-least-6-indian-government-schemes-relevant-to-farmers-including-pm-kisan-pradhan-mantri-kisan-samman-nidhi-pmfby-pradhan-mantri-fasal-bima-yojana-kisan-credit-card-kcc-scheme-national-mission-for-sustainable-agriculture-nmsa-soil-health-card-scheme-and-pm-krishi-sinchayee-yojana-pmksy-each-card-should-include-the-scheme-name-a-brief-description-2-3-sentences-key-benefits-as-bullet-points-and-an-eligibility-note-apply-slideup-animation-to-cards-on-scroll-entry-add-a-government-schemes-navigation-link-in-the-header-s-nav-bar-pointing-to-schemes",
-      "featureTitle": "Create a dedicated Government Schemes page (frontend/src/pages/GovernmentSchemes.tsx) accessible at the route '/schemes'. The page should display detailed information cards for at least 6 Indian government schemes relevant to farmers, including: PM-KISAN (Pradhan Mantri Kisan Samman Nidhi), PMFBY (Pradhan Mantri Fasal Bima Yojana), Kisan Credit Card (KCC) Scheme, National Mission for Sustainable Agriculture (NMSA), Soil Health Card Scheme, and PM Krishi Sinchayee Yojana (PMKSY). Each card should include the scheme name, a brief description (2–3 sentences), key benefits as bullet points, and an eligibility note. Apply slideUp animation to cards on scroll entry. Add a 'Government Schemes' navigation link in the Header's nav bar pointing to '/schemes'.",
+      "featureId": "feature-create-a-translations-file-frontend-src-utils-translations-ts-containing-translation-strings-for-all-three-languages-english-hindi-marathi-covering-key-ui-text-across-all-pages-navigation-labels-home-about-techniques-farm-shop-cattle-equipment-contact-government-schemes-hero-section-headlines-and-subheadings-section-titles-e-g-benefits-of-organic-farming-our-mission-our-vision-future-scope-location-based-crop-suggestions-government-schemes-common-button-labels-add-to-cart-view-more-explore-categories-watch-tutorial-sign-up-verify-otp-submit-proceed-to-checkout-form-field-labels-name-email-message-mobile-number-full-name-delivery-address-phone-number-and-common-status-feedback-messages-order-placed-successfully-incorrect-otp-etc",
+      "featureTitle": "Create a translations file (frontend/src/utils/translations.ts) containing translation strings for all three languages (English, Hindi, Marathi) covering key UI text across all pages: navigation labels (Home, About, Techniques, Farm, Shop, Cattle, Equipment, Contact, Government Schemes), hero section headlines and subheadings, section titles (e.g., 'Benefits of Organic Farming', 'Our Mission', 'Our Vision', 'Future Scope', 'Location-Based Crop Suggestions', 'Government Schemes'), common button labels (Add to Cart, View More, Explore Categories, Watch Tutorial, Sign Up, Verify OTP, Submit, Proceed to Checkout), form field labels (Name, Email, Message, Mobile Number, Full Name, Delivery Address, Phone Number), and common status/feedback messages (Order placed successfully, Incorrect OTP, etc.).",
       "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/components/Header.tsx",
-        "frontend/src/pages/GovernmentSchemes.tsx"
+        "frontend/src/utils/translations.ts"
       ],
       "components": [
         "authorization@4.0.0",
@@ -37,7 +35,52 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-24"
+        "REQ-30"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-language-switcher-ui-component-frontend-src-components-languageswitcher-tsx-that-renders-a-dropdown-or-button-group-allowing-the-user-to-switch-between-english-en-hindi-and-marathi-languages-integrate-it-into-the-header-component-frontend-src-components-header-tsx-place-it-in-the-top-right-area-of-the-sticky-header-visible-on-both-desktop-and-mobile-wrap-the-root-app-frontend-src-app-tsx-with-the-languageprovider-so-language-state-is-globally-available",
+      "featureTitle": "Add a language switcher UI component (frontend/src/components/LanguageSwitcher.tsx) that renders a dropdown or button group allowing the user to switch between English (EN), Hindi (हि), and Marathi (म) languages. Integrate it into the Header component (frontend/src/components/Header.tsx) — place it in the top-right area of the sticky header, visible on both desktop and mobile. Wrap the root App (frontend/src/App.tsx) with the LanguageProvider so language state is globally available.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Header.tsx",
+        "frontend/src/components/LanguageSwitcher.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-31"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-the-t-key-translation-function-from-uselanguage-across-all-major-page-components-home-frontend-src-pages-home-tsx-about-frontend-src-pages-about-tsx-techniques-frontend-src-pages-techniques-tsx-farm-frontend-src-pages-farm-tsx-shop-frontend-src-pages-shop-tsx-cattle-frontend-src-pages-cattle-tsx-equipment-frontend-src-pages-equipment-tsx-contact-frontend-src-pages-contact-tsx-governmentschemes-frontend-src-pages-governmentschemes-tsx-signup-frontend-src-pages-signup-tsx-otpverification-frontend-src-pages-otpverification-tsx-header-frontend-src-components-header-tsx-and-footer-frontend-src-components-footer-tsx-replacing-hardcoded-english-ui-strings-with-t-key-calls-so-that-switching-language-updates-the-displayed-text-without-a-page-reload",
+      "featureTitle": "Apply the t(key) translation function from useLanguage across all major page components — Home (frontend/src/pages/Home.tsx), About (frontend/src/pages/About.tsx), Techniques (frontend/src/pages/Techniques.tsx), Farm (frontend/src/pages/Farm.tsx), Shop (frontend/src/pages/Shop.tsx), Cattle (frontend/src/pages/Cattle.tsx), Equipment (frontend/src/pages/Equipment.tsx), Contact (frontend/src/pages/Contact.tsx), GovernmentSchemes (frontend/src/pages/GovernmentSchemes.tsx), Signup (frontend/src/pages/Signup.tsx), OtpVerification (frontend/src/pages/OtpVerification.tsx), Header (frontend/src/components/Header.tsx), and Footer (frontend/src/components/Footer.tsx) — replacing hardcoded English UI strings with t(key) calls so that switching language updates the displayed text without a page reload.",
+      "files": [
+        "frontend/src/components/Footer.tsx",
+        "frontend/src/pages/About.tsx",
+        "frontend/src/pages/Farm.tsx",
+        "frontend/src/pages/Home.tsx",
+        "frontend/src/pages/Shop.tsx",
+        "frontend/src/pages/Techniques.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-32"
       ],
       "confidence": "high"
     }

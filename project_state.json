@@ -1,12 +1,13 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 13,
+  "projectStateVersion": 19,
   "summary": "Agro Crops – Organic Farming Management System: A modern, responsive, green-themed multi-page website for organic farming. Includes Signup, OTP Verification, Home, About, Produce/Techniques, Farm, Shop, Cattle, Equipment, and Contact pages. Features add-to-cart, wishlist, search, location-based crop suggestions, government schemes info, smooth animations, and a future scope section.",
   "architectural_notes": [
     "Green-themed design: primary green, secondary white/light brown, soft gradients, rounded cards, light shadows",
     "Animations: fadeIn, zoomIn, slideUp used throughout all pages",
     "Mobile-responsive layout required across all pages",
-    "Multi-page website structure (10 pages) with consistent header/navbar"
+    "Multi-page website structure (10 pages) with consistent header/navbar",
+    "Multi-language support: English, Hindi, Marathi — language switcher in header/navbar"
   ],
   "known_issues": [
     "Cart add-to-cart functionality is not working on the Shop page",
@@ -190,6 +191,70 @@
         "REQ-24"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-remove-the-built-with-caffeine-ai-attribution-text-from-the-footer-component-frontend-src-components-footer-tsx-delete-the-entire-line-or-element-that-renders-this-branding-so-it-no-longer-appears-anywhere-on-the-website",
+      "title": "Remove the 'Built with caffeine.ai' attribution text from the Footer component (frontend/src/components/Footer.tsx). Delete the entire line or element that renders this branding so it no longer appears anywhere on the website.",
+      "reqIds": [
+        "REQ-25"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-expand-the-equipment-page-frontend-src-pages-equipment-tsx-to-include-at-least-10-advanced-farm-equipment-items-beyond-the-existing-four-tractor-plough-thresher-sprayer-add-the-following-additional-equipment-rotavator-seed-drill-power-tiller-combine-harvester-laser-land-leveler-paddy-transplanter-mulching-machine-drip-irrigation-system-crop-cutter-reaper-and-pneumatic-planter-each-equipment-card-must-display-an-equipment-name-an-emoji-or-icon-a-short-description-of-its-use-key-specifications-power-requirement-suitable-crops-terrain-type-and-a-watch-tutorial-button-that-links-to-or-opens-a-tutorial-video-section-for-that-tool",
+      "title": "Expand the Equipment page (frontend/src/pages/Equipment.tsx) to include at least 10 advanced farm equipment items beyond the existing four (Tractor, Plough, Thresher, Sprayer). Add the following additional equipment: Rotavator, Seed Drill, Power Tiller, Combine Harvester, Laser Land Leveler, Paddy Transplanter, Mulching Machine, Drip Irrigation System, Crop Cutter/Reaper, and Pneumatic Planter. Each equipment card must display: an equipment name, an emoji or icon, a short description of its use, key specifications (power requirement, suitable crops, terrain type), and a 'Watch Tutorial' button that links to or opens a tutorial video section for that tool.",
+      "reqIds": [
+        "REQ-26"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-tutorial-videos-section-to-the-equipment-page-frontend-src-pages-equipment-tsx-for-each-equipment-item-embed-a-tutorial-video-panel-that-appears-when-the-user-clicks-the-watch-tutorial-button-on-an-equipment-card-display-the-video-in-a-modal-or-an-inline-expandable-section-below-the-card-use-real-youtube-embed-urls-iframe-with-youtube-embed-links-for-relevant-tutorial-videos-one-per-equipment-type-include-a-video-title-a-1-2-sentence-description-of-what-the-tutorial-covers-and-a-close-collapse-control-if-a-direct-embed-is-not-possible-display-a-styled-placeholder-card-with-a-play-icon-video-title-and-a-watch-on-youtube-external-link-button-pointing-to-a-relevant-youtube-search-url-for-that-equipment",
+      "title": "Add a Tutorial Videos section to the Equipment page (frontend/src/pages/Equipment.tsx). For each equipment item, embed a tutorial video panel that appears when the user clicks the 'Watch Tutorial' button on an equipment card. Display the video in a modal or an inline expandable section below the card. Use real YouTube embed URLs (iframe with YouTube embed links) for relevant tutorial videos — one per equipment type. Include a video title, a 1–2 sentence description of what the tutorial covers, and a close/collapse control. If a direct embed is not possible, display a styled placeholder card with a play icon, video title, and a 'Watch on YouTube' external link button pointing to a relevant YouTube search URL for that equipment.",
+      "reqIds": [
+        "REQ-27"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-dedicated-advanced-equipment-guide-hero-intro-section-at-the-top-of-the-equipment-page-frontend-src-pages-equipment-tsx-with-a-green-gradient-header-a-headline-such-as-modern-farm-equipment-tools-a-subheading-explaining-that-the-page-covers-both-traditional-and-advanced-mechanized-farming-tools-and-a-category-filter-bar-with-tabs-buttons-for-all-tillage-seeding-harvesting-irrigation-and-post-harvest-clicking-a-category-tab-filters-the-visible-equipment-cards-to-only-show-items-belonging-to-that-category-assign-each-equipment-item-to-one-of-these-categories-apply-a-fadein-animation-to-the-hero-section-on-page-load",
+      "title": "Add a dedicated 'Advanced Equipment Guide' hero/intro section at the top of the Equipment page (frontend/src/pages/Equipment.tsx) with a green gradient header, a headline such as 'Modern Farm Equipment & Tools', a subheading explaining that the page covers both traditional and advanced mechanized farming tools, and a category filter bar with tabs/buttons for: All, Tillage, Seeding, Harvesting, Irrigation, and Post-Harvest. Clicking a category tab filters the visible equipment cards to only show items belonging to that category. Assign each equipment item to one of these categories. Apply a fadeIn animation to the hero section on page load.",
+      "reqIds": [
+        "REQ-28"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-languagecontext-frontend-src-contexts-languagecontext-tsx-that-manages-the-currently-selected-language-english-hindi-marathi-persists-the-selection-to-localstorage-and-exposes-a-uselanguage-hook-returning-language-setlanguage-t-where-t-key-returns-the-translated-string-for-the-current-language",
+      "title": "Create a LanguageContext (frontend/src/contexts/LanguageContext.tsx) that manages the currently selected language (English, Hindi, Marathi), persists the selection to localStorage, and exposes a useLanguage hook returning { language, setLanguage, t } where t(key) returns the translated string for the current language.",
+      "reqIds": [
+        "REQ-29"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-translations-file-frontend-src-utils-translations-ts-containing-translation-strings-for-all-three-languages-english-hindi-marathi-covering-key-ui-text-across-all-pages-navigation-labels-home-about-techniques-farm-shop-cattle-equipment-contact-government-schemes-hero-section-headlines-and-subheadings-section-titles-e-g-benefits-of-organic-farming-our-mission-our-vision-future-scope-location-based-crop-suggestions-government-schemes-common-button-labels-add-to-cart-view-more-explore-categories-watch-tutorial-sign-up-verify-otp-submit-proceed-to-checkout-form-field-labels-name-email-message-mobile-number-full-name-delivery-address-phone-number-and-common-status-feedback-messages-order-placed-successfully-incorrect-otp-etc",
+      "title": "Create a translations file (frontend/src/utils/translations.ts) containing translation strings for all three languages (English, Hindi, Marathi) covering key UI text across all pages: navigation labels (Home, About, Techniques, Farm, Shop, Cattle, Equipment, Contact, Government Schemes), hero section headlines and subheadings, section titles (e.g., 'Benefits of Organic Farming', 'Our Mission', 'Our Vision', 'Future Scope', 'Location-Based Crop Suggestions', 'Government Schemes'), common button labels (Add to Cart, View More, Explore Categories, Watch Tutorial, Sign Up, Verify OTP, Submit, Proceed to Checkout), form field labels (Name, Email, Message, Mobile Number, Full Name, Delivery Address, Phone Number), and common status/feedback messages (Order placed successfully, Incorrect OTP, etc.).",
+      "reqIds": [
+        "REQ-30"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-language-switcher-ui-component-frontend-src-components-languageswitcher-tsx-that-renders-a-dropdown-or-button-group-allowing-the-user-to-switch-between-english-en-hindi-and-marathi-languages-integrate-it-into-the-header-component-frontend-src-components-header-tsx-place-it-in-the-top-right-area-of-the-sticky-header-visible-on-both-desktop-and-mobile-wrap-the-root-app-frontend-src-app-tsx-with-the-languageprovider-so-language-state-is-globally-available",
+      "title": "Add a language switcher UI component (frontend/src/components/LanguageSwitcher.tsx) that renders a dropdown or button group allowing the user to switch between English (EN), Hindi (हि), and Marathi (म) languages. Integrate it into the Header component (frontend/src/components/Header.tsx) — place it in the top-right area of the sticky header, visible on both desktop and mobile. Wrap the root App (frontend/src/App.tsx) with the LanguageProvider so language state is globally available.",
+      "reqIds": [
+        "REQ-31"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-the-t-key-translation-function-from-uselanguage-across-all-major-page-components-home-frontend-src-pages-home-tsx-about-frontend-src-pages-about-tsx-techniques-frontend-src-pages-techniques-tsx-farm-frontend-src-pages-farm-tsx-shop-frontend-src-pages-shop-tsx-cattle-frontend-src-pages-cattle-tsx-equipment-frontend-src-pages-equipment-tsx-contact-frontend-src-pages-contact-tsx-governmentschemes-frontend-src-pages-governmentschemes-tsx-signup-frontend-src-pages-signup-tsx-otpverification-frontend-src-pages-otpverification-tsx-header-frontend-src-components-header-tsx-and-footer-frontend-src-components-footer-tsx-replacing-hardcoded-english-ui-strings-with-t-key-calls-so-that-switching-language-updates-the-displayed-text-without-a-page-reload",
+      "title": "Apply the t(key) translation function from useLanguage across all major page components — Home (frontend/src/pages/Home.tsx), About (frontend/src/pages/About.tsx), Techniques (frontend/src/pages/Techniques.tsx), Farm (frontend/src/pages/Farm.tsx), Shop (frontend/src/pages/Shop.tsx), Cattle (frontend/src/pages/Cattle.tsx), Equipment (frontend/src/pages/Equipment.tsx), Contact (frontend/src/pages/Contact.tsx), GovernmentSchemes (frontend/src/pages/GovernmentSchemes.tsx), Signup (frontend/src/pages/Signup.tsx), OtpVerification (frontend/src/pages/OtpVerification.tsx), Header (frontend/src/components/Header.tsx), and Footer (frontend/src/components/Footer.tsx) — replacing hardcoded English UI strings with t(key) calls so that switching language updates the displayed text without a page reload.",
+      "reqIds": [
+        "REQ-32"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -302,6 +367,24 @@
     {
       "id": "AR-33",
       "summary": "Add a Government Schemes page or dedicated section with scheme details and information for farmers",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-34",
+      "summary": "Remove the 'Built with caffeine.ai' branding/attribution text from the website",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-35",
+      "summary": "Enhance Equipment page with more advanced farm equipment (beyond tractor, plough, thresher, sprayer) and add tutorial video sections for using each tool",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-36",
+      "summary": "Add multi-language support with language switcher for Marathi, Hindi, and English across the website",
       "reqIds": [],
       "status": "pending"
     }

@@ -1,39 +1,77 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-28T21:11:49.787Z",
+  "generatedAt": "2026-02-28T22:01:16.348Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
   },
   "requirements": {
-    "total": 2,
-    "implemented": 2,
+    "total": 4,
+    "implemented": 4,
     "items": [
       {
-        "id": "REQ-23",
-        "summary": "Add a Customer Details section inside the cart drawer (in the Header's cart Sheet component, frontend/src/components/Header.tsx). Below the list of cart items, render a form with fields for: Full Name, Delivery Address (textarea), and Phone Number. The form should only be visible when the cart has at least one item. Include a 'Proceed to Checkout' button at the bottom that validates all three fields are filled before submitting. On successful validation, show a success confirmation message (e.g., 'Order placed successfully! We will contact you shortly.') and clear the cart. No backend integration is required — simulate order placement with local state.",
+        "id": "REQ-29",
+        "summary": "Create a LanguageContext (frontend/src/contexts/LanguageContext.tsx) that manages the currently selected language (English, Hindi, Marathi), persists the selection to localStorage, and exposes a useLanguage hook returning { language, setLanguage, t } where t(key) returns the translated string for the current language.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/components/Header.tsx"
+          "frontend/src/contexts/LanguageContext.tsx"
         ],
         "matchedFiles": [
-          "frontend/src/components/Header.tsx"
+          "frontend/src/contexts/LanguageContext.tsx"
         ]
       },
       {
-        "id": "REQ-24",
-        "summary": "Create a dedicated Government Schemes page (frontend/src/pages/GovernmentSchemes.tsx) accessible at the route '/schemes'. The page should display detailed information cards for at least 6 Indian government schemes relevant to farmers, including: PM-KISAN (Pradhan Mantri Kisan Samman Nidhi), PMFBY (Pradhan Mantri Fasal Bima Yojana), Kisan Credit Card (KCC) Scheme, National Mission for Sustainable Agriculture (NMSA), Soil Health Card Scheme, and PM Krishi Sinchayee Yojana (PMKSY). Each card should include the scheme name, a brief description (2–3 sentences), key benefits as bullet points, and an eligibility note. Apply slideUp animation to cards on scroll entry. Add a 'Government Schemes' navigation link in the Header's nav bar pointing to '/schemes'.",
+        "id": "REQ-30",
+        "summary": "Create a translations file (frontend/src/utils/translations.ts) containing translation strings for all three languages (English, Hindi, Marathi) covering key UI text across all pages: navigation labels (Home, About, Techniques, Farm, Shop, Cattle, Equipment, Contact, Government Schemes), hero section headlines and subheadings, section titles (e.g., 'Benefits of Organic Farming', 'Our Mission', 'Our Vision', 'Future Scope', 'Location-Based Crop Suggestions', 'Government Schemes'), common button labels (Add to Cart, View More, Explore Categories, Watch Tutorial, Sign Up, Verify OTP, Submit, Proceed to Checkout), form field labels (Name, Email, Message, Mobile Number, Full Name, Delivery Address, Phone Number), and common status/feedback messages (Order placed successfully, Incorrect OTP, etc.).",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/pages/GovernmentSchemes.tsx",
-          "frontend/src/App.tsx",
-          "frontend/src/components/Header.tsx"
+          "frontend/src/utils/translations.ts"
         ],
         "matchedFiles": [
+          "frontend/src/utils/translations.ts"
+        ]
+      },
+      {
+        "id": "REQ-31",
+        "summary": "Add a language switcher UI component (frontend/src/components/LanguageSwitcher.tsx) that renders a dropdown or button group allowing the user to switch between English (EN), Hindi (हि), and Marathi (म) languages. Integrate it into the Header component (frontend/src/components/Header.tsx) — place it in the top-right area of the sticky header, visible on both desktop and mobile. Wrap the root App (frontend/src/App.tsx) with the LanguageProvider so language state is globally available.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/LanguageSwitcher.tsx",
+          "frontend/src/components/Header.tsx",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/LanguageSwitcher.tsx",
+          "frontend/src/components/Header.tsx",
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-32",
+        "summary": "Apply the t(key) translation function from useLanguage across all major page components — Home (frontend/src/pages/Home.tsx), About (frontend/src/pages/About.tsx), Techniques (frontend/src/pages/Techniques.tsx), Farm (frontend/src/pages/Farm.tsx), Shop (frontend/src/pages/Shop.tsx), Cattle (frontend/src/pages/Cattle.tsx), Equipment (frontend/src/pages/Equipment.tsx), Contact (frontend/src/pages/Contact.tsx), GovernmentSchemes (frontend/src/pages/GovernmentSchemes.tsx), Signup (frontend/src/pages/Signup.tsx), OtpVerification (frontend/src/pages/OtpVerification.tsx), Header (frontend/src/components/Header.tsx), and Footer (frontend/src/components/Footer.tsx) — replacing hardcoded English UI strings with t(key) calls so that switching language updates the displayed text without a page reload.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/Home.tsx",
+          "frontend/src/pages/About.tsx",
+          "frontend/src/pages/Techniques.tsx",
+          "frontend/src/pages/Farm.tsx",
+          "frontend/src/pages/Shop.tsx",
+          "frontend/src/pages/Cattle.tsx",
+          "frontend/src/pages/Equipment.tsx",
+          "frontend/src/pages/Contact.tsx",
           "frontend/src/pages/GovernmentSchemes.tsx",
-          "frontend/src/App.tsx",
-          "frontend/src/components/Header.tsx"
+          "frontend/src/pages/Signup.tsx",
+          "frontend/src/pages/OtpVerification.tsx",
+          "frontend/src/components/Footer.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/Home.tsx",
+          "frontend/src/pages/About.tsx",
+          "frontend/src/pages/Techniques.tsx",
+          "frontend/src/pages/Farm.tsx",
+          "frontend/src/pages/Shop.tsx",
+          "frontend/src/components/Footer.tsx"
         ]
       }
     ]
@@ -41,11 +79,18 @@
   "changedFiles": [
     "build-request.json",
     "feature_evidence.json",
-    "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
     "frontend/src/App.tsx",
+    "frontend/src/components/Footer.tsx",
     "frontend/src/components/Header.tsx",
-    "frontend/src/pages/GovernmentSchemes.tsx",
+    "frontend/src/components/LanguageSwitcher.tsx",
+    "frontend/src/contexts/LanguageContext.tsx",
+    "frontend/src/pages/About.tsx",
+    "frontend/src/pages/Farm.tsx",
+    "frontend/src/pages/Home.tsx",
+    "frontend/src/pages/Shop.tsx",
+    "frontend/src/pages/Techniques.tsx",
+    "frontend/src/utils/translations.ts",
     "project_state.json",
     "scratch/component-selection.json",
     "spec.md",
