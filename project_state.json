@@ -1,0 +1,313 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 13,
+  "summary": "Agro Crops – Organic Farming Management System: A modern, responsive, green-themed multi-page website for organic farming. Includes Signup, OTP Verification, Home, About, Produce/Techniques, Farm, Shop, Cattle, Equipment, and Contact pages. Features add-to-cart, wishlist, search, location-based crop suggestions, government schemes info, smooth animations, and a future scope section.",
+  "architectural_notes": [
+    "Green-themed design: primary green, secondary white/light brown, soft gradients, rounded cards, light shadows",
+    "Animations: fadeIn, zoomIn, slideUp used throughout all pages",
+    "Mobile-responsive layout required across all pages",
+    "Multi-page website structure (10 pages) with consistent header/navbar"
+  ],
+  "known_issues": [
+    "Cart add-to-cart functionality is not working on the Shop page",
+    "Signup page is accessible even after authentication (should redirect authenticated users away from /signup)",
+    "Signup page/option not visible on the website — navigation or routing to /signup may be broken"
+  ],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-implement-a-green-eco-friendly-visual-theme-throughout-the-entire-application-primary-color-green-2d6a4f-52b788-range-secondary-colors-white-and-light-brown-d4a373-soft-gradients-on-headers-and-cards-rounded-card-corners-border-radius-12-16px-light-drop-shadows-clean-sans-serif-typography-and-a-nature-farming-aesthetic-apply-css-keyframe-animations-for-fadein-zoomin-and-slideup-that-trigger-on-page-load-and-scroll-entry-for-all-major-sections",
+      "title": "Implement a green, eco-friendly visual theme throughout the entire application: primary color green (#2d6a4f / #52b788 range), secondary colors white and light brown (#d4a373), soft gradients on headers and cards, rounded card corners (border-radius ~12–16px), light drop shadows, clean sans-serif typography, and a nature/farming aesthetic. Apply CSS keyframe animations for fadeIn, zoomIn, and slideUp that trigger on page load and scroll entry for all major sections.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-signup-page-with-a-mobile-number-input-field-10-digit-numeric-validation-with-real-time-error-feedback-a-sign-up-button-that-is-disabled-until-a-valid-10-digit-number-is-entered-and-navigation-to-the-otp-verification-page-on-submission-store-the-entered-mobile-number-in-react-state-for-passing-to-the-otp-page",
+      "title": "Create a Signup page with a mobile number input field (10-digit numeric validation with real-time error feedback), a Sign Up button that is disabled until a valid 10-digit number is entered, and navigation to the OTP Verification page on submission. Store the entered mobile number in React state for passing to the OTP page.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-an-otp-verification-page-with-4-separate-single-digit-input-boxes-implement-auto-focus-advance-when-a-digit-is-entered-focus-moves-automatically-to-the-next-box-backspace-on-an-empty-box-moves-focus-to-the-previous-box-on-submission-validate-that-all-4-boxes-are-filled-and-if-correct-navigate-to-the-home-page-show-an-error-message-for-incorrect-otp-use-a-hardcoded-demo-otp-e-g-1234-for-validation-since-no-backend-sms-service-is-available",
+      "title": "Create an OTP Verification page with 4 separate single-digit input boxes. Implement auto-focus advance: when a digit is entered, focus moves automatically to the next box; backspace on an empty box moves focus to the previous box. On submission validate that all 4 boxes are filled and if correct navigate to the Home page. Show an error message for incorrect OTP. Use a hardcoded demo OTP (e.g., '1234') for validation since no backend SMS service is available.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-home-page-with-a-sticky-header-containing-the-agro-crops-logo-leaf-icon-and-slogan-organic-farming-a-navigation-bar-with-links-to-home-about-produce-techniques-contact-and-categories-a-full-width-hero-section-featuring-the-generated-hero-background-image-with-overlay-text-promoting-organic-farming-an-introduction-section-highlighting-the-benefits-of-organic-farming-healthier-food-environmental-sustainability-soil-health-a-location-based-crop-suggestions-section-static-ui-with-a-region-selector-and-suggested-crops-list-a-government-schemes-information-section-static-cards-listing-3-4-scheme-names-and-brief-descriptions-and-a-future-scope-section-describing-iot-based-smart-farming-ai-chatbot-for-farmers-in-local-languages-blockchain-for-supply-chain-transparency-community-knowledge-sharing-platform-and-b2b-b2c-marketplace-expansion-apply-fadein-and-slideup-animations-to-all-sections",
+      "title": "Create a Home page with: a sticky header containing the Agro Crops logo (leaf icon) and slogan 'Organic Farming'; a navigation bar with links to Home, About, Produce, Techniques, Contact, and Categories; a full-width hero section featuring the generated hero background image with overlay text promoting organic farming; an introduction section highlighting the benefits of organic farming (healthier food, environmental sustainability, soil health); a Location-Based Crop Suggestions section (static UI with a region selector and suggested crops list); a Government Schemes information section (static cards listing 3–4 scheme names and brief descriptions); and a Future Scope section describing IoT-based smart farming, AI chatbot for farmers in local languages, blockchain for supply chain transparency, community knowledge sharing platform, and B2B & B2C marketplace expansion. Apply fadeIn and slideUp animations to all sections.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-an-about-page-with-a-green-gradient-header-section-titled-about-agro-crops-a-mission-card-and-a-vision-card-animated-with-zoomin-and-a-clean-professional-layout-describing-the-platform-s-goals-of-promoting-organic-farming-supporting-farmers-and-enabling-sustainable-agriculture",
+      "title": "Create an About page with a green gradient header section titled 'About Agro Crops', a Mission card and a Vision card (animated with zoomIn), and a clean professional layout describing the platform's goals of promoting organic farming, supporting farmers, and enabling sustainable agriculture.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-produce-techniques-page-with-three-animated-informational-cards-covering-composting-pest-control-and-crop-rotation-each-card-includes-an-emoji-icon-title-and-a-short-descriptive-paragraph-add-a-prominent-cta-button-labeled-explore-categories-that-navigates-to-the-shop-or-categories-page-apply-slideup-animation-to-cards-on-scroll",
+      "title": "Create a Produce/Techniques page with three animated informational cards covering: Composting (♻️), Pest Control (🐛), and Crop Rotation (🔄). Each card includes an emoji icon, title, and a short descriptive paragraph. Add a prominent CTA button labeled 'Explore Categories' that navigates to the Shop or Categories page. Apply slideUp animation to cards on scroll.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-farm-page-with-an-introduction-section-on-organic-farming-principles-a-search-box-that-filters-a-static-list-of-crops-wheat-rice-maize-sugarcane-cotton-tomato-potato-by-name-with-real-time-filtering-displaying-matching-crop-cards-with-a-crop-name-emoji-and-brief-growing-guidance-include-a-benefits-of-organic-farming-section-with-icon-bullet-points",
+      "title": "Create a Farm page with an introduction section on organic farming principles, a search box that filters a static list of crops (wheat, rice, maize, sugarcane, cotton, tomato, potato) by name with real-time filtering, displaying matching crop cards with a crop name, emoji, and brief growing guidance. Include a Benefits of Organic Farming section with icon-bullet points.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-shop-page-with-a-responsive-product-grid-3-columns-on-desktop-2-on-tablet-1-on-mobile-each-product-card-includes-a-product-image-from-generated-assets-name-price-in-inr-an-add-to-cart-button-and-a-wishlist-heart-icon-toggle-implement-a-global-cart-state-react-context-or-usestate-tracking-cart-items-and-quantities-implement-a-wishlist-state-tracking-wishlisted-items-show-a-cart-item-count-badge-in-the-header-include-at-least-9-products-across-categories-organic-seeds-vegetables-and-fertilizers",
+      "title": "Create a Shop page with a responsive product grid (3 columns on desktop, 2 on tablet, 1 on mobile). Each product card includes a product image (from generated assets), name, price in INR, an 'Add to Cart' button, and a wishlist heart icon toggle. Implement a global cart state (React Context or useState) tracking cart items and quantities. Implement a wishlist state tracking wishlisted items. Show a cart item count badge in the header. Include at least 9 products across categories: organic seeds, vegetables, and fertilizers.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-cattle-page-with-a-search-box-for-filtering-animals-by-name-a-grid-of-animal-cards-cow-buffalo-goat-sheep-poultry-each-showing-an-animal-image-from-generated-assets-animal-name-food-care-information-summary-and-a-view-more-button-that-expands-reveals-detailed-care-info-include-a-benefits-of-organic-cattle-rearing-section-below-the-grid-with-icon-bullet-points",
+      "title": "Create a Cattle page with a search box for filtering animals by name, a grid of animal cards (cow, buffalo, goat, sheep, poultry) each showing an animal image (from generated assets), animal name, food & care information summary, and a 'View More' button that expands/reveals detailed care info. Include a 'Benefits of Organic Cattle Rearing' section below the grid with icon-bullet points.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-an-equipment-page-with-a-search-box-that-filters-farm-tools-by-name-a-responsive-grid-displaying-cards-for-tractor-plough-thresher-and-sprayer-each-card-includes-a-generated-tool-image-tool-name-and-a-short-description-of-its-use-apply-scroll-triggered-slideup-animations-to-cards-as-they-enter-the-viewport",
+      "title": "Create an Equipment page with a search box that filters farm tools by name, a responsive grid displaying cards for: Tractor, Plough, Thresher, and Sprayer. Each card includes a generated tool image, tool name, and a short description of its use. Apply scroll-triggered slideUp animations to cards as they enter the viewport.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-contact-page-with-a-motivational-headline-growing-together-for-a-greener-tomorrow-a-contact-info-section-displaying-a-demo-email-and-phone-number-and-a-simple-contact-form-with-fields-for-name-email-message-and-a-submit-button-apply-a-slideup-animation-to-the-form-on-page-load-show-a-success-message-after-form-submission-no-backend-required-simulate-with-state",
+      "title": "Create a Contact page with a motivational headline ('Growing Together for a Greener Tomorrow'), a contact info section displaying a demo email and phone number, and a simple contact form with fields for Name, Email, Message, and a Submit button. Apply a slideUp animation to the form on page load. Show a success message after form submission (no backend required — simulate with state).",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-set-up-a-react-router-based-single-page-application-with-routes-for-all-10-pages-signup-otp-home-about-techniques-farm-shop-cattle-equipment-contact-the-app-should-start-at-signup-for-unauthenticated-users-the-shared-header-navigation-bar-should-be-rendered-on-all-pages-except-signup-and-otp",
+      "title": "Set up a React Router based single-page application with routes for all 10 pages: /signup, /otp, / (Home), /about, /techniques, /farm, /shop, /cattle, /equipment, /contact. The app should start at /signup for unauthenticated users. The shared header/navigation bar should be rendered on all pages except Signup and OTP.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-fix-the-add-to-cart-functionality-on-the-shop-page-so-that-clicking-the-add-to-cart-button-on-any-product-card-correctly-adds-the-item-to-the-global-cart-state-via-the-cartcontext-updates-the-cart-item-count-badge-in-the-header-and-persists-the-cart-across-page-navigation-within-the-same-session",
+      "title": "Fix the 'Add to Cart' functionality on the Shop page so that clicking the 'Add to Cart' button on any product card correctly adds the item to the global cart state via the CartContext, updates the cart item count badge in the Header, and persists the cart across page navigation within the same session.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-route-guard-on-the-signup-and-otp-pages-so-that-users-who-have-already-completed-otp-verification-i-e-are-considered-authenticated-within-the-session-are-automatically-redirected-to-the-home-page-instead-of-being-able-to-view-the-signup-or-otp-pages",
+      "title": "Implement a route guard on the /signup and /otp pages so that users who have already completed OTP verification (i.e., are considered authenticated within the session) are automatically redirected to the Home page (/) instead of being able to view the Signup or OTP pages.",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-fix-the-routing-so-that-unauthenticated-users-are-correctly-directed-to-the-signup-page-when-they-first-visit-the-application-ensure-the-default-route-or-a-catch-all-redirect-sends-unauthenticated-users-to-signup-rather-than-any-other-page-and-that-the-signup-page-is-reachable-and-renders-correctly",
+      "title": "Fix the routing so that unauthenticated users are correctly directed to the /signup page when they first visit the application. Ensure the default route (or a catch-all redirect) sends unauthenticated users to /signup rather than any other page, and that the Signup page is reachable and renders correctly.",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-audit-app-tsx-route-configuration-to-verify-that-the-auth-layout-group-which-renders-routes-without-the-header-footer-i-e-signup-and-otp-is-correctly-defined-and-that-the-root-path-redirects-unauthenticated-users-to-signup-fix-any-misconfigured-route-definitions-missing-route-registrations-or-incorrect-layout-groupings-that-prevent-the-signup-page-from-appearing",
+      "title": "Audit App.tsx route configuration to verify that the auth layout group (which renders routes without the header/footer, i.e., /signup and /otp) is correctly defined and that the root path '/' redirects unauthenticated users to '/signup'. Fix any misconfigured route definitions, missing route registrations, or incorrect layout groupings that prevent the Signup page from appearing.",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-static-contact-information-displayed-on-the-contact-page-to-use-the-real-email-address-kharatchaitanya03-gmail-com-and-phone-number-8421016006-replace-any-placeholder-demo-email-and-phone-values-currently-shown-in-the-contact-info-section-with-these-actual-values",
+      "title": "Update the static contact information displayed on the Contact page to use the real email address 'kharatchaitanya03@gmail.com' and phone number '8421016006'. Replace any placeholder/demo email and phone values currently shown in the contact info section with these actual values.",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-footer-component-frontend-src-components-footer-tsx-to-display-the-real-contact-email-kharatchaitanya03-gmail-com-and-phone-number-8421016006-in-the-contact-info-section-replacing-any-placeholder-or-demo-values",
+      "title": "Update the Footer component (frontend/src/components/Footer.tsx) to display the real contact email 'kharatchaitanya03@gmail.com' and phone number '8421016006' in the contact info section, replacing any placeholder or demo values.",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-about-page-frontend-src-pages-about-tsx-to-include-a-contact-info-subsection-or-inline-references-displaying-the-real-email-kharatchaitanya03-gmail-com-and-phone-number-8421016006-where-contextually-appropriate-e-g-under-team-leadership-or-a-get-in-touch-prompt",
+      "title": "Update the About page (frontend/src/pages/About.tsx) to include a contact info subsection or inline references displaying the real email 'kharatchaitanya03@gmail.com' and phone number '8421016006', where contextually appropriate (e.g., under team/leadership or a 'Get in Touch' prompt).",
+      "reqIds": [
+        "REQ-20"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-home-page-frontend-src-pages-home-tsx-to-include-the-real-contact-email-kharatchaitanya03-gmail-com-and-phone-number-8421016006-in-any-contact-related-section-e-g-within-the-hero-cta-a-contact-us-callout-or-the-government-schemes-section-footer-row-replacing-any-placeholder-values",
+      "title": "Update the Home page (frontend/src/pages/Home.tsx) to include the real contact email 'kharatchaitanya03@gmail.com' and phone number '8421016006' in any contact-related section (e.g., within the hero CTA, a 'Contact Us' callout, or the government schemes section footer row), replacing any placeholder values.",
+      "reqIds": [
+        "REQ-21"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-customer-details-section-inside-the-cart-drawer-in-the-header-s-cart-sheet-component-frontend-src-components-header-tsx-below-the-list-of-cart-items-render-a-form-with-fields-for-full-name-delivery-address-textarea-and-phone-number-the-form-should-only-be-visible-when-the-cart-has-at-least-one-item-include-a-proceed-to-checkout-button-at-the-bottom-that-validates-all-three-fields-are-filled-before-submitting-on-successful-validation-show-a-success-confirmation-message-e-g-order-placed-successfully-we-will-contact-you-shortly-and-clear-the-cart-no-backend-integration-is-required-simulate-order-placement-with-local-state",
+      "title": "Add a Customer Details section inside the cart drawer (in the Header's cart Sheet component, frontend/src/components/Header.tsx). Below the list of cart items, render a form with fields for: Full Name, Delivery Address (textarea), and Phone Number. The form should only be visible when the cart has at least one item. Include a 'Proceed to Checkout' button at the bottom that validates all three fields are filled before submitting. On successful validation, show a success confirmation message (e.g., 'Order placed successfully! We will contact you shortly.') and clear the cart. No backend integration is required — simulate order placement with local state.",
+      "reqIds": [
+        "REQ-23"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-dedicated-government-schemes-page-frontend-src-pages-governmentschemes-tsx-accessible-at-the-route-schemes-the-page-should-display-detailed-information-cards-for-at-least-6-indian-government-schemes-relevant-to-farmers-including-pm-kisan-pradhan-mantri-kisan-samman-nidhi-pmfby-pradhan-mantri-fasal-bima-yojana-kisan-credit-card-kcc-scheme-national-mission-for-sustainable-agriculture-nmsa-soil-health-card-scheme-and-pm-krishi-sinchayee-yojana-pmksy-each-card-should-include-the-scheme-name-a-brief-description-2-3-sentences-key-benefits-as-bullet-points-and-an-eligibility-note-apply-slideup-animation-to-cards-on-scroll-entry-add-a-government-schemes-navigation-link-in-the-header-s-nav-bar-pointing-to-schemes",
+      "title": "Create a dedicated Government Schemes page (frontend/src/pages/GovernmentSchemes.tsx) accessible at the route '/schemes'. The page should display detailed information cards for at least 6 Indian government schemes relevant to farmers, including: PM-KISAN (Pradhan Mantri Kisan Samman Nidhi), PMFBY (Pradhan Mantri Fasal Bima Yojana), Kisan Credit Card (KCC) Scheme, National Mission for Sustainable Agriculture (NMSA), Soil Health Card Scheme, and PM Krishi Sinchayee Yojana (PMKSY). Each card should include the scheme name, a brief description (2–3 sentences), key benefits as bullet points, and an eligibility note. Apply slideUp animation to cards on scroll entry. Add a 'Government Schemes' navigation link in the Header's nav bar pointing to '/schemes'.",
+      "reqIds": [
+        "REQ-24"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Signup page with 10-digit mobile validation and OTP redirect",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "OTP Verification page with 4-box input, auto-focus, and home redirect",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Home page with header, navbar, hero section, and smooth animations",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "About page with mission/vision, animated cards, and green gradient header",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Produce/Techniques page with composting, pest control, crop rotation cards and CTA",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Farm page with organic farming intro, crop search box, and benefits section",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Shop page with product grid, add-to-cart, and wishlist functionality",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Cattle page with animal cards, care info, search, and view more button",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Equipment page with tool grid (tractor, plough, thresher, sprayer), scroll animations, and search",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "Contact page with form, email/phone, motivational message, and slide animation",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-11",
+      "summary": "Location-based crop suggestion section and government schemes information section",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-12",
+      "summary": "Future scope section: IoT farming, AI chatbot, blockchain, community platform, B2B/B2C marketplace",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-25",
+      "summary": "Implement a lightweight backend actor in Motoko that stores contact form submissions (name, email, message, timestamp) and exposes: a submitContact(name: Text, email: Text, message: Text) update function and a getContacts() query function returning all submissions. This provides a working data persistence layer for the contact form.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-26",
+      "summary": "Update Contact page with real email (kharatchaitanya03@gmail.com) and phone number (8421016006)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-27",
+      "summary": "Add real contact info (email: kharatchaitanya03@gmail.com, phone: 8421016006) in all relevant places across the entire website (footer, header, about page, contact page, etc.)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-31",
+      "summary": "Verify and ensure the Contact page (frontend/src/pages/Contact.tsx) continues to display the real email 'kharatchaitanya03@gmail.com' and phone number '8421016006', consistent with the previously applied update. No placeholder values should remain.",
+      "reqIds": [
+        "REQ-22"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-32",
+      "summary": "Add customer details form/section in the cart (e.g., name, address, phone) for checkout purposes",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-33",
+      "summary": "Add a Government Schemes page or dedicated section with scheme details and information for farmers",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Agro Crops",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

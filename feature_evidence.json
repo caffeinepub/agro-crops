@@ -1,0 +1,45 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-add-a-customer-details-section-inside-the-cart-drawer-in-the-header-s-cart-sheet-component-frontend-src-components-header-tsx-below-the-list-of-cart-items-render-a-form-with-fields-for-full-name-delivery-address-textarea-and-phone-number-the-form-should-only-be-visible-when-the-cart-has-at-least-one-item-include-a-proceed-to-checkout-button-at-the-bottom-that-validates-all-three-fields-are-filled-before-submitting-on-successful-validation-show-a-success-confirmation-message-e-g-order-placed-successfully-we-will-contact-you-shortly-and-clear-the-cart-no-backend-integration-is-required-simulate-order-placement-with-local-state",
+      "featureTitle": "Add a Customer Details section inside the cart drawer (in the Header's cart Sheet component, frontend/src/components/Header.tsx). Below the list of cart items, render a form with fields for: Full Name, Delivery Address (textarea), and Phone Number. The form should only be visible when the cart has at least one item. Include a 'Proceed to Checkout' button at the bottom that validates all three fields are filled before submitting. On successful validation, show a success confirmation message (e.g., 'Order placed successfully! We will contact you shortly.') and clear the cart. No backend integration is required — simulate order placement with local state.",
+      "files": [
+        "frontend/src/components/Header.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-23"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-dedicated-government-schemes-page-frontend-src-pages-governmentschemes-tsx-accessible-at-the-route-schemes-the-page-should-display-detailed-information-cards-for-at-least-6-indian-government-schemes-relevant-to-farmers-including-pm-kisan-pradhan-mantri-kisan-samman-nidhi-pmfby-pradhan-mantri-fasal-bima-yojana-kisan-credit-card-kcc-scheme-national-mission-for-sustainable-agriculture-nmsa-soil-health-card-scheme-and-pm-krishi-sinchayee-yojana-pmksy-each-card-should-include-the-scheme-name-a-brief-description-2-3-sentences-key-benefits-as-bullet-points-and-an-eligibility-note-apply-slideup-animation-to-cards-on-scroll-entry-add-a-government-schemes-navigation-link-in-the-header-s-nav-bar-pointing-to-schemes",
+      "featureTitle": "Create a dedicated Government Schemes page (frontend/src/pages/GovernmentSchemes.tsx) accessible at the route '/schemes'. The page should display detailed information cards for at least 6 Indian government schemes relevant to farmers, including: PM-KISAN (Pradhan Mantri Kisan Samman Nidhi), PMFBY (Pradhan Mantri Fasal Bima Yojana), Kisan Credit Card (KCC) Scheme, National Mission for Sustainable Agriculture (NMSA), Soil Health Card Scheme, and PM Krishi Sinchayee Yojana (PMKSY). Each card should include the scheme name, a brief description (2–3 sentences), key benefits as bullet points, and an eligibility note. Apply slideUp animation to cards on scroll entry. Add a 'Government Schemes' navigation link in the Header's nav bar pointing to '/schemes'.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Header.tsx",
+        "frontend/src/pages/GovernmentSchemes.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-24"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Add Customer Details in Cart and Government Schemes Page",
+  "requirements": [
+    {
+      "id": "REQ-23",
+      "summary": "Add customer details form in cart drawer with validation and success confirmation",
+      "acceptanceCriteria": [
+        "The cart sheet drawer displays a 'Customer Details' form section when there is at least one item in the cart.",
+        "The form contains three fields: Full Name (text input), Delivery Address (textarea), and Phone Number (numeric input).",
+        "The 'Proceed to Checkout' button is disabled or shows a validation error if any field is empty.",
+        "On successful form submission, a success message is displayed and the cart is cleared.",
+        "The customer details form is not visible when the cart is empty.",
+        "The styling of the form is consistent with the existing green eco-friendly theme."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Header.tsx",
+          "operation": "modify",
+          "description": "Inside the cart Sheet component's SheetContent, below the cart items list and before the total price section, add a conditional Customer Details form section that renders only when cart.items.length > 0. Include three form fields: Full Name (text input), Delivery Address (textarea with 3 rows), and Phone Number (numeric input with maxLength 10). Add local state to manage form values and validation errors. Include a 'Proceed to Checkout' button that validates all fields are non-empty before submission. On successful validation, display a success message using a toast or alert ('Order placed successfully! We will contact you shortly.'), then call clearCart() from CartContext. Style the form section with consistent spacing, borders, and the green theme colors matching the existing cart UI. Use Tailwind utility classes for form inputs with focus rings in green-600."
+        }
+      ]
+    },
+    {
+      "id": "REQ-24",
+      "summary": "Create Government Schemes page with 6 Indian agricultural schemes and navigation link",
+      "acceptanceCriteria": [
+        "A new route '/schemes' is registered in App.tsx and renders the GovernmentSchemes page.",
+        "The page displays at least 6 government scheme cards.",
+        "Each card contains: scheme name, description, key benefits (bullet list), and eligibility note.",
+        "Cards animate with slideUp on scroll entry using the existing AnimatedSection component.",
+        "A 'Government Schemes' link is added to the Header navigation bar and navigates to '/schemes'.",
+        "The page header has a green gradient consistent with other pages (e.g., About page header style).",
+        "The page is accessible only to authenticated users (consistent with other main routes)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/GovernmentSchemes.tsx",
+          "operation": "create",
+          "description": "Create a new page component that displays detailed information about 6 Indian government schemes for farmers: PM-KISAN (Pradhan Mantri Kisan Samman Nidhi), PMFBY (Pradhan Mantri Fasal Bima Yojana), Kisan Credit Card (KCC) Scheme, National Mission for Sustainable Agriculture (NMSA), Soil Health Card Scheme, and PM Krishi Sinchayee Yojana (PMKSY). Structure the page with a hero header section using a green gradient (bg-gradient-to-r from-green-700 to-green-500) matching the About page style, with title 'Government Schemes for Farmers' and subtitle. Below the header, render a grid of scheme cards (grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6) inside a container with max-w-7xl mx-auto px-4 py-12. Each card should be wrapped in the AnimatedSection component with animation='slideUp' and include: scheme name as heading, 2-3 sentence description, key benefits as a bulleted list (ul with list-disc), and an eligibility note in smaller text. Style cards with white background, rounded borders, shadow, and hover effects consistent with the existing site theme. Use the green-600/green-700 colors for accents and headings."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Import the new GovernmentSchemes page component at the top of the file. In the main routes array (within the authGuardedRoutes group), add a new route object with path: '/schemes' and element: <GovernmentSchemes />. Position this route after the existing authenticated routes (e.g., after '/techniques') to maintain alphabetical or logical ordering."
+        },
+        {
+          "path": "frontend/src/components/Header.tsx",
+          "operation": "modify",
+          "description": "In the desktop navigation links section (the nav element with space-x-8 flex items), add a new Link component pointing to '/schemes' with text 'Government Schemes'. Position it logically in the navigation order (e.g., after 'About' or 'Contact'). Ensure the Link uses the same Tailwind classes as other navigation links (text-gray-700 hover:text-green-600 transition-colors font-medium) for visual consistency. Also add the same link to the mobile navigation menu (if present) within the Sheet or mobile menu structure."
+        }
+      ]
+    }
+  ]
+}

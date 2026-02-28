@@ -1,0 +1,67 @@
+{
+  "kind": "build_request",
+  "title": "Add Customer Details in Cart and Government Schemes Page",
+  "projectName": "Agro Crops",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-23",
+      "text": "Add a Customer Details section inside the cart drawer (in the Header's cart Sheet component, frontend/src/components/Header.tsx). Below the list of cart items, render a form with fields for: Full Name, Delivery Address (textarea), and Phone Number. The form should only be visible when the cart has at least one item. Include a 'Proceed to Checkout' button at the bottom that validates all three fields are filled before submitting. On successful validation, show a success confirmation message (e.g., 'Order placed successfully! We will contact you shortly.') and clear the cart. No backend integration is required — simulate order placement with local state.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "add costomer details in cart option"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The cart sheet drawer displays a 'Customer Details' form section when there is at least one item in the cart.",
+        "The form contains three fields: Full Name (text input), Delivery Address (textarea), and Phone Number (numeric input).",
+        "The 'Proceed to Checkout' button is disabled or shows a validation error if any field is empty.",
+        "On successful form submission, a success message is displayed and the cart is cleared.",
+        "The customer details form is not visible when the cart is empty.",
+        "The styling of the form is consistent with the existing green eco-friendly theme."
+      ]
+    },
+    {
+      "id": "REQ-24",
+      "text": "Create a dedicated Government Schemes page (frontend/src/pages/GovernmentSchemes.tsx) accessible at the route '/schemes'. The page should display detailed information cards for at least 6 Indian government schemes relevant to farmers, including: PM-KISAN (Pradhan Mantri Kisan Samman Nidhi), PMFBY (Pradhan Mantri Fasal Bima Yojana), Kisan Credit Card (KCC) Scheme, National Mission for Sustainable Agriculture (NMSA), Soil Health Card Scheme, and PM Krishi Sinchayee Yojana (PMKSY). Each card should include the scheme name, a brief description (2–3 sentences), key benefits as bullet points, and an eligibility note. Apply slideUp animation to cards on scroll entry. Add a 'Government Schemes' navigation link in the Header's nav bar pointing to '/schemes'.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "add goverment scheme option"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A new route '/schemes' is registered in App.tsx and renders the GovernmentSchemes page.",
+        "The page displays at least 6 government scheme cards.",
+        "Each card contains: scheme name, description, key benefits (bullet list), and eligibility note.",
+        "Cards animate with slideUp on scroll entry using the existing AnimatedSection component.",
+        "A 'Government Schemes' link is added to the Header navigation bar and navigates to '/schemes'.",
+        "The page header has a green gradient consistent with other pages (e.g., About page header style).",
+        "The page is accessible only to authenticated users (consistent with other main routes)."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not modify files under frontend/src/hooks/ or frontend/src/components/ui/.",
+    "Do not change the CartContext API — only extend the UI layer in Header.tsx for customer details.",
+    "Reuse the existing AnimatedSection component for scroll animations on the new page.",
+    "All styling must follow the existing green eco-friendly Tailwind theme defined in frontend/src/index.css and tailwind.config.js."
+  ],
+  "nonGoals": [
+    "No real payment gateway or checkout backend integration.",
+    "No SMS or email notification on order placement.",
+    "No persistence of customer details or orders to the backend canister.",
+    "No changes to the existing government schemes section already present on the Home page — the new page is a separate, more detailed view."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

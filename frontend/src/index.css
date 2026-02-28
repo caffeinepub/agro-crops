@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Merriweather:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* Green eco-friendly palette */
+    --background: 0.98 0.008 120;
+    --foreground: 0.18 0.04 145;
+
+    --card: 1 0 0;
+    --card-foreground: 0.18 0.04 145;
+
+    --popover: 1 0 0;
+    --popover-foreground: 0.18 0.04 145;
+
+    --primary: 0.42 0.13 145;
+    --primary-foreground: 0.99 0 0;
+
+    --secondary: 0.92 0.04 120;
+    --secondary-foreground: 0.25 0.08 145;
+
+    --muted: 0.94 0.02 120;
+    --muted-foreground: 0.52 0.04 145;
+
+    --accent: 0.88 0.06 120;
+    --accent-foreground: 0.25 0.08 145;
+
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    --border: 0.88 0.04 120;
+    --input: 0.88 0.04 120;
+    --ring: 0.42 0.13 145;
+
+    --chart-1: 0.42 0.13 145;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.75 0.15 80;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+
+    --sidebar: 0.96 0.02 120;
+    --sidebar-foreground: 0.18 0.04 145;
+    --sidebar-primary: 0.42 0.13 145;
+    --sidebar-primary-foreground: 0.99 0 0;
+    --sidebar-accent: 0.88 0.06 120;
+    --sidebar-accent-foreground: 0.25 0.08 145;
+    --sidebar-border: 0.88 0.04 120;
+    --sidebar-ring: 0.42 0.13 145;
+
+    /* Custom tokens */
+    --green-deep: 0.32 0.12 145;
+    --green-mid: 0.42 0.13 145;
+    --green-light: 0.62 0.14 145;
+    --green-pale: 0.88 0.06 120;
+    --brown-light: 0.78 0.08 65;
+    --brown-warm: 0.68 0.1 60;
+    --hero-overlay: 0.15 0.06 145;
+  }
+
+  .dark {
+    --background: 0.14 0.04 145;
+    --foreground: 0.95 0.02 120;
+    --card: 0.18 0.05 145;
+    --card-foreground: 0.95 0.02 120;
+    --popover: 0.22 0.05 145;
+    --popover-foreground: 0.95 0.02 120;
+    --primary: 0.62 0.14 145;
+    --primary-foreground: 0.12 0.04 145;
+    --secondary: 0.22 0.05 145;
+    --secondary-foreground: 0.95 0.02 120;
+    --muted: 0.22 0.05 145;
+    --muted-foreground: 0.65 0.04 145;
+    --accent: 0.28 0.06 145;
+    --accent-foreground: 0.95 0.02 120;
+    --destructive: 0.704 0.191 22.216;
+    --destructive-foreground: 0.205 0 0;
+    --border: 1 0 0 / 10%;
+    --input: 1 0 0 / 15%;
+    --ring: 0.62 0.14 145;
+    --sidebar: 0.18 0.05 145;
+    --sidebar-foreground: 0.95 0.02 120;
+    --sidebar-primary: 0.62 0.14 145;
+    --sidebar-primary-foreground: 0.12 0.04 145;
+    --sidebar-accent: 0.28 0.06 145;
+    --sidebar-accent-foreground: 0.95 0.02 120;
+    --sidebar-border: 1 0 0 / 10%;
+    --sidebar-ring: 0.62 0.14 145;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-poppins;
+  }
+
+  h1, h2, h3 {
+    @apply font-merriweather;
+  }
+}
+
+@layer utilities {
+  .font-poppins {
+    font-family: 'Poppins', sans-serif;
+  }
+  .font-merriweather {
+    font-family: 'Merriweather', serif;
+  }
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomIn {
+  from { opacity: 0; transform: scale(0.85); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse-green {
+  0%, 100% { box-shadow: 0 0 0 0 oklch(0.42 0.13 145 / 0.4); }
+  50% { box-shadow: 0 0 0 12px oklch(0.42 0.13 145 / 0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.animate-slideUp {
+  animation: slideUp 0.7s ease-out forwards;
+}
+
+.animate-zoomIn {
+  animation: zoomIn 0.6s ease-out forwards;
+}
+
+.animate-slideInLeft {
+  animation: slideInLeft 0.7s ease-out forwards;
+}
+
+.animate-slideInRight {
+  animation: slideInRight 0.7s ease-out forwards;
+}
+
+.animate-pulse-green {
+  animation: pulse-green 2s infinite;
+}
+
+/* Delay utilities */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+
+/* Initially hidden for animation */
+.anim-hidden {
+  opacity: 0;
+}
+
+/* ===== GRADIENT UTILITIES ===== */
+.gradient-green {
+  background: linear-gradient(135deg, oklch(0.32 0.12 145), oklch(0.52 0.14 145));
+}
+
+.gradient-green-light {
+  background: linear-gradient(135deg, oklch(0.88 0.06 120), oklch(0.96 0.03 120));
+}
+
+.gradient-hero {
+  background: linear-gradient(135deg, oklch(0.22 0.1 145 / 0.85), oklch(0.38 0.12 145 / 0.7));
+}
+
+/* ===== CARD STYLES ===== */
+.eco-card {
+  @apply bg-card rounded-2xl shadow-card border border-border overflow-hidden transition-all duration-300;
+}
+
+.eco-card:hover {
+  @apply shadow-card-hover -translate-y-1;
+}
+
+/* ===== BUTTON STYLES ===== */
+.btn-primary {
+  @apply bg-primary text-primary-foreground font-semibold px-6 py-3 rounded-xl transition-all duration-200 hover:opacity-90 hover:shadow-lg active:scale-95;
+}
+
+.btn-outline-green {
+  @apply border-2 border-primary text-primary font-semibold px-6 py-3 rounded-xl transition-all duration-200 hover:bg-primary hover:text-primary-foreground;
+}
+
+/* ===== SECTION STYLES ===== */
+.section-padding {
+  @apply py-16 px-4 md:px-8 lg:px-16;
+}
+
+.section-title {
+  @apply text-3xl md:text-4xl font-bold text-center mb-4;
+  font-family: 'Merriweather', serif;
+}
+
+.section-subtitle {
+  @apply text-center text-muted-foreground text-lg mb-12 max-w-2xl mx-auto;
+}
+
+/* ===== SEARCH INPUT ===== */
+.search-input {
+  @apply w-full px-5 py-3 rounded-xl border-2 border-border bg-card text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors duration-200;
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: oklch(0.94 0.02 120);
+}
+::-webkit-scrollbar-thumb {
+  background: oklch(0.52 0.14 145);
+  border-radius: 3px;
+}

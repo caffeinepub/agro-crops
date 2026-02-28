@@ -1,0 +1,54 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-28T21:11:49.787Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 2,
+    "implemented": 2,
+    "items": [
+      {
+        "id": "REQ-23",
+        "summary": "Add a Customer Details section inside the cart drawer (in the Header's cart Sheet component, frontend/src/components/Header.tsx). Below the list of cart items, render a form with fields for: Full Name, Delivery Address (textarea), and Phone Number. The form should only be visible when the cart has at least one item. Include a 'Proceed to Checkout' button at the bottom that validates all three fields are filled before submitting. On successful validation, show a success confirmation message (e.g., 'Order placed successfully! We will contact you shortly.') and clear the cart. No backend integration is required — simulate order placement with local state.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/Header.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/Header.tsx"
+        ]
+      },
+      {
+        "id": "REQ-24",
+        "summary": "Create a dedicated Government Schemes page (frontend/src/pages/GovernmentSchemes.tsx) accessible at the route '/schemes'. The page should display detailed information cards for at least 6 Indian government schemes relevant to farmers, including: PM-KISAN (Pradhan Mantri Kisan Samman Nidhi), PMFBY (Pradhan Mantri Fasal Bima Yojana), Kisan Credit Card (KCC) Scheme, National Mission for Sustainable Agriculture (NMSA), Soil Health Card Scheme, and PM Krishi Sinchayee Yojana (PMKSY). Each card should include the scheme name, a brief description (2–3 sentences), key benefits as bullet points, and an eligibility note. Apply slideUp animation to cards on scroll entry. Add a 'Government Schemes' navigation link in the Header's nav bar pointing to '/schemes'.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/GovernmentSchemes.tsx",
+          "frontend/src/App.tsx",
+          "frontend/src/components/Header.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/GovernmentSchemes.tsx",
+          "frontend/src/App.tsx",
+          "frontend/src/components/Header.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/src/App.tsx",
+    "frontend/src/components/Header.tsx",
+    "frontend/src/pages/GovernmentSchemes.tsx",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}
