@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle, Loader2 } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle, Loader2, AlertCircle } from 'lucide-react';
 import AnimatedSection from '../components/AnimatedSection';
-import { useSubmitContact } from '../hooks/useQueries';
+import { useActor } from '../hooks/useActor';
 
 interface FormData {
   name: string;
@@ -11,12 +11,17 @@ interface FormData {
 
 const initialForm: FormData = { name: '', email: '', message: '' };
 
+// Formspree endpoint configured for kharatchaitanya03@gmail.com
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xpwzgdjk';
+
 export default function Contact() {
   const [form, setForm] = useState<FormData>(initialForm);
   const [errors, setErrors] = useState<Partial<FormData>>({});
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
-  const submitContact = useSubmitContact();
+  const { actor } = useActor();
 
   const validate = (): boolean => {
     const newErrors: Partial<FormData> = {};
@@ -38,24 +43,62 @@ export default function Contact() {
     if (errors[name as keyof FormData]) {
       setErrors(prev => ({ ...prev, [name]: undefined }));
     }
+    if (submitError) setSubmitError(null);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
 
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    const trimmedName = form.name.trim();
+    const trimmedEmail = form.email.trim();
+    const trimmedMessage = form.message.trim();
+
     try {
-      await submitContact.mutateAsync({
-        name: form.name.trim(),
-        email: form.email.trim(),
-        message: form.message.trim(),
+      // Primary: Send via Formspree for email delivery
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          name: trimmedName,
+          email: trimmedEmail,
+          message: trimmedMessage,
+        }),
       });
+
+      if (!response.ok) {
+        const data = await response.json().catch(() => ({}));
+        const errMsg =
+          (data as { error?: string }).error ||
+          'Failed to send message. Please try again or contact us directly.';
+        throw new Error(errMsg);
+      }
+
+      // Secondary: Persist to backend (best-effort, does not affect email delivery)
+      if (actor) {
+        try {
+          await actor.submitContact(trimmedName, trimmedEmail, trimmedMessage);
+        } catch (backendErr) {
+          console.error('Backend persistence failed (non-critical):', backendErr);
+        }
+      }
+
       setSubmitted(true);
       setForm(initialForm);
-    } catch {
-      // Even if backend fails, show success for demo purposes
-      setSubmitted(true);
-      setForm(initialForm);
+    } catch (err: unknown) {
+      const message =
+        err instanceof Error
+          ? err.message
+          : 'Failed to send message. Please try again or contact us directly.';
+      setSubmitError(message);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -173,7 +216,7 @@ export default function Contact() {
                         Message Sent!
                       </h3>
                       <p className="text-muted-foreground mb-6 max-w-sm">
-                        Thank you for reaching out. Our team will get back to you within 24 hours.
+                        Your message has been sent successfully! We will get back to you soon.
                       </p>
                       <button
                         onClick={() => setSubmitted(false)}
@@ -187,6 +230,14 @@ export default function Contact() {
                       <h2 className="text-2xl font-bold text-foreground mb-6 font-merriweather">
                         Send Us a Message
                       </h2>
+
+                      {submitError && (
+                        <div className="flex items-start gap-3 bg-destructive/10 border border-destructive/30 rounded-xl p-4 mb-5 animate-fadeIn">
+                          <AlertCircle className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" />
+                          <p className="text-destructive text-sm">{submitError}</p>
+                        </div>
+                      )}
+
                       <form onSubmit={handleSubmit} className="space-y-5">
                         {/* Name */}
                         <div>
@@ -199,6 +250,7 @@ export default function Contact() {
                             value={form.name}
                             onChange={handleChange}
                             placeholder="Enter your full name"
+                            disabled={isSubmitting}
                             className={`search-input ${errors.name ? 'border-destructive focus:border-destructive' : ''}`}
                           />
                           {errors.name && (
@@ -217,6 +269,7 @@ export default function Contact() {
                             value={form.email}
                             onChange={handleChange}
                             placeholder="Enter your email address"
+                            disabled={isSubmitting}
                             className={`search-input ${errors.email ? 'border-destructive focus:border-destructive' : ''}`}
                           />
                           {errors.email && (
@@ -235,6 +288,7 @@ export default function Contact() {
                             onChange={handleChange}
                             placeholder="Tell us how we can help you..."
                             rows={5}
+                            disabled={isSubmitting}
                             className={`search-input resize-none ${errors.message ? 'border-destructive focus:border-destructive' : ''}`}
                           />
                           {errors.message && (
@@ -244,10 +298,10 @@ export default function Contact() {
 
                         <button
                           type="submit"
-                          disabled={submitContact.isPending}
+                          disabled={isSubmitting}
                           className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl font-semibold text-base gradient-green text-white shadow-green hover:shadow-card-hover hover:-translate-y-0.5 active:scale-95 transition-all duration-200 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0"
                         >
-                          {submitContact.isPending ? (
+                          {isSubmitting ? (
                             <>
                               <Loader2 className="w-4 h-4 animate-spin" />
                               Sending...

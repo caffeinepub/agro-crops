@@ -1,104 +1,43 @@
 {
   "kind": "build_request",
-  "title": "Add multi-language support (English, Hindi, Marathi) with language switcher",
+  "title": "Expand Organic Farming Techniques page with more techniques and deeper content",
   "projectName": "Agro Crops",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-29",
-      "text": "Create a LanguageContext (frontend/src/contexts/LanguageContext.tsx) that manages the currently selected language (English, Hindi, Marathi), persists the selection to localStorage, and exposes a useLanguage hook returning { language, setLanguage, t } where t(key) returns the translated string for the current language.",
+      "id": "REQ-50",
+      "text": "Expand the Organic Farming Techniques page (frontend/src/pages/Techniques.tsx) to include at least 9 additional techniques beyond the existing three (Composting, Pest Control, Crop Rotation). Add the following new techniques: (1) Green Manuring 🌿, (2) Mulching 🍂, (3) Vermicomposting 🪱, (4) Drip Irrigation 💧, (5) Intercropping 🌾, (6) Biological Pest Control 🐞, (7) Soil pH Management 🧪, (8) Rainwater Harvesting 🌧️, and (9) Seed Treatment & Selection 🌱. Each technique card must display: an emoji icon, the technique name, a 2–3 sentence overview description, a step-by-step process section (3–5 numbered steps), a key benefits list (at least 3 bullet points), a recommended tools/inputs section listing 2–4 relevant tools or materials, and a pro tip or best practice callout. The existing three technique cards (Composting, Pest Control, Crop Rotation) must also be updated to include the same enriched structure (step-by-step process, benefits list, recommended tools, pro tip) if not already present. All cards must be displayed in a responsive grid layout and animated with slideUp on scroll entry using the existing AnimatedSection component. The existing 'Explore Categories' CTA button must remain intact at the bottom of the page.",
       "target": "frontend",
       "source": {
         "messageIds": [
           "msg-1"
         ],
         "quotes": [
-          "add language option and add marathi hindi and english languages"
+          "add more deep information in Organic Farming Techniques add more option"
         ]
       },
       "acceptanceCriteria": [
-        "LanguageContext is created and exported from frontend/src/contexts/LanguageContext.tsx",
-        "Supports three language codes: 'en' (English), 'hi' (Hindi), 'mr' (Marathi)",
-        "Selected language is persisted in localStorage and restored on page reload",
-        "useLanguage hook returns language, setLanguage, and t(key) translation function",
-        "t(key) falls back to English if a translation key is missing for the selected language"
-      ]
-    },
-    {
-      "id": "REQ-30",
-      "text": "Create a translations file (frontend/src/utils/translations.ts) containing translation strings for all three languages (English, Hindi, Marathi) covering key UI text across all pages: navigation labels (Home, About, Techniques, Farm, Shop, Cattle, Equipment, Contact, Government Schemes), hero section headlines and subheadings, section titles (e.g., 'Benefits of Organic Farming', 'Our Mission', 'Our Vision', 'Future Scope', 'Location-Based Crop Suggestions', 'Government Schemes'), common button labels (Add to Cart, View More, Explore Categories, Watch Tutorial, Sign Up, Verify OTP, Submit, Proceed to Checkout), form field labels (Name, Email, Message, Mobile Number, Full Name, Delivery Address, Phone Number), and common status/feedback messages (Order placed successfully, Incorrect OTP, etc.).",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-1"
-        ],
-        "quotes": [
-          "add language option and add marathi hindi and english languages"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Translations file exports a translations object keyed by language code (en, hi, mr)",
-        "All three languages have translation entries for navigation labels",
-        "All three languages have translation entries for common button labels and form field labels",
-        "All three languages have translation entries for major section titles across all pages",
-        "Hindi and Marathi translations use proper Unicode Devanagari script"
-      ]
-    },
-    {
-      "id": "REQ-31",
-      "text": "Add a language switcher UI component (frontend/src/components/LanguageSwitcher.tsx) that renders a dropdown or button group allowing the user to switch between English (EN), Hindi (हि), and Marathi (म) languages. Integrate it into the Header component (frontend/src/components/Header.tsx) — place it in the top-right area of the sticky header, visible on both desktop and mobile. Wrap the root App (frontend/src/App.tsx) with the LanguageProvider so language state is globally available.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-1"
-        ],
-        "quotes": [
-          "add language option and add marathi hindi and english languages"
-        ]
-      },
-      "acceptanceCriteria": [
-        "A language switcher control is visible in the Header on all pages (including authenticated pages)",
-        "The switcher shows all three options: EN (English), हि (Hindi), म (Marathi)",
-        "Clicking a language option immediately updates all translated text across the current page",
-        "The active/selected language is visually highlighted in the switcher",
-        "The language switcher is accessible on both desktop and mobile (hamburger menu or inline)",
-        "LanguageProvider wraps the App in frontend/src/App.tsx"
-      ]
-    },
-    {
-      "id": "REQ-32",
-      "text": "Apply the t(key) translation function from useLanguage across all major page components — Home (frontend/src/pages/Home.tsx), About (frontend/src/pages/About.tsx), Techniques (frontend/src/pages/Techniques.tsx), Farm (frontend/src/pages/Farm.tsx), Shop (frontend/src/pages/Shop.tsx), Cattle (frontend/src/pages/Cattle.tsx), Equipment (frontend/src/pages/Equipment.tsx), Contact (frontend/src/pages/Contact.tsx), GovernmentSchemes (frontend/src/pages/GovernmentSchemes.tsx), Signup (frontend/src/pages/Signup.tsx), OtpVerification (frontend/src/pages/OtpVerification.tsx), Header (frontend/src/components/Header.tsx), and Footer (frontend/src/components/Footer.tsx) — replacing hardcoded English UI strings with t(key) calls so that switching language updates the displayed text without a page reload.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-1"
-        ],
-        "quotes": [
-          "add language option and add marathi hindi and english languages"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Switching to Hindi renders all major UI labels, section titles, and button text in Hindi (Devanagari)",
-        "Switching to Marathi renders all major UI labels, section titles, and button text in Marathi (Devanagari)",
-        "Switching back to English restores all English text",
-        "Language switch takes effect immediately without a page reload",
-        "Static contact information (email, phone) and product/crop names are not translated (remain in English/numerals)",
-        "No hardcoded English strings remain in the major translated UI sections"
+        "The Techniques page displays at least 12 technique cards in total (3 existing + 9 new).",
+        "Each technique card shows an emoji icon, technique name, overview description, step-by-step process (3–5 steps), benefits list (≥3 bullet points), recommended tools section, and a pro tip callout.",
+        "The existing three cards (Composting, Pest Control, Crop Rotation) are enriched with the step-by-step process, benefits list, recommended tools, and pro tip sections.",
+        "All technique cards are displayed in a responsive grid (1 column on mobile, 2 on tablet, 3 on desktop).",
+        "Each card animates with slideUp on scroll entry via the AnimatedSection component.",
+        "The 'Explore Categories' CTA button remains visible at the bottom of the page.",
+        "No existing functionality (routing, animations, translations) is broken."
       ]
     }
   ],
   "constraints": [
-    "Do not modify any file under frontend/src/hooks/ (useInternetIdentity.ts, useActor.ts) or frontend/src/main.tsx",
-    "Do not modify any files under frontend/src/components/ui/",
-    "Hindi and Marathi translations must use proper Devanagari Unicode script",
-    "Language persistence must use localStorage only — no backend involvement"
+    "Do not modify any files listed under frontend.immutablePaths.",
+    "All existing functionality (search, filters, animations, language translations) must remain intact.",
+    "Use the existing AnimatedSection component for scroll-triggered animations.",
+    "Preserve the existing green eco-friendly visual theme (primary color #2d6a4f / #52b788, rounded corners 12–16px, light drop shadows)."
   ],
   "nonGoals": [
-    "No right-to-left (RTL) language support",
-    "No server-side or backend translation logic",
-    "No automatic language detection based on browser locale",
-    "No translation of dynamic data such as product names, crop names, or animal names",
-    "No integration with external i18n libraries (e.g., i18next) unless already present in the project"
+    "Do not add backend persistence for technique data.",
+    "Do not modify the Equipment, Farm, or any other page.",
+    "Do not change the routing or authentication logic.",
+    "Do not add video embeds or external links to technique cards unless explicitly requested."
   ],
   "imageRequirements": {
     "required": [],

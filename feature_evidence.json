@@ -2,28 +2,10 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-create-a-languagecontext-frontend-src-contexts-languagecontext-tsx-that-manages-the-currently-selected-language-english-hindi-marathi-persists-the-selection-to-localstorage-and-exposes-a-uselanguage-hook-returning-language-setlanguage-t-where-t-key-returns-the-translated-string-for-the-current-language",
-      "featureTitle": "Create a LanguageContext (frontend/src/contexts/LanguageContext.tsx) that manages the currently selected language (English, Hindi, Marathi), persists the selection to localStorage, and exposes a useLanguage hook returning { language, setLanguage, t } where t(key) returns the translated string for the current language.",
+      "featureId": "feature-expand-the-organic-farming-techniques-page-frontend-src-pages-techniques-tsx-to-include-at-least-9-additional-techniques-beyond-the-existing-three-composting-pest-control-crop-rotation-add-the-following-new-techniques-1-green-manuring-2-mulching-3-vermicomposting-4-drip-irrigation-5-intercropping-6-biological-pest-control-7-soil-ph-management-8-rainwater-harvesting-and-9-seed-treatment-selection-each-technique-card-must-display-an-emoji-icon-the-technique-name-a-2-3-sentence-overview-description-a-step-by-step-process-section-3-5-numbered-steps-a-key-benefits-list-at-least-3-bullet-points-a-recommended-tools-inputs-section-listing-2-4-relevant-tools-or-materials-and-a-pro-tip-or-best-practice-callout-the-existing-three-technique-cards-composting-pest-control-crop-rotation-must-also-be-updated-to-include-the-same-enriched-structure-step-by-step-process-benefits-list-recommended-tools-pro-tip-if-not-already-present-all-cards-must-be-displayed-in-a-responsive-grid-layout-and-animated-with-slideup-on-scroll-entry-using-the-existing-animatedsection-component-the-existing-explore-categories-cta-button-must-remain-intact-at-the-bottom-of-the-page",
+      "featureTitle": "Expand the Organic Farming Techniques page (frontend/src/pages/Techniques.tsx) to include at least 9 additional techniques beyond the existing three (Composting, Pest Control, Crop Rotation). Add the following new techniques: (1) Green Manuring 🌿, (2) Mulching 🍂, (3) Vermicomposting 🪱, (4) Drip Irrigation 💧, (5) Intercropping 🌾, (6) Biological Pest Control 🐞, (7) Soil pH Management 🧪, (8) Rainwater Harvesting 🌧️, and (9) Seed Treatment & Selection 🌱. Each technique card must display: an emoji icon, the technique name, a 2–3 sentence overview description, a step-by-step process section (3–5 numbered steps), a key benefits list (at least 3 bullet points), a recommended tools/inputs section listing 2–4 relevant tools or materials, and a pro tip or best practice callout. The existing three technique cards (Composting, Pest Control, Crop Rotation) must also be updated to include the same enriched structure (step-by-step process, benefits list, recommended tools, pro tip) if not already present. All cards must be displayed in a responsive grid layout and animated with slideUp on scroll entry using the existing AnimatedSection component. The existing 'Explore Categories' CTA button must remain intact at the bottom of the page.",
       "files": [
-        "frontend/src/contexts/LanguageContext.tsx"
-      ],
-      "components": [
-        "authorization@4.0.0",
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-29"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-create-a-translations-file-frontend-src-utils-translations-ts-containing-translation-strings-for-all-three-languages-english-hindi-marathi-covering-key-ui-text-across-all-pages-navigation-labels-home-about-techniques-farm-shop-cattle-equipment-contact-government-schemes-hero-section-headlines-and-subheadings-section-titles-e-g-benefits-of-organic-farming-our-mission-our-vision-future-scope-location-based-crop-suggestions-government-schemes-common-button-labels-add-to-cart-view-more-explore-categories-watch-tutorial-sign-up-verify-otp-submit-proceed-to-checkout-form-field-labels-name-email-message-mobile-number-full-name-delivery-address-phone-number-and-common-status-feedback-messages-order-placed-successfully-incorrect-otp-etc",
-      "featureTitle": "Create a translations file (frontend/src/utils/translations.ts) containing translation strings for all three languages (English, Hindi, Marathi) covering key UI text across all pages: navigation labels (Home, About, Techniques, Farm, Shop, Cattle, Equipment, Contact, Government Schemes), hero section headlines and subheadings, section titles (e.g., 'Benefits of Organic Farming', 'Our Mission', 'Our Vision', 'Future Scope', 'Location-Based Crop Suggestions', 'Government Schemes'), common button labels (Add to Cart, View More, Explore Categories, Watch Tutorial, Sign Up, Verify OTP, Submit, Proceed to Checkout), form field labels (Name, Email, Message, Mobile Number, Full Name, Delivery Address, Phone Number), and common status/feedback messages (Order placed successfully, Incorrect OTP, etc.).",
-      "files": [
+        "frontend/src/pages/Techniques.tsx",
         "frontend/src/utils/translations.ts"
       ],
       "components": [
@@ -32,55 +14,11 @@
         "shadcn-ui@1.0.0",
         "build-template-react@1.0.0",
         "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
+        "github-export-icp-cli@1.0.0",
+        "blob-storage@4.0.0"
       ],
       "testIds": [
-        "REQ-30"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-add-a-language-switcher-ui-component-frontend-src-components-languageswitcher-tsx-that-renders-a-dropdown-or-button-group-allowing-the-user-to-switch-between-english-en-hindi-and-marathi-languages-integrate-it-into-the-header-component-frontend-src-components-header-tsx-place-it-in-the-top-right-area-of-the-sticky-header-visible-on-both-desktop-and-mobile-wrap-the-root-app-frontend-src-app-tsx-with-the-languageprovider-so-language-state-is-globally-available",
-      "featureTitle": "Add a language switcher UI component (frontend/src/components/LanguageSwitcher.tsx) that renders a dropdown or button group allowing the user to switch between English (EN), Hindi (हि), and Marathi (म) languages. Integrate it into the Header component (frontend/src/components/Header.tsx) — place it in the top-right area of the sticky header, visible on both desktop and mobile. Wrap the root App (frontend/src/App.tsx) with the LanguageProvider so language state is globally available.",
-      "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/components/Header.tsx",
-        "frontend/src/components/LanguageSwitcher.tsx"
-      ],
-      "components": [
-        "authorization@4.0.0",
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-31"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-apply-the-t-key-translation-function-from-uselanguage-across-all-major-page-components-home-frontend-src-pages-home-tsx-about-frontend-src-pages-about-tsx-techniques-frontend-src-pages-techniques-tsx-farm-frontend-src-pages-farm-tsx-shop-frontend-src-pages-shop-tsx-cattle-frontend-src-pages-cattle-tsx-equipment-frontend-src-pages-equipment-tsx-contact-frontend-src-pages-contact-tsx-governmentschemes-frontend-src-pages-governmentschemes-tsx-signup-frontend-src-pages-signup-tsx-otpverification-frontend-src-pages-otpverification-tsx-header-frontend-src-components-header-tsx-and-footer-frontend-src-components-footer-tsx-replacing-hardcoded-english-ui-strings-with-t-key-calls-so-that-switching-language-updates-the-displayed-text-without-a-page-reload",
-      "featureTitle": "Apply the t(key) translation function from useLanguage across all major page components — Home (frontend/src/pages/Home.tsx), About (frontend/src/pages/About.tsx), Techniques (frontend/src/pages/Techniques.tsx), Farm (frontend/src/pages/Farm.tsx), Shop (frontend/src/pages/Shop.tsx), Cattle (frontend/src/pages/Cattle.tsx), Equipment (frontend/src/pages/Equipment.tsx), Contact (frontend/src/pages/Contact.tsx), GovernmentSchemes (frontend/src/pages/GovernmentSchemes.tsx), Signup (frontend/src/pages/Signup.tsx), OtpVerification (frontend/src/pages/OtpVerification.tsx), Header (frontend/src/components/Header.tsx), and Footer (frontend/src/components/Footer.tsx) — replacing hardcoded English UI strings with t(key) calls so that switching language updates the displayed text without a page reload.",
-      "files": [
-        "frontend/src/components/Footer.tsx",
-        "frontend/src/pages/About.tsx",
-        "frontend/src/pages/Farm.tsx",
-        "frontend/src/pages/Home.tsx",
-        "frontend/src/pages/Shop.tsx",
-        "frontend/src/pages/Techniques.tsx"
-      ],
-      "components": [
-        "authorization@4.0.0",
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-32"
+        "REQ-50"
       ],
       "confidence": "high"
     }

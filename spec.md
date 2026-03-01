@@ -1,13 +1,14 @@
 # Specification
 
 ## Summary
-**Goal:** Add multi-language support (English, Hindi, Marathi) with a language switcher to the Agro Crops frontend.
+**Goal:** Expand the Organic Farming Techniques page with 9 additional techniques and enrich all existing technique cards with deeper structured content.
 
 **Planned changes:**
-- Create `LanguageContext.tsx` with a `useLanguage` hook exposing `{ language, setLanguage, t }`, persisting the selected language to localStorage
-- Create `translations.ts` with translation strings in English, Hindi (Devanagari), and Marathi (Devanagari) covering navigation labels, section titles, button labels, form field labels, and status messages
-- Create a `LanguageSwitcher` component (EN / हि / म) and integrate it into the Header on desktop and mobile
-- Wrap the root `App` with `LanguageProvider`
-- Replace hardcoded English strings with `t(key)` calls across all major pages (Home, About, Techniques, Farm, Shop, Cattle, Equipment, Contact, GovernmentSchemes, Signup, OtpVerification) and shared components (Header, Footer)
+- Add 9 new technique cards to the Techniques page: Green Manuring 🌿, Mulching 🍂, Vermicomposting 🪱, Drip Irrigation 💧, Intercropping 🌾, Biological Pest Control 🐞, Soil pH Management 🧪, Rainwater Harvesting 🌧️, and Seed Treatment & Selection 🌱
+- Update the 3 existing technique cards (Composting, Pest Control, Crop Rotation) with enriched content structure
+- Each technique card (new and existing) must display: emoji icon, technique name, 2–3 sentence overview, step-by-step process (3–5 numbered steps), key benefits list (≥3 bullet points), recommended tools/inputs (2–4 items), and a pro tip callout
+- Display all cards in a responsive grid (1 column mobile, 2 tablet, 3 desktop)
+- Wrap each card with the existing AnimatedSection component for slideUp scroll-entry animation
+- Keep the existing "Explore Categories" CTA button at the bottom of the page
 
-**User-visible outcome:** Users can switch between English, Hindi, and Marathi using a language switcher in the header; all major UI text updates instantly without a page reload, and the language choice is remembered across sessions.
+**User-visible outcome:** Users visiting the Organic Farming Techniques page will see 12 richly detailed technique cards with step-by-step guidance, benefits, tools, and pro tips, all presented in an animated responsive grid layout.

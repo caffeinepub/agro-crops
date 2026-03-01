@@ -1,144 +1,30 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Add multi-language support (English, Hindi, Marathi) with language switcher",
+  "title": "Expand Organic Farming Techniques page with more techniques and deeper content",
   "requirements": [
     {
-      "id": "REQ-29",
-      "summary": "Create LanguageContext with language state management, localStorage persistence, and translation function",
+      "id": "REQ-50",
+      "summary": "Expand the Organic Farming Techniques page to include 9 additional techniques with enriched content structure (step-by-step process, benefits, tools, and pro tips) for all 12 technique cards, displayed in a responsive animated grid",
       "acceptanceCriteria": [
-        "LanguageContext is created and exported from frontend/src/contexts/LanguageContext.tsx",
-        "Supports three language codes: 'en' (English), 'hi' (Hindi), 'mr' (Marathi)",
-        "Selected language is persisted in localStorage and restored on page reload",
-        "useLanguage hook returns language, setLanguage, and t(key) translation function",
-        "t(key) falls back to English if a translation key is missing for the selected language"
+        "The Techniques page displays at least 12 technique cards in total (3 existing + 9 new).",
+        "Each technique card shows an emoji icon, technique name, overview description, step-by-step process (3–5 steps), benefits list (≥3 bullet points), recommended tools section, and a pro tip callout.",
+        "The existing three cards (Composting, Pest Control, Crop Rotation) are enriched with the step-by-step process, benefits list, recommended tools, and pro tip sections.",
+        "All technique cards are displayed in a responsive grid (1 column on mobile, 2 on tablet, 3 on desktop).",
+        "Each card animates with slideUp on scroll entry via the AnimatedSection component.",
+        "The 'Explore Categories' CTA button remains visible at the bottom of the page.",
+        "No existing functionality (routing, animations, translations) is broken."
       ],
       "file_operations": [
-        {
-          "path": "frontend/src/contexts/LanguageContext.tsx",
-          "operation": "create",
-          "description": "Create a React context that manages the currently selected language state ('en', 'hi', or 'mr'), persists it to localStorage under the key 'agro-crops-language', and provides a useLanguage hook returning { language, setLanguage, t } where t(key) retrieves the translated string from the translations object for the current language, falling back to English if the key is missing in the selected language."
-        }
-      ]
-    },
-    {
-      "id": "REQ-30",
-      "summary": "Create comprehensive translations file with English, Hindi, and Marathi strings for all UI text",
-      "acceptanceCriteria": [
-        "Translations file exports a translations object keyed by language code (en, hi, mr)",
-        "All three languages have translation entries for navigation labels",
-        "All three languages have translation entries for common button labels and form field labels",
-        "All three languages have translation entries for major section titles across all pages",
-        "Hindi and Marathi translations use proper Unicode Devanagari script"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/utils/translations.ts",
-          "operation": "create",
-          "description": "Export a translations object structured as { en: {...}, hi: {...}, mr: {...} } containing translation keys covering: navigation labels (Home, About, Techniques, Farm, Shop, Cattle, Equipment, Contact, Government Schemes, Logout, Login, Signup, Cart), hero section text (main headline, subheadings on Home page), section titles (Benefits of Organic Farming, Our Mission, Our Vision, Future Scope, Location-Based Crop Suggestions, Government Schemes, Organic Livestock Farming Guide, Farm Equipment & Machinery, Organic Farming Techniques, Organic Product Shop, Why Choose Organic Farming, Contact Us, Get in Touch, Team Members), button labels (Add to Cart, View Details, Explore Categories, Watch Tutorial, Sign Up, Verify OTP, Submit, Proceed to Checkout, Clear Cart, Remove, Search, Filter by Category, All Categories), form field labels (Name, Email, Message, Mobile Number, Full Name, Delivery Address, Phone Number, Enter 4-digit OTP, Quantity), status messages (Order placed successfully, Incorrect OTP please try again, Contact form submitted successfully, Added to cart, Removed from cart), and other common UI text (Search products, Search crops, Search animals, Search equipment, No items in cart, Total, Items, Category, Season, Soil Type, Benefits, Eligibility, Description). Hindi and Marathi translations must use proper Devanagari Unicode characters."
-        }
-      ]
-    },
-    {
-      "id": "REQ-31",
-      "summary": "Add LanguageSwitcher component to Header and wrap App with LanguageProvider",
-      "acceptanceCriteria": [
-        "A language switcher control is visible in the Header on all pages (including authenticated pages)",
-        "The switcher shows all three options: EN (English), हि (Hindi), म (Marathi)",
-        "Clicking a language option immediately updates all translated text across the current page",
-        "The active/selected language is visually highlighted in the switcher",
-        "The language switcher is accessible on both desktop and mobile (hamburger menu or inline)",
-        "LanguageProvider wraps the App in frontend/src/App.tsx"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/LanguageSwitcher.tsx",
-          "operation": "create",
-          "description": "Create a language switcher component that uses the useLanguage hook to get the current language and setLanguage function. Render a dropdown or button group (using shadcn/ui DropdownMenu or Select if desired) displaying three options: 'EN' (English), 'हि' (Hindi), 'म' (Marathi). Highlight the currently selected language visually. On selecting a language, call setLanguage with the corresponding code ('en', 'hi', 'mr'). Ensure the component is styled consistently with the app's green/eco theme and works on both desktop and mobile."
-        },
-        {
-          "path": "frontend/src/components/Header.tsx",
-          "operation": "modify",
-          "description": "Import and integrate the LanguageSwitcher component into the Header. Place it in the top-right area of the header, next to or near the Login/Logout button and cart icon. For mobile view, include it in the mobile navigation menu (Sheet) so it remains accessible. Replace hardcoded navigation labels ('Home', 'About', 'Techniques', etc.) with t(key) calls using the useLanguage hook. Replace 'Cart' text and 'Login'/'Logout' button text with translated equivalents using t(). Ensure the cart sheet's customer detail form labels (Full Name, Delivery Address, Phone Number) and button labels (Proceed to Checkout, Clear Cart) are also replaced with t() calls."
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Import the LanguageProvider from frontend/src/contexts/LanguageContext.tsx. Wrap the entire app component tree (inside QueryClientProvider and InternetIdentityProvider, around the CartProvider and RouterProvider) with LanguageProvider so that language state is globally available to all pages and components."
-        }
-      ]
-    },
-    {
-      "id": "REQ-32",
-      "summary": "Apply t(key) translation function across all major page components and the Footer",
-      "acceptanceCriteria": [
-        "Switching to Hindi renders all major UI labels, section titles, and button text in Hindi (Devanagari)",
-        "Switching to Marathi renders all major UI labels, section titles, and button text in Marathi (Devanagari)",
-        "Switching back to English restores all English text",
-        "Language switch takes effect immediately without a page reload",
-        "Static contact information (email, phone) and product/crop names are not translated (remain in English/numerals)",
-        "No hardcoded English strings remain in the major translated UI sections"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/pages/Home.tsx",
-          "operation": "modify",
-          "description": "Import useLanguage hook and destructure the t function. Replace hardcoded English text with t(key) calls for: hero section headline and subheading, 'Why Choose Organic Farming' title, each benefit card title and description, 'Location-Based Crop Suggestions' title and description, 'Government Schemes' title and link text ('View All Schemes'), and 'Future Scope' section title and card descriptions. Keep crop names, region names, and scheme names in English."
-        },
-        {
-          "path": "frontend/src/pages/About.tsx",
-          "operation": "modify",
-          "description": "Import useLanguage hook and use t() for: the hero section title and subtitle, stats labels ('Happy Farmers', 'Organic Farms', 'Products', 'Countries'), 'Our Mission' and 'Our Vision' headings and their descriptions, 'Meet Our Team' heading, team member role labels (CEO & Founder, Chief Agricultural Officer, Head of Marketing, Lead Developer), 'Join Us' section title and description, and 'Contact Us' heading. Keep team member names, email, phone, and address in English."
-        },
         {
           "path": "frontend/src/pages/Techniques.tsx",
           "operation": "modify",
-          "description": "Import useLanguage and apply t() to: the page hero title and subtitle ('Master Sustainable Farming Practices'), each technique card title (Composting, Natural Pest Control, Crop Rotation, Mulching, Green Manuring, Drip Irrigation, Vermicomposting, Biofertilizers, Intercropping), and their descriptions and benefits. Keep technique names consistent or translate only if translations are available."
+          "description": "Add 9 new organic farming techniques (Green Manuring 🌿, Mulching 🍂, Vermicomposting 🪱, Drip Irrigation 💧, Intercropping 🌾, Biological Pest Control 🐞, Soil pH Management 🧪, Rainwater Harvesting 🌧️, and Seed Treatment & Selection 🌱) to the existing techniques array. Enrich all 12 technique objects (3 existing + 9 new) with the following structure: emoji icon, technique name, 2–3 sentence overview description, step-by-step process array (3–5 numbered steps), key benefits array (at least 3 bullet points), recommended tools/inputs array (2–4 items), and a pro tip or best practice callout string. Update the technique card rendering logic to display all these new fields in a structured layout within each card. Ensure the responsive grid layout uses Tailwind classes for 1 column on mobile, 2 on tablet, and 3 on desktop. Wrap each technique card with the existing AnimatedSection component using the slideUp animation. Preserve the existing 'Explore Categories' CTA button at the bottom of the page. Maintain all existing multilingual support via the LanguageContext translation function."
         },
         {
-          "path": "frontend/src/pages/Farm.tsx",
+          "path": "frontend/src/utils/translations.ts",
           "operation": "modify",
-          "description": "Import useLanguage and use t() for: page hero title and subtitle ('Organic Crop Cultivation Guide'), search placeholder ('Search crops...'), table headers (Crop, Season, Soil Type, Benefits, Cultivation Tips), 'Benefits of Organic Farming' section title, and each benefit description. Keep crop names in English."
-        },
-        {
-          "path": "frontend/src/pages/Shop.tsx",
-          "operation": "modify",
-          "description": "Import useLanguage and apply t() to: page hero title and subtitle ('Organic Product Shop'), 'All Categories' filter option, category names (Seeds, Vegetables, Fertilizers), search placeholder ('Search products...'), 'Add to Cart' button text, wishlist toggle label or tooltip if any, and 'No products found' message if present. Keep product names and prices in English/numerals."
-        },
-        {
-          "path": "frontend/src/pages/Cattle.tsx",
-          "operation": "modify",
-          "description": "Import useLanguage and use t() for: page hero title and subtitle ('Organic Livestock Farming Guide'), search placeholder ('Search animals...'), animal card labels (Food, Care, View Details), 'Benefits of Organic Livestock Farming' section title, and benefit descriptions. Keep animal breed names in English."
-        },
-        {
-          "path": "frontend/src/pages/Equipment.tsx",
-          "operation": "modify",
-          "description": "Import useLanguage and apply t() to: page hero title and subtitle ('Farm Equipment & Machinery'), 'All Categories' filter option, category names (Land Preparation, Sowing & Planting, Irrigation, Harvesting, Post-Harvest), search placeholder ('Search equipment...'), equipment card labels (Category, Specifications, Usage, Watch Tutorial), and any descriptive text. Keep equipment names in English."
-        },
-        {
-          "path": "frontend/src/pages/Contact.tsx",
-          "operation": "modify",
-          "description": "Import useLanguage and use t() for: page hero title and subtitle ('Contact Us', 'Get in Touch'), form labels (Name, Email, Message), 'Submit' button text, 'Contact Information' heading, and labels for Email, Phone, Address. Keep the actual email address, phone number, and physical address text in English/numerals."
-        },
-        {
-          "path": "frontend/src/pages/GovernmentSchemes.tsx",
-          "operation": "modify",
-          "description": "Import useLanguage and use t() for: page hero title and subtitle ('Government Schemes for Farmers'), each scheme card's 'Description', 'Benefits', and 'Eligibility' section headings. Keep scheme names (PM-KISAN, PMFBY, KCC, etc.) and their detailed content in English, as these are official program names and specific technical details."
-        },
-        {
-          "path": "frontend/src/pages/Signup.tsx",
-          "operation": "modify",
-          "description": "Import useLanguage and use t() for: page title ('Sign Up'), form label ('Mobile Number'), placeholder text ('Enter your 10-digit mobile number'), 'Continue' or 'Sign Up' button text, and any validation or helper text. Keep numeric input format unchanged."
-        },
-        {
-          "path": "frontend/src/pages/OtpVerification.tsx",
-          "operation": "modify",
-          "description": "Import useLanguage and use t() for: page title ('OTP Verification'), instruction text ('Enter the 4-digit OTP sent to your mobile'), input placeholder if any, 'Verify' button text, success message ('OTP verified successfully'), error message ('Incorrect OTP, please try again'), and any resend OTP link text. Keep the OTP input numeric format unchanged."
-        },
-        {
-          "path": "frontend/src/components/Footer.tsx",
-          "operation": "modify",
-          "description": "Import useLanguage and use t() for: 'Quick Links' heading, each navigation link label (Home, About, Techniques, Farm, Shop, Cattle, Equipment, Contact, Government Schemes), 'Contact Us' heading, and labels for Email, Phone, Location. Keep the actual email, phone number, and address text in English/numerals. Keep the brand name 'Agro Crops' and tagline untranslated or translate the tagline if a translation key exists."
+          "description": "Add translation keys for all 9 new techniques (Green Manuring, Mulching, Vermicomposting, Drip Irrigation, Intercropping, Biological Pest Control, Soil pH Management, Rainwater Harvesting, Seed Treatment & Selection) covering: technique names, overview descriptions, each step in the step-by-step process (3–5 steps per technique), each benefit in the key benefits list (at least 3 per technique), each recommended tool/input (2–4 per technique), and the pro tip callout. Also add the new content fields (steps, benefits, tools, pro tips) for the 3 existing techniques (Composting, Pest Control, Crop Rotation) if not already present. Ensure translations are provided for all supported languages (en, hi, mr) to maintain consistency with the existing multilingual structure."
         }
       ]
     }

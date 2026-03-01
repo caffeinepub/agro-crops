@@ -10,10 +10,30 @@ const stats = [
 ];
 
 const team = [
-  { name: 'Chaitanya Kharat', roleKey: 'ceoFounder', initials: 'CK' },
-  { name: 'Priya Sharma', roleKey: 'chiefAgriculturalOfficer', initials: 'PS' },
-  { name: 'Rahul Verma', roleKey: 'headOfMarketing', initials: 'RV' },
-  { name: 'Anita Patel', roleKey: 'leadDeveloper', initials: 'AP' },
+  {
+    name: 'Chaitanya Kharat',
+    roleKey: 'ceoFounder',
+    initials: 'CK',
+    mobile: '8421016006',
+  },
+  {
+    name: 'Aditya Anarase',
+    roleKey: 'chiefAgriculturalOfficer',
+    initials: 'AA',
+    mobile: '9423653174',
+  },
+  {
+    name: 'Dhananjay Dhadge',
+    roleKey: 'headOfMarketing',
+    initials: 'DD',
+    mobile: '7219872347',
+  },
+  {
+    name: 'Shivam Murkute',
+    roleKey: 'headOfMarketing',
+    initials: 'SM',
+    mobile: '8378093053',
+  },
 ];
 
 export default function About() {
@@ -69,20 +89,49 @@ export default function About() {
         </div>
       </section>
 
-      {/* Team */}
+      {/* Meet Our Team */}
       <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
+            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-4 border border-primary/20">
+              <Users className="w-4 h-4" />
+              <span>Our People</span>
+            </div>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">{t('meetOurTeam')}</h2>
+            <p className="text-muted-foreground max-w-xl mx-auto text-base">
+              The passionate individuals driving AgroSmart's mission to empower farmers across India.
+            </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {team.map((member, i) => (
-              <div key={i} className="eco-card p-6 rounded-xl border border-border bg-card text-center">
-                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-primary font-bold text-lg">{member.initials}</span>
+              <div
+                key={i}
+                className="eco-card p-6 rounded-xl border border-border bg-card text-center shadow-md hover:shadow-lg transition-shadow duration-300 group"
+              >
+                {/* Avatar */}
+                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary/20 to-primary/40 flex items-center justify-center mx-auto mb-5 border-2 border-primary/30 group-hover:border-primary transition-colors duration-300">
+                  <span className="text-primary font-bold text-xl">{member.initials}</span>
                 </div>
-                <h3 className="font-semibold text-foreground mb-1">{member.name}</h3>
-                <p className="text-muted-foreground text-sm">{t(member.roleKey)}</p>
+
+                {/* Name */}
+                <h3 className="font-bold text-foreground text-lg mb-1">{member.name}</h3>
+
+                {/* Role */}
+                <p className="text-primary text-sm font-medium mb-4">{t(member.roleKey)}</p>
+
+                {/* Divider */}
+                <div className="w-10 h-0.5 bg-primary/30 mx-auto mb-4 rounded-full" />
+
+                {/* Mobile */}
+                <a
+                  href={`tel:${member.mobile}`}
+                  className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm font-medium group/link"
+                >
+                  <div className="w-7 h-7 rounded-full bg-primary/10 flex items-center justify-center group-hover/link:bg-primary/20 transition-colors">
+                    <Phone className="w-3.5 h-3.5 text-primary" />
+                  </div>
+                  <span>{member.mobile}</span>
+                </a>
               </div>
             ))}
           </div>

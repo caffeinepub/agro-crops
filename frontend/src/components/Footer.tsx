@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link } from '@tanstack/react-router';
-import { Leaf, Mail, Phone, MapPin, Heart } from 'lucide-react';
+import { Leaf, Mail, Phone, MapPin } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Footer() {
   const { t } = useLanguage();
   const year = new Date().getFullYear();
-  const appId = encodeURIComponent(window.location.hostname || 'agro-crops');
 
   const navLinks = [
     { label: t('home'), path: '/' },
@@ -78,20 +77,9 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-border mt-8 pt-6 flex flex-col items-center gap-2 text-center">
+        <div className="border-t border-border mt-8 pt-6 text-center">
           <p className="text-muted-foreground text-sm">
             © {year} Agro Crops. All rights reserved.
-          </p>
-          <p className="text-muted-foreground text-xs flex items-center gap-1">
-            Built with <Heart className="w-3 h-3 text-primary fill-primary" /> using{' '}
-            <a
-              href={`https://caffeine.ai/?utm_source=Caffeine-footer&utm_medium=referral&utm_content=${appId}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary hover:underline font-medium"
-            >
-              caffeine.ai
-            </a>
           </p>
         </div>
       </div>
