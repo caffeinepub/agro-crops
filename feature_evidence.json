@@ -2,10 +2,51 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-expand-the-organic-farming-techniques-page-frontend-src-pages-techniques-tsx-to-include-at-least-9-additional-techniques-beyond-the-existing-three-composting-pest-control-crop-rotation-add-the-following-new-techniques-1-green-manuring-2-mulching-3-vermicomposting-4-drip-irrigation-5-intercropping-6-biological-pest-control-7-soil-ph-management-8-rainwater-harvesting-and-9-seed-treatment-selection-each-technique-card-must-display-an-emoji-icon-the-technique-name-a-2-3-sentence-overview-description-a-step-by-step-process-section-3-5-numbered-steps-a-key-benefits-list-at-least-3-bullet-points-a-recommended-tools-inputs-section-listing-2-4-relevant-tools-or-materials-and-a-pro-tip-or-best-practice-callout-the-existing-three-technique-cards-composting-pest-control-crop-rotation-must-also-be-updated-to-include-the-same-enriched-structure-step-by-step-process-benefits-list-recommended-tools-pro-tip-if-not-already-present-all-cards-must-be-displayed-in-a-responsive-grid-layout-and-animated-with-slideup-on-scroll-entry-using-the-existing-animatedsection-component-the-existing-explore-categories-cta-button-must-remain-intact-at-the-bottom-of-the-page",
-      "featureTitle": "Expand the Organic Farming Techniques page (frontend/src/pages/Techniques.tsx) to include at least 9 additional techniques beyond the existing three (Composting, Pest Control, Crop Rotation). Add the following new techniques: (1) Green Manuring 🌿, (2) Mulching 🍂, (3) Vermicomposting 🪱, (4) Drip Irrigation 💧, (5) Intercropping 🌾, (6) Biological Pest Control 🐞, (7) Soil pH Management 🧪, (8) Rainwater Harvesting 🌧️, and (9) Seed Treatment & Selection 🌱. Each technique card must display: an emoji icon, the technique name, a 2–3 sentence overview description, a step-by-step process section (3–5 numbered steps), a key benefits list (at least 3 bullet points), a recommended tools/inputs section listing 2–4 relevant tools or materials, and a pro tip or best practice callout. The existing three technique cards (Composting, Pest Control, Crop Rotation) must also be updated to include the same enriched structure (step-by-step process, benefits list, recommended tools, pro tip) if not already present. All cards must be displayed in a responsive grid layout and animated with slideUp on scroll entry using the existing AnimatedSection component. The existing 'Explore Categories' CTA button must remain intact at the bottom of the page.",
+      "featureId": "feature-audit-and-fix-the-language-switcher-so-that-selecting-english-hindi-or-marathi-in-the-languageswitcher-component-frontend-src-components-languageswitcher-tsx-correctly-updates-the-language-state-in-languagecontext-frontend-src-contexts-languagecontext-tsx-and-causes-all-pages-and-components-that-use-the-t-key-translation-function-to-re-render-with-the-new-language-s-strings-immediately-without-requiring-a-page-reload-verify-that-1-the-languageprovider-in-frontend-src-app-tsx-correctly-wraps-the-entire-component-tree-so-all-consumers-receive-context-updates-2-the-uselanguage-hook-properly-reads-from-and-writes-to-the-shared-context-state-not-a-stale-local-copy-3-the-language-selection-is-persisted-to-localstorage-and-restored-on-page-load-4-every-page-component-home-about-techniques-farm-shop-cattle-equipment-contact-governmentschemes-signup-otpverification-cropsuggestions-and-shared-components-header-footer-re-render-with-translated-text-when-the-language-changes-fix-any-issues-found-such-as-the-context-value-not-triggering-re-renders-stale-closures-over-the-language-state-or-components-importing-translations-directly-instead-of-via-the-hook",
+      "featureTitle": "Audit and fix the language switcher so that selecting English, Hindi, or Marathi in the LanguageSwitcher component (frontend/src/components/LanguageSwitcher.tsx) correctly updates the language state in LanguageContext (frontend/src/contexts/LanguageContext.tsx) and causes all pages and components that use the t(key) translation function to re-render with the new language's strings immediately — without requiring a page reload. Verify that: (1) the LanguageProvider in frontend/src/App.tsx correctly wraps the entire component tree so all consumers receive context updates; (2) the useLanguage hook properly reads from and writes to the shared context state (not a stale local copy); (3) the language selection is persisted to localStorage and restored on page load; (4) every page component (Home, About, Techniques, Farm, Shop, Cattle, Equipment, Contact, GovernmentSchemes, Signup, OtpVerification, CropSuggestions) and shared components (Header, Footer) re-render with translated text when the language changes. Fix any issues found such as the context value not triggering re-renders, stale closures over the language state, or components importing translations directly instead of via the hook.",
       "files": [
-        "frontend/src/pages/Techniques.tsx",
+        "frontend/src/App.tsx",
+        "frontend/src/contexts/LanguageContext.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "blob-storage@4.0.0"
+      ],
+      "testIds": [
+        "REQ-56"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-reusable-voicereader-component-frontend-src-components-voicereader-tsx-that-uses-the-browser-s-web-speech-api-window-speechsynthesis-to-read-page-content-aloud-in-the-currently-selected-language-english-hindi-or-marathi-the-component-must-1-render-a-clearly-visible-floating-action-button-bottom-right-corner-of-the-screen-fixed-position-with-a-speaker-microphone-icon-visible-on-all-authenticated-pages-2-support-three-controls-play-start-reading-pause-resume-and-stop-using-speechsynthesisutterance-3-detect-the-current-language-from-languagecontext-and-set-the-utterance-lang-attribute-accordingly-en-in-for-english-hi-in-for-hindi-mr-in-for-marathi-4-read-the-main-visible-text-content-of-the-current-page-by-collecting-text-from-a-designated-content-area-e-g-querying-the-main-page-container-or-from-a-page-specific-summary-string-passed-as-a-prop-5-display-a-small-tooltip-or-label-read-aloud-above-the-button-in-the-current-language-6-gracefully-degrade-if-the-browser-does-not-support-speechsynthesis-or-the-selected-voice-language-is-unavailable-show-a-friendly-toast-alert-message-voice-reading-is-not-supported-in-your-browser-the-component-must-be-integrated-into-the-authenticated-layout-the-layout-wrapper-used-in-app-tsx-that-renders-header-and-footer-so-it-appears-on-all-pages-except-signup-and-otp",
+      "featureTitle": "Create a reusable VoiceReader component (frontend/src/components/VoiceReader.tsx) that uses the browser's Web Speech API (window.speechSynthesis) to read page content aloud in the currently selected language (English, Hindi, or Marathi). The component must: (1) render a clearly visible floating action button (bottom-right corner of the screen, fixed position) with a speaker/microphone icon, visible on all authenticated pages; (2) support three controls — Play (start reading), Pause/Resume, and Stop — using SpeechSynthesisUtterance; (3) detect the current language from LanguageContext and set the utterance lang attribute accordingly: 'en-IN' for English, 'hi-IN' for Hindi, 'mr-IN' for Marathi; (4) read the main visible text content of the current page by collecting text from a designated content area (e.g., querying the main page container) or from a page-specific summary string passed as a prop; (5) display a small tooltip or label ('Read Aloud' / 'पढ़ें' / 'वाचा') above the button in the current language; (6) gracefully degrade — if the browser does not support speechSynthesis or the selected voice/language is unavailable, show a friendly toast/alert message: 'Voice reading is not supported in your browser.' The component must be integrated into the authenticated layout (the Layout wrapper used in App.tsx that renders Header and Footer) so it appears on all pages except Signup and OTP.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/VoiceReader.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "blob-storage@4.0.0"
+      ],
+      "testIds": [
+        "REQ-57"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-translation-keys-for-the-voicereader-ui-strings-to-the-translations-file-frontend-src-utils-translations-ts-for-all-three-languages-add-the-following-keys-readaloud-read-aloud-pause-pause-resume-resume-stop-stop-voicenotsupported-voice-reading-is-not-supported-in-your-browser-ensure-these-keys-are-available-under-the-same-translation-lookup-structure-used-by-all-other-t-key-calls-throughout-the-app",
+      "featureTitle": "Add translation keys for the VoiceReader UI strings to the translations file (frontend/src/utils/translations.ts) for all three languages. Add the following keys: 'readAloud' ('Read Aloud' / 'पढ़ें' / 'वाचा'), 'pause' ('Pause' / 'रोकें' / 'थांबवा'), 'resume' ('Resume' / 'जारी रखें' / 'पुन्हा सुरू'), 'stop' ('Stop' / 'बंद करें' / 'थांबा'), 'voiceNotSupported' ('Voice reading is not supported in your browser.' / 'आपके ब्राउज़र में आवाज़ पठन समर्थित नहीं है।' / 'तुमच्या ब्राउझरमध्ये आवाज वाचन समर्थित नाही.'). Ensure these keys are available under the same translation lookup structure used by all other t(key) calls throughout the app.",
+      "files": [
         "frontend/src/utils/translations.ts"
       ],
       "components": [
@@ -18,7 +59,7 @@
         "blob-storage@4.0.0"
       ],
       "testIds": [
-        "REQ-50"
+        "REQ-58"
       ],
       "confidence": "high"
     }

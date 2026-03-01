@@ -1,30 +1,146 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Expand Organic Farming Techniques page with more techniques and deeper content",
+  "title": "Fix language switcher and add voice text-to-speech reader in all three languages",
   "requirements": [
     {
-      "id": "REQ-50",
-      "summary": "Expand the Organic Farming Techniques page to include 9 additional techniques with enriched content structure (step-by-step process, benefits, tools, and pro tips) for all 12 technique cards, displayed in a responsive animated grid",
+      "id": "REQ-56",
+      "summary": "Audit and fix the language switcher so selecting English, Hindi, or Marathi immediately updates all UI text across the app without requiring a page reload, ensuring LanguageContext properly triggers re-renders in all consuming components.",
       "acceptanceCriteria": [
-        "The Techniques page displays at least 12 technique cards in total (3 existing + 9 new).",
-        "Each technique card shows an emoji icon, technique name, overview description, step-by-step process (3–5 steps), benefits list (≥3 bullet points), recommended tools section, and a pro tip callout.",
-        "The existing three cards (Composting, Pest Control, Crop Rotation) are enriched with the step-by-step process, benefits list, recommended tools, and pro tip sections.",
-        "All technique cards are displayed in a responsive grid (1 column on mobile, 2 on tablet, 3 on desktop).",
-        "Each card animates with slideUp on scroll entry via the AnimatedSection component.",
-        "The 'Explore Categories' CTA button remains visible at the bottom of the page.",
-        "No existing functionality (routing, animations, translations) is broken."
+        "Clicking English/Hindi/Marathi buttons in the header language switcher immediately updates all visible UI text on the current page without a page reload.",
+        "Navigating to any page after switching language shows that page's content in the selected language.",
+        "The selected language persists across browser refreshes (stored in localStorage).",
+        "All t(key) calls in Header, Footer, and every page component return strings in the currently selected language.",
+        "The LanguageProvider wraps the full app tree in App.tsx so no component is outside the context boundary.",
+        "No stale closures or direct imports of the translations object bypass the context — all components use the useLanguage hook."
       ],
       "file_operations": [
         {
+          "path": "frontend/src/contexts/LanguageContext.tsx",
+          "operation": "modify",
+          "description": "Fix the LanguageContext implementation to ensure that language state changes trigger re-renders in all consuming components. Verify the context value is correctly structured with both the current language and the setLanguage function, and that the t() function closure always references the latest language state (not a stale copy). Ensure localStorage persistence is working correctly on both read and write."
+        },
+        {
+          "path": "frontend/src/components/LanguageSwitcher.tsx",
+          "operation": "modify",
+          "description": "Verify the LanguageSwitcher component properly calls the setLanguage function from useLanguage hook and that button clicks correctly update the shared context state. Ensure no local state is overriding the context value."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Verify that LanguageProvider wraps the entire component tree (including the router and all routes) so that all child components receive context updates. Ensure the provider is placed at the correct level in the component hierarchy to cover Header, Footer, and all page components."
+        },
+        {
+          "path": "frontend/src/components/Header.tsx",
+          "operation": "modify",
+          "description": "Verify that the Header component uses the useLanguage hook to access the t() function and that it re-renders when the language changes. Check for any stale closures or direct imports of the translations object that might bypass the context."
+        },
+        {
+          "path": "frontend/src/components/Footer.tsx",
+          "operation": "modify",
+          "description": "Verify that the Footer component uses the useLanguage hook to access the t() function and that it re-renders when the language changes. Check for any stale closures or direct imports of the translations object that might bypass the context."
+        },
+        {
+          "path": "frontend/src/pages/Home.tsx",
+          "operation": "modify",
+          "description": "Verify that the Home page component uses the useLanguage hook and re-renders correctly when the language changes. Ensure all translated text comes through the t() function rather than direct imports."
+        },
+        {
+          "path": "frontend/src/pages/About.tsx",
+          "operation": "modify",
+          "description": "Verify that the About page component uses the useLanguage hook and re-renders correctly when the language changes. Ensure all translated text comes through the t() function rather than direct imports."
+        },
+        {
           "path": "frontend/src/pages/Techniques.tsx",
           "operation": "modify",
-          "description": "Add 9 new organic farming techniques (Green Manuring 🌿, Mulching 🍂, Vermicomposting 🪱, Drip Irrigation 💧, Intercropping 🌾, Biological Pest Control 🐞, Soil pH Management 🧪, Rainwater Harvesting 🌧️, and Seed Treatment & Selection 🌱) to the existing techniques array. Enrich all 12 technique objects (3 existing + 9 new) with the following structure: emoji icon, technique name, 2–3 sentence overview description, step-by-step process array (3–5 numbered steps), key benefits array (at least 3 bullet points), recommended tools/inputs array (2–4 items), and a pro tip or best practice callout string. Update the technique card rendering logic to display all these new fields in a structured layout within each card. Ensure the responsive grid layout uses Tailwind classes for 1 column on mobile, 2 on tablet, and 3 on desktop. Wrap each technique card with the existing AnimatedSection component using the slideUp animation. Preserve the existing 'Explore Categories' CTA button at the bottom of the page. Maintain all existing multilingual support via the LanguageContext translation function."
+          "description": "Verify that the Techniques page component uses the useLanguage hook and re-renders correctly when the language changes. Ensure all translated text comes through the t() function rather than direct imports."
         },
+        {
+          "path": "frontend/src/pages/Farm.tsx",
+          "operation": "modify",
+          "description": "Verify that the Farm page component uses the useLanguage hook and re-renders correctly when the language changes. Ensure all translated text comes through the t() function rather than direct imports."
+        },
+        {
+          "path": "frontend/src/pages/Shop.tsx",
+          "operation": "modify",
+          "description": "Verify that the Shop page component uses the useLanguage hook and re-renders correctly when the language changes. Ensure all translated text comes through the t() function rather than direct imports."
+        },
+        {
+          "path": "frontend/src/pages/Cattle.tsx",
+          "operation": "modify",
+          "description": "Verify that the Cattle page component uses the useLanguage hook and re-renders correctly when the language changes. Ensure all translated text comes through the t() function rather than direct imports."
+        },
+        {
+          "path": "frontend/src/pages/Equipment.tsx",
+          "operation": "modify",
+          "description": "Verify that the Equipment page component uses the useLanguage hook and re-renders correctly when the language changes. Ensure all translated text comes through the t() function rather than direct imports."
+        },
+        {
+          "path": "frontend/src/pages/Contact.tsx",
+          "operation": "modify",
+          "description": "Verify that the Contact page component uses the useLanguage hook and re-renders correctly when the language changes. Ensure all translated text comes through the t() function rather than direct imports."
+        },
+        {
+          "path": "frontend/src/pages/GovernmentSchemes.tsx",
+          "operation": "modify",
+          "description": "Verify that the GovernmentSchemes page component uses the useLanguage hook and re-renders correctly when the language changes. Ensure all translated text comes through the t() function rather than direct imports."
+        },
+        {
+          "path": "frontend/src/pages/Signup.tsx",
+          "operation": "modify",
+          "description": "Verify that the Signup page component uses the useLanguage hook and re-renders correctly when the language changes. Ensure all translated text comes through the t() function rather than direct imports."
+        },
+        {
+          "path": "frontend/src/pages/OtpVerification.tsx",
+          "operation": "modify",
+          "description": "Verify that the OtpVerification page component uses the useLanguage hook and re-renders correctly when the language changes. Ensure all translated text comes through the t() function rather than direct imports."
+        },
+        {
+          "path": "frontend/src/pages/CropSuggestions.tsx",
+          "operation": "modify",
+          "description": "Verify that the CropSuggestions page component uses the useLanguage hook and re-renders correctly when the language changes. Ensure all translated text comes through the t() function rather than direct imports."
+        }
+      ]
+    },
+    {
+      "id": "REQ-57",
+      "summary": "Create a reusable VoiceReader component that uses the browser's Web Speech API to read page content aloud in the currently selected language (English/Hindi/Marathi), with a fixed floating button visible on all authenticated pages except Signup and OTP.",
+      "acceptanceCriteria": [
+        "A fixed floating speaker button is visible in the bottom-right corner on all authenticated pages (Home, About, Farm, Shop, Cattle, Equipment, Contact, GovernmentSchemes, Techniques, CropSuggestions).",
+        "Clicking the Play button starts reading the page's main text content aloud using the browser's speech synthesis API.",
+        "The utterance language is set to 'en-IN' when English is active, 'hi-IN' for Hindi, and 'mr-IN' for Marathi.",
+        "Pause/Resume and Stop controls function correctly during active speech.",
+        "The tooltip label on the button is translated: 'Read Aloud' (English), 'पढ़ें' (Hindi), 'वाचा' (Marathi).",
+        "If speechSynthesis is unsupported, a user-friendly message is displayed instead of a JavaScript error.",
+        "The VoiceReader button does NOT appear on the /signup or /otp pages.",
+        "Switching language while not reading updates the language used for the next Play action."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/VoiceReader.tsx",
+          "operation": "create",
+          "description": "Create a new VoiceReader component that renders a fixed floating action button in the bottom-right corner of the screen. The component uses the Web Speech API (window.speechSynthesis) to read page content aloud. It must: (1) detect the current language from LanguageContext using the useLanguage hook and map it to the correct lang code ('en-IN', 'hi-IN', 'mr-IN'); (2) provide Play, Pause/Resume, and Stop controls using SpeechSynthesisUtterance; (3) collect text content to read by querying a main content container (e.g., document.querySelector('main') or a prop-provided text summary); (4) display translated button labels and tooltips using the t() function ('readAloud', 'pause', 'resume', 'stop'); (5) handle browser compatibility gracefully by checking for window.speechSynthesis support and showing a translated error message ('voiceNotSupported') if unavailable; (6) use a fixed z-index that sits above page content but below modals; (7) apply the eco-themed styling consistent with the app's green color palette."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire the VoiceReader component into the authenticated layout so it appears on all pages except /signup and /otp. Add conditional rendering logic that checks the current route and only renders VoiceReader when the user is on authenticated pages (Home, About, Farm, Shop, Cattle, Equipment, Contact, GovernmentSchemes, Techniques, CropSuggestions). Import the VoiceReader component and place it at the appropriate level in the component tree (inside the LanguageProvider but outside the individual route components) so it persists across page navigation."
+        }
+      ]
+    },
+    {
+      "id": "REQ-58",
+      "summary": "Add translation keys for the VoiceReader UI strings to the translations file for all three languages (English, Hindi, Marathi).",
+      "acceptanceCriteria": [
+        "The keys 'readAloud', 'pause', 'resume', 'stop', and 'voiceNotSupported' exist in the translations object for English, Hindi, and Marathi.",
+        "Calling t('readAloud') returns 'Read Aloud' in English, 'पढ़ें' in Hindi, and 'वाचा' in Marathi.",
+        "All five keys resolve correctly through the useLanguage hook's t() function in all three languages."
+      ],
+      "file_operations": [
         {
           "path": "frontend/src/utils/translations.ts",
           "operation": "modify",
-          "description": "Add translation keys for all 9 new techniques (Green Manuring, Mulching, Vermicomposting, Drip Irrigation, Intercropping, Biological Pest Control, Soil pH Management, Rainwater Harvesting, Seed Treatment & Selection) covering: technique names, overview descriptions, each step in the step-by-step process (3–5 steps per technique), each benefit in the key benefits list (at least 3 per technique), each recommended tool/input (2–4 per technique), and the pro tip callout. Also add the new content fields (steps, benefits, tools, pro tips) for the 3 existing techniques (Composting, Pest Control, Crop Rotation) if not already present. Ensure translations are provided for all supported languages (en, hi, mr) to maintain consistency with the existing multilingual structure."
+          "description": "Add five new translation keys to the translations object for all three languages: (1) 'readAloud' → 'Read Aloud' (en), 'पढ़ें' (hi), 'वाचा' (mr); (2) 'pause' → 'Pause' (en), 'रोकें' (hi), 'थांबवा' (mr); (3) 'resume' → 'Resume' (en), 'जारी रखें' (hi), 'पुन्हा सुरू' (mr); (4) 'stop' → 'Stop' (en), 'बंद करें' (hi), 'थांबा' (mr); (5) 'voiceNotSupported' → 'Voice reading is not supported in your browser.' (en), 'आपके ब्राउज़र में आवाज़ पठन समर्थित नहीं है।' (hi), 'तुमच्या ब्राउझरमध्ये आवाज वाचन समर्थित नाही.' (mr). Ensure these keys follow the same structure as existing translations and are accessible via the t() function from LanguageContext."
         }
       ]
     }

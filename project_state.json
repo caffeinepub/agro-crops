@@ -1,21 +1,24 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 43,
+  "projectStateVersion": 51,
   "summary": "Agro Crops – Organic Farming Management System: A modern, responsive, green-themed multi-page website for organic farming. Includes Signup, OTP Verification, Home, About, Produce/Techniques, Farm, Shop, Cattle, Equipment, and Contact pages. Features add-to-cart, wishlist, search, location-based crop suggestions, government schemes info, smooth animations, and a future scope section.",
   "architectural_notes": [
     "Green-themed design: primary green, secondary white/light brown, soft gradients, rounded cards, light shadows",
     "Animations: fadeIn, zoomIn, slideUp used throughout all pages",
     "Mobile-responsive layout required across all pages",
     "Multi-page website structure (10 pages) with consistent header/navbar",
-    "Multi-language support: English, Hindi, Marathi — language switcher in header/navbar"
+    "Multi-language support: English, Hindi, Marathi — language switcher in header/navbar",
+    "Do not change the existing green theme — user explicitly wants to preserve the previous green theme as-is",
+    "Voice/TTS reader: use Web Speech API (SpeechSynthesis) for text-to-speech in English, Hindi, and Marathi; provide a visible speaker/read-aloud button accessible on all pages"
   ],
   "known_issues": [
     "Cart add-to-cart functionality is not working on the Shop page",
     "Signup page is accessible even after authentication (should redirect authenticated users away from /signup)",
     "Signup page/option not visible on the website — navigation or routing to /signup may be broken",
-    "Contact form messages are not being received by the site owner despite Formspree integration attempt"
+    "Contact form messages are not being received by the site owner despite Formspree integration attempt",
+    "Language switcher is not working properly — switching language does not correctly update UI text across all pages"
   ],
-  "isFixRequest": false,
+  "isFixRequest": true,
   "existing_features": [
     {
       "id": "feature-implement-a-green-eco-friendly-visual-theme-throughout-the-entire-application-primary-color-green-2d6a4f-52b788-range-secondary-colors-white-and-light-brown-d4a373-soft-gradients-on-headers-and-cards-rounded-card-corners-border-radius-12-16px-light-drop-shadows-clean-sans-serif-typography-and-a-nature-farming-aesthetic-apply-css-keyframe-animations-for-fadein-zoomin-and-slideup-that-trigger-on-page-load-and-scroll-entry-for-all-major-sections",
@@ -384,6 +387,62 @@
         "REQ-50"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-create-a-dedicated-location-based-crop-suggestions-page-at-the-route-crop-suggestions-frontend-src-pages-cropsuggestions-tsx-the-page-must-include-1-a-green-gradient-hero-header-section-with-a-headline-such-as-location-based-crop-suggestions-and-a-subheading-explaining-that-the-tool-helps-farmers-choose-the-best-crops-for-their-region-2-a-region-selector-dropdown-listing-at-least-20-indian-states-regions-maharashtra-punjab-haryana-uttar-pradesh-madhya-pradesh-rajasthan-gujarat-karnataka-tamil-nadu-andhra-pradesh-telangana-west-bengal-bihar-odisha-assam-himachal-pradesh-uttarakhand-jharkhand-chhattisgarh-and-kerala-3-upon-selecting-a-region-display-an-expanded-grid-of-at-least-8-recommended-crop-cards-for-that-region-each-crop-card-must-show-crop-name-emoji-icon-best-sowing-season-ideal-soil-type-expected-yield-per-acre-water-requirement-key-organic-farming-tips-2-3-tips-as-bullet-points-and-common-pests-diseases-to-watch-for-4-a-how-it-works-informational-section-explaining-the-region-based-recommendation-process-with-3-4-steps-5-apply-fadein-animation-to-the-hero-section-on-page-load-and-slideup-animations-to-crop-cards-on-scroll-entry-using-the-existing-animatedsection-component-6-register-the-route-crop-suggestions-in-frontend-src-app-tsx-within-the-authenticated-layout-with-header-and-footer",
+      "title": "Create a dedicated Location-Based Crop Suggestions page at the route '/crop-suggestions' (frontend/src/pages/CropSuggestions.tsx). The page must include: (1) A green gradient hero/header section with a headline such as 'Location-Based Crop Suggestions' and a subheading explaining that the tool helps farmers choose the best crops for their region. (2) A region selector dropdown listing at least 20 Indian states/regions: Maharashtra, Punjab, Haryana, Uttar Pradesh, Madhya Pradesh, Rajasthan, Gujarat, Karnataka, Tamil Nadu, Andhra Pradesh, Telangana, West Bengal, Bihar, Odisha, Assam, Himachal Pradesh, Uttarakhand, Jharkhand, Chhattisgarh, and Kerala. (3) Upon selecting a region, display an expanded grid of at least 8 recommended crop cards for that region. Each crop card must show: crop name, emoji icon, best sowing season, ideal soil type, expected yield per acre, water requirement, key organic farming tips (2–3 tips as bullet points), and common pests/diseases to watch for. (4) A 'How It Works' informational section explaining the region-based recommendation process with 3–4 steps. (5) Apply fadeIn animation to the hero section on page load and slideUp animations to crop cards on scroll entry using the existing AnimatedSection component. (6) Register the route '/crop-suggestions' in frontend/src/App.tsx within the authenticated Layout (with Header and Footer).",
+      "reqIds": [
+        "REQ-51"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-crop-suggestions-navigation-link-in-the-header-component-frontend-src-components-header-tsx-pointing-to-crop-suggestions-the-link-must-appear-in-both-the-desktop-navigation-bar-and-the-mobile-menu-alongside-existing-links-home-about-techniques-farm-shop-cattle-equipment-contact-government-schemes-apply-the-same-active-link-styling-used-by-other-nav-items-also-add-a-translation-key-for-crop-suggestions-in-frontend-src-utils-translations-ts-for-english-hindi-and-marathi-and-use-the-t-key-call-for-this-nav-label-in-the-header",
+      "title": "Add a 'Crop Suggestions' navigation link in the Header component (frontend/src/components/Header.tsx) pointing to '/crop-suggestions'. The link must appear in both the desktop navigation bar and the mobile menu alongside existing links (Home, About, Techniques, Farm, Shop, Cattle, Equipment, Contact, Government Schemes). Apply the same active-link styling used by other nav items. Also add a translation key for 'Crop Suggestions' in frontend/src/utils/translations.ts for English, Hindi, and Marathi, and use the t(key) call for this nav label in the Header.",
+      "reqIds": [
+        "REQ-52"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-location-based-crop-suggestions-section-on-the-home-page-frontend-src-pages-home-tsx-to-display-a-compact-preview-of-the-feature-replace-or-supplement-the-existing-static-region-selector-ui-with-a-brief-introduction-a-condensed-region-dropdown-showing-the-same-20-regions-and-a-view-detailed-crop-suggestions-call-to-action-button-that-navigates-to-crop-suggestions-the-section-should-no-longer-attempt-to-render-full-crop-details-inline-on-the-home-page-instead-it-serves-as-a-teaser-that-drives-users-to-the-dedicated-page",
+      "title": "Update the Location-Based Crop Suggestions section on the Home page (frontend/src/pages/Home.tsx) to display a compact preview of the feature. Replace or supplement the existing static region selector UI with a brief introduction, a condensed region dropdown showing the same 20 regions, and a 'View Detailed Crop Suggestions →' call-to-action button that navigates to '/crop-suggestions'. The section should no longer attempt to render full crop details inline on the Home page — instead, it serves as a teaser that drives users to the dedicated page.",
+      "reqIds": [
+        "REQ-53"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-rebuild-and-redeploy-the-entire-agro-crops-application-from-the-existing-codebase-ensure-all-previously-implemented-features-compile-and-run-correctly-green-eco-friendly-theme-signup-otp-authentication-flow-with-route-guards-home-page-with-hero-benefits-crop-suggestions-teaser-government-schemes-future-scope-sections-about-page-with-mission-vision-team-values-sections-techniques-page-with-12-technique-cards-farm-page-with-20-crops-and-search-shop-page-with-60-products-across-3-categories-with-cart-wishlist-functionality-cattle-page-with-15-animals-and-expandable-care-info-equipment-page-with-14-equipment-items-and-youtube-tutorial-panels-and-category-filter-contact-page-with-formspree-integration-endpoint-https-formspree-io-f-xpwzgdjk-government-schemes-page-with-18-scheme-cards-including-official-website-and-apply-now-buttons-cropsuggestions-page-at-crop-suggestions-with-20-regions-and-8-crop-cards-per-region-all-pages-must-use-the-nunito-montserrat-font-stack-t-key-translations-for-english-hindi-marathi-animatedsection-animations-and-display-real-contact-info-kharatchaitanya03-gmail-com-8421016006-no-built-with-caffeine-ai-text-must-appear-anywhere",
+      "title": "Rebuild and redeploy the entire Agro Crops application from the existing codebase. Ensure all previously implemented features compile and run correctly: green eco-friendly theme, Signup/OTP authentication flow with route guards, Home page with hero/benefits/crop suggestions teaser/government schemes/future scope sections, About page with mission/vision/team/values sections, Techniques page with 12 technique cards, Farm page with 20+ crops and search, Shop page with 60+ products across 3 categories with cart/wishlist functionality, Cattle page with 15 animals and expandable care info, Equipment page with 14 equipment items and YouTube tutorial panels and category filter, Contact page with Formspree integration (endpoint https://formspree.io/f/xpwzgdjk), Government Schemes page with 18 scheme cards including Official Website and Apply Now buttons, CropSuggestions page at /crop-suggestions with 20 regions and 8+ crop cards per region. All pages must use the Nunito/Montserrat font stack, t(key) translations for English/Hindi/Marathi, AnimatedSection animations, and display real contact info (kharatchaitanya03@gmail.com, 8421016006). No 'Built with caffeine.ai' text must appear anywhere.",
+      "reqIds": [
+        "REQ-55"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-audit-and-fix-the-language-switcher-so-that-selecting-english-hindi-or-marathi-in-the-languageswitcher-component-frontend-src-components-languageswitcher-tsx-correctly-updates-the-language-state-in-languagecontext-frontend-src-contexts-languagecontext-tsx-and-causes-all-pages-and-components-that-use-the-t-key-translation-function-to-re-render-with-the-new-language-s-strings-immediately-without-requiring-a-page-reload-verify-that-1-the-languageprovider-in-frontend-src-app-tsx-correctly-wraps-the-entire-component-tree-so-all-consumers-receive-context-updates-2-the-uselanguage-hook-properly-reads-from-and-writes-to-the-shared-context-state-not-a-stale-local-copy-3-the-language-selection-is-persisted-to-localstorage-and-restored-on-page-load-4-every-page-component-home-about-techniques-farm-shop-cattle-equipment-contact-governmentschemes-signup-otpverification-cropsuggestions-and-shared-components-header-footer-re-render-with-translated-text-when-the-language-changes-fix-any-issues-found-such-as-the-context-value-not-triggering-re-renders-stale-closures-over-the-language-state-or-components-importing-translations-directly-instead-of-via-the-hook",
+      "title": "Audit and fix the language switcher so that selecting English, Hindi, or Marathi in the LanguageSwitcher component (frontend/src/components/LanguageSwitcher.tsx) correctly updates the language state in LanguageContext (frontend/src/contexts/LanguageContext.tsx) and causes all pages and components that use the t(key) translation function to re-render with the new language's strings immediately — without requiring a page reload. Verify that: (1) the LanguageProvider in frontend/src/App.tsx correctly wraps the entire component tree so all consumers receive context updates; (2) the useLanguage hook properly reads from and writes to the shared context state (not a stale local copy); (3) the language selection is persisted to localStorage and restored on page load; (4) every page component (Home, About, Techniques, Farm, Shop, Cattle, Equipment, Contact, GovernmentSchemes, Signup, OtpVerification, CropSuggestions) and shared components (Header, Footer) re-render with translated text when the language changes. Fix any issues found such as the context value not triggering re-renders, stale closures over the language state, or components importing translations directly instead of via the hook.",
+      "reqIds": [
+        "REQ-56"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-reusable-voicereader-component-frontend-src-components-voicereader-tsx-that-uses-the-browser-s-web-speech-api-window-speechsynthesis-to-read-page-content-aloud-in-the-currently-selected-language-english-hindi-or-marathi-the-component-must-1-render-a-clearly-visible-floating-action-button-bottom-right-corner-of-the-screen-fixed-position-with-a-speaker-microphone-icon-visible-on-all-authenticated-pages-2-support-three-controls-play-start-reading-pause-resume-and-stop-using-speechsynthesisutterance-3-detect-the-current-language-from-languagecontext-and-set-the-utterance-lang-attribute-accordingly-en-in-for-english-hi-in-for-hindi-mr-in-for-marathi-4-read-the-main-visible-text-content-of-the-current-page-by-collecting-text-from-a-designated-content-area-e-g-querying-the-main-page-container-or-from-a-page-specific-summary-string-passed-as-a-prop-5-display-a-small-tooltip-or-label-read-aloud-above-the-button-in-the-current-language-6-gracefully-degrade-if-the-browser-does-not-support-speechsynthesis-or-the-selected-voice-language-is-unavailable-show-a-friendly-toast-alert-message-voice-reading-is-not-supported-in-your-browser-the-component-must-be-integrated-into-the-authenticated-layout-the-layout-wrapper-used-in-app-tsx-that-renders-header-and-footer-so-it-appears-on-all-pages-except-signup-and-otp",
+      "title": "Create a reusable VoiceReader component (frontend/src/components/VoiceReader.tsx) that uses the browser's Web Speech API (window.speechSynthesis) to read page content aloud in the currently selected language (English, Hindi, or Marathi). The component must: (1) render a clearly visible floating action button (bottom-right corner of the screen, fixed position) with a speaker/microphone icon, visible on all authenticated pages; (2) support three controls — Play (start reading), Pause/Resume, and Stop — using SpeechSynthesisUtterance; (3) detect the current language from LanguageContext and set the utterance lang attribute accordingly: 'en-IN' for English, 'hi-IN' for Hindi, 'mr-IN' for Marathi; (4) read the main visible text content of the current page by collecting text from a designated content area (e.g., querying the main page container) or from a page-specific summary string passed as a prop; (5) display a small tooltip or label ('Read Aloud' / 'पढ़ें' / 'वाचा') above the button in the current language; (6) gracefully degrade — if the browser does not support speechSynthesis or the selected voice/language is unavailable, show a friendly toast/alert message: 'Voice reading is not supported in your browser.' The component must be integrated into the authenticated layout (the Layout wrapper used in App.tsx that renders Header and Footer) so it appears on all pages except Signup and OTP.",
+      "reqIds": [
+        "REQ-57"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-translation-keys-for-the-voicereader-ui-strings-to-the-translations-file-frontend-src-utils-translations-ts-for-all-three-languages-add-the-following-keys-readaloud-read-aloud-pause-pause-resume-resume-stop-stop-voicenotsupported-voice-reading-is-not-supported-in-your-browser-ensure-these-keys-are-available-under-the-same-translation-lookup-structure-used-by-all-other-t-key-calls-throughout-the-app",
+      "title": "Add translation keys for the VoiceReader UI strings to the translations file (frontend/src/utils/translations.ts) for all three languages. Add the following keys: 'readAloud' ('Read Aloud' / 'पढ़ें' / 'वाचा'), 'pause' ('Pause' / 'रोकें' / 'थांबवा'), 'resume' ('Resume' / 'जारी रखें' / 'पुन्हा सुरू'), 'stop' ('Stop' / 'बंद करें' / 'थांबा'), 'voiceNotSupported' ('Voice reading is not supported in your browser.' / 'आपके ब्राउज़र में आवाज़ पठन समर्थित नहीं है।' / 'तुमच्या ब्राउझरमध्ये आवाज वाचन समर्थित नाही.'). Ensure these keys are available under the same translation lookup structure used by all other t(key) calls throughout the app.",
+      "reqIds": [
+        "REQ-58"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -596,6 +655,32 @@
     {
       "id": "AR-52",
       "summary": "Expand the Organic Farming Techniques page with more detailed information and additional technique options beyond the existing three (Composting, Pest Control, Crop Rotation). Add more techniques with in-depth content including step-by-step processes, benefits, tools, and tips.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-53",
+      "summary": "Add 'Location-Based Crop Suggestions' as a dedicated navigation link in the main navbar (alongside Home, About, etc.) and create a dedicated page with more detailed information about location-based crop recommendations",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-54",
+      "summary": "Preserve the existing green eco-friendly visual theme exactly as it currently stands across all pages. Do not modify any theme-related files including frontend/src/index.css, frontend/tailwind.config.js, or any color tokens, font settings, gradient definitions, border-radius values, drop shadows, or animation keyframes. The primary green colors (#2d6a4f / #52b788), secondary white and light brown (#d4a373), Nunito/Montserrat font stack, and all CSS keyframe animations (fadeIn, zoomIn, slideUp) must remain unchanged.",
+      "reqIds": [
+        "REQ-54"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-55",
+      "summary": "Fix language switcher so switching between English, Hindi, and Marathi correctly updates all UI text across all pages without requiring a page reload",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-56",
+      "summary": "Add a voice/text-to-speech information reader feature supporting all three languages (English, Hindi, Marathi) to help hearing-impaired and uneducated farmers by reading page content aloud",
       "reqIds": [],
       "status": "pending"
     }

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Merriweather:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,90 +6,60 @@
 
 @layer base {
   :root {
+    --background: 0 0% 99%;
+    --foreground: 150 30% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 150 30% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 30% 12%;
+    --primary: 145 52% 28%;
+    --primary-foreground: 0 0% 99%;
+    --secondary: 145 40% 42%;
+    --secondary-foreground: 150 30% 12%;
+    --muted: 120 10% 94%;
+    --muted-foreground: 145 15% 42%;
+    --accent: 120 20% 94%;
+    --accent-foreground: 150 30% 12%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 99%;
+    --border: 120 12% 88%;
+    --input: 120 12% 88%;
+    --ring: 145 52% 28%;
     --radius: 0.75rem;
+    --chart-1: 145 52% 28%;
+    --chart-2: 145 40% 42%;
+    --chart-3: 80 55% 52%;
+    --chart-4: 200 45% 45%;
+    --chart-5: 30 65% 52%;
 
-    /* Green eco-friendly palette */
-    --background: 0.98 0.008 120;
-    --foreground: 0.18 0.04 145;
-
-    --card: 1 0 0;
-    --card-foreground: 0.18 0.04 145;
-
-    --popover: 1 0 0;
-    --popover-foreground: 0.18 0.04 145;
-
-    --primary: 0.42 0.13 145;
-    --primary-foreground: 0.99 0 0;
-
-    --secondary: 0.92 0.04 120;
-    --secondary-foreground: 0.25 0.08 145;
-
-    --muted: 0.94 0.02 120;
-    --muted-foreground: 0.52 0.04 145;
-
-    --accent: 0.88 0.06 120;
-    --accent-foreground: 0.25 0.08 145;
-
-    --destructive: 0.577 0.245 27.325;
-    --destructive-foreground: 0.985 0 0;
-
-    --border: 0.88 0.04 120;
-    --input: 0.88 0.04 120;
-    --ring: 0.42 0.13 145;
-
-    --chart-1: 0.42 0.13 145;
-    --chart-2: 0.6 0.118 184.704;
-    --chart-3: 0.75 0.15 80;
-    --chart-4: 0.828 0.189 84.429;
-    --chart-5: 0.769 0.188 70.08;
-
-    --sidebar: 0.96 0.02 120;
-    --sidebar-foreground: 0.18 0.04 145;
-    --sidebar-primary: 0.42 0.13 145;
-    --sidebar-primary-foreground: 0.99 0 0;
-    --sidebar-accent: 0.88 0.06 120;
-    --sidebar-accent-foreground: 0.25 0.08 145;
-    --sidebar-border: 0.88 0.04 120;
-    --sidebar-ring: 0.42 0.13 145;
-
-    /* Custom tokens */
-    --green-deep: 0.32 0.12 145;
-    --green-mid: 0.42 0.13 145;
-    --green-light: 0.62 0.14 145;
-    --green-pale: 0.88 0.06 120;
-    --brown-light: 0.78 0.08 65;
-    --brown-warm: 0.68 0.1 60;
-    --hero-overlay: 0.15 0.06 145;
+    /* Eco color tokens as CSS variables */
+    --eco-primary: 145 52% 28%;
+    --eco-secondary: 145 40% 42%;
+    --eco-dark: 145 45% 14%;
+    --eco-light: 120 18% 96%;
+    --eco-accent: 80 50% 58%;
   }
 
   .dark {
-    --background: 0.14 0.04 145;
-    --foreground: 0.95 0.02 120;
-    --card: 0.18 0.05 145;
-    --card-foreground: 0.95 0.02 120;
-    --popover: 0.22 0.05 145;
-    --popover-foreground: 0.95 0.02 120;
-    --primary: 0.62 0.14 145;
-    --primary-foreground: 0.12 0.04 145;
-    --secondary: 0.22 0.05 145;
-    --secondary-foreground: 0.95 0.02 120;
-    --muted: 0.22 0.05 145;
-    --muted-foreground: 0.65 0.04 145;
-    --accent: 0.28 0.06 145;
-    --accent-foreground: 0.95 0.02 120;
-    --destructive: 0.704 0.191 22.216;
-    --destructive-foreground: 0.205 0 0;
-    --border: 1 0 0 / 10%;
-    --input: 1 0 0 / 15%;
-    --ring: 0.62 0.14 145;
-    --sidebar: 0.18 0.05 145;
-    --sidebar-foreground: 0.95 0.02 120;
-    --sidebar-primary: 0.62 0.14 145;
-    --sidebar-primary-foreground: 0.12 0.04 145;
-    --sidebar-accent: 0.28 0.06 145;
-    --sidebar-accent-foreground: 0.95 0.02 120;
-    --sidebar-border: 1 0 0 / 10%;
-    --sidebar-ring: 0.62 0.14 145;
+    --background: 145 20% 8%;
+    --foreground: 120 10% 95%;
+    --card: 145 18% 11%;
+    --card-foreground: 120 10% 95%;
+    --popover: 145 18% 11%;
+    --popover-foreground: 120 10% 95%;
+    --primary: 145 40% 52%;
+    --primary-foreground: 145 20% 8%;
+    --secondary: 145 30% 32%;
+    --secondary-foreground: 120 10% 95%;
+    --muted: 145 15% 18%;
+    --muted-foreground: 145 12% 55%;
+    --accent: 145 18% 18%;
+    --accent-foreground: 120 10% 95%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 99%;
+    --border: 145 20% 22%;
+    --input: 145 20% 22%;
+    --ring: 145 40% 52%;
   }
 
   * {
@@ -97,149 +67,232 @@
   }
 
   body {
-    @apply bg-background text-foreground font-poppins;
+    @apply bg-background text-foreground;
+    font-family: 'Nunito', sans-serif;
   }
 
-  h1, h2, h3 {
-    @apply font-merriweather;
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+
+@layer components {
+  .eco-btn-primary {
+    @apply font-semibold px-6 py-3 rounded-xl transition-colors duration-200 cursor-pointer;
+    background-color: hsl(var(--eco-primary));
+    color: hsl(var(--primary-foreground));
+  }
+
+  .eco-btn-primary:hover {
+    background-color: hsl(var(--eco-dark));
+  }
+
+  .eco-btn-secondary {
+    @apply font-semibold px-6 py-3 rounded-xl border-2 transition-colors duration-200 cursor-pointer;
+    background-color: white;
+    color: hsl(var(--eco-primary));
+    border-color: hsl(var(--eco-primary));
+  }
+
+  .eco-btn-secondary:hover {
+    background-color: hsl(var(--eco-light));
+  }
+
+  .eco-btn {
+    @apply font-semibold px-4 py-2 rounded-lg transition-colors duration-200;
+    background-color: hsl(var(--eco-primary));
+    color: white;
+  }
+
+  .eco-btn:hover {
+    background-color: hsl(var(--eco-dark));
+  }
+
+  .eco-card {
+    @apply bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-200;
+    border: 1px solid hsl(var(--eco-primary) / 0.1);
+  }
+
+  .section-padding {
+    @apply py-16 px-4;
+  }
+
+  .section-title {
+    @apply text-3xl font-display font-bold text-center mb-10;
+  }
+
+  .gradient-green {
+    background: linear-gradient(135deg, hsl(var(--eco-primary)), hsl(var(--eco-secondary)));
+  }
+
+  .gradient-hero {
+    background: linear-gradient(135deg, hsl(var(--eco-dark) / 0.85), hsl(var(--eco-primary) / 0.5));
+  }
+
+  .search-input {
+    @apply w-full px-4 py-3 rounded-xl focus:outline-none bg-background text-foreground placeholder:text-muted-foreground transition-colors;
+    border: 1px solid hsl(var(--eco-primary) / 0.3);
+  }
+
+  .search-input:focus {
+    border-color: hsl(var(--eco-primary));
+    box-shadow: 0 0 0 2px hsl(var(--eco-primary) / 0.2);
+  }
+
+  .btn-outline-green {
+    @apply font-semibold px-6 py-2 rounded-xl transition-colors duration-200;
+    border: 2px solid hsl(var(--eco-primary));
+    color: hsl(var(--eco-primary));
+  }
+
+  .btn-outline-green:hover {
+    background-color: hsl(var(--eco-primary));
+    color: white;
   }
 }
 
 @layer utilities {
-  .font-poppins {
-    font-family: 'Poppins', sans-serif;
+  .font-display {
+    font-family: 'Montserrat', sans-serif;
   }
-  .font-merriweather {
-    font-family: 'Merriweather', serif;
+
+  .text-eco-primary {
+    color: hsl(var(--eco-primary));
+  }
+
+  .text-eco-secondary {
+    color: hsl(var(--eco-secondary));
+  }
+
+  .text-eco-dark {
+    color: hsl(var(--eco-dark));
+  }
+
+  .text-eco-accent {
+    color: hsl(var(--eco-accent));
+  }
+
+  .text-eco-light {
+    color: hsl(var(--eco-light));
+  }
+
+  .bg-eco-primary {
+    background-color: hsl(var(--eco-primary));
+  }
+
+  .bg-eco-secondary {
+    background-color: hsl(var(--eco-secondary));
+  }
+
+  .bg-eco-dark {
+    background-color: hsl(var(--eco-dark));
+  }
+
+  .bg-eco-light {
+    background-color: hsl(var(--eco-light));
+  }
+
+  .bg-eco-accent {
+    background-color: hsl(var(--eco-accent));
+  }
+
+  .bg-green-pale {
+    background-color: hsl(var(--eco-light));
+  }
+
+  .border-eco-primary {
+    border-color: hsl(var(--eco-primary));
+  }
+
+  .hover\:bg-eco-primary:hover {
+    background-color: hsl(var(--eco-primary));
+  }
+
+  .hover\:bg-eco-dark:hover {
+    background-color: hsl(var(--eco-dark));
+  }
+
+  .hover\:text-eco-primary:hover {
+    color: hsl(var(--eco-primary));
+  }
+
+  .hover\:text-eco-accent:hover {
+    color: hsl(var(--eco-accent));
+  }
+
+  .text-green-light {
+    color: hsl(145 55% 58%);
+  }
+
+  .shadow-green {
+    box-shadow: 0 4px 14px hsl(var(--eco-primary) / 0.3);
+  }
+
+  .shadow-card-hover {
+    box-shadow: 0 8px 30px hsl(var(--eco-primary) / 0.15);
   }
 }
 
-/* ===== ANIMATIONS ===== */
+/* Keyframe Animations */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 
 @keyframes slideUp {
-  from { opacity: 0; transform: translateY(40px); }
+  from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes zoomIn {
-  from { opacity: 0; transform: scale(0.85); }
+  from { opacity: 0; transform: scale(0.92); }
   to { opacity: 1; transform: scale(1); }
 }
 
 @keyframes slideInLeft {
-  from { opacity: 0; transform: translateX(-40px); }
+  from { opacity: 0; transform: translateX(-30px); }
   to { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes slideInRight {
-  from { opacity: 0; transform: translateX(40px); }
+  from { opacity: 0; transform: translateX(30px); }
   to { opacity: 1; transform: translateX(0); }
 }
 
-@keyframes pulse-green {
-  0%, 100% { box-shadow: 0 0 0 0 oklch(0.42 0.13 145 / 0.4); }
-  50% { box-shadow: 0 0 0 12px oklch(0.42 0.13 145 / 0); }
-}
-
 .animate-fadeIn {
-  animation: fadeIn 0.8s ease-out forwards;
+  animation: fadeIn 0.6s ease-out both;
 }
 
 .animate-slideUp {
-  animation: slideUp 0.7s ease-out forwards;
+  animation: slideUp 0.6s ease-out both;
 }
 
 .animate-zoomIn {
-  animation: zoomIn 0.6s ease-out forwards;
+  animation: zoomIn 0.5s ease-out both;
 }
 
 .animate-slideInLeft {
-  animation: slideInLeft 0.7s ease-out forwards;
+  animation: slideInLeft 0.6s ease-out both;
 }
 
 .animate-slideInRight {
-  animation: slideInRight 0.7s ease-out forwards;
+  animation: slideInRight 0.6s ease-out both;
 }
 
-.animate-pulse-green {
-  animation: pulse-green 2s infinite;
-}
-
-/* Delay utilities */
-.delay-100 { animation-delay: 0.1s; }
-.delay-200 { animation-delay: 0.2s; }
-.delay-300 { animation-delay: 0.3s; }
-.delay-400 { animation-delay: 0.4s; }
-.delay-500 { animation-delay: 0.5s; }
-.delay-600 { animation-delay: 0.6s; }
-
-/* Initially hidden for animation */
-.anim-hidden {
-  opacity: 0;
-}
-
-/* ===== GRADIENT UTILITIES ===== */
-.gradient-green {
-  background: linear-gradient(135deg, oklch(0.32 0.12 145), oklch(0.52 0.14 145));
-}
-
-.gradient-green-light {
-  background: linear-gradient(135deg, oklch(0.88 0.06 120), oklch(0.96 0.03 120));
-}
-
-.gradient-hero {
-  background: linear-gradient(135deg, oklch(0.22 0.1 145 / 0.85), oklch(0.38 0.12 145 / 0.7));
-}
-
-/* ===== CARD STYLES ===== */
-.eco-card {
-  @apply bg-card rounded-2xl shadow-card border border-border overflow-hidden transition-all duration-300;
-}
-
-.eco-card:hover {
-  @apply shadow-card-hover -translate-y-1;
-}
-
-/* ===== BUTTON STYLES ===== */
-.btn-primary {
-  @apply bg-primary text-primary-foreground font-semibold px-6 py-3 rounded-xl transition-all duration-200 hover:opacity-90 hover:shadow-lg active:scale-95;
-}
-
-.btn-outline-green {
-  @apply border-2 border-primary text-primary font-semibold px-6 py-3 rounded-xl transition-all duration-200 hover:bg-primary hover:text-primary-foreground;
-}
-
-/* ===== SECTION STYLES ===== */
-.section-padding {
-  @apply py-16 px-4 md:px-8 lg:px-16;
-}
-
-.section-title {
-  @apply text-3xl md:text-4xl font-bold text-center mb-4;
-  font-family: 'Merriweather', serif;
-}
-
-.section-subtitle {
-  @apply text-center text-muted-foreground text-lg mb-12 max-w-2xl mx-auto;
-}
-
-/* ===== SEARCH INPUT ===== */
-.search-input {
-  @apply w-full px-5 py-3 rounded-xl border-2 border-border bg-card text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors duration-200;
-}
-
-/* ===== SCROLLBAR ===== */
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
 }
+
 ::-webkit-scrollbar-track {
-  background: oklch(0.94 0.02 120);
+  background: hsl(var(--eco-light));
 }
+
 ::-webkit-scrollbar-thumb {
-  background: oklch(0.52 0.14 145);
+  background: hsl(var(--eco-secondary));
   border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--eco-primary));
 }

@@ -1,22 +1,28 @@
 {
   "kind": "spec_vs_diff_report",
   "version": "1.0",
-  "generatedAt": "2026-03-01T08:55:32.317Z",
-  "summary": "The diff shows that frontend/src/pages/Techniques.tsx was significantly expanded and frontend/src/utils/translations.ts was updated. The implementation appears to address REQ-50 by adding new technique cards with enriched structure, updating the translations file, and preserving the existing layout. However, due to truncation of the Techniques.tsx diff, full verification of all 12 cards and all required fields cannot be confirmed with certainty. Based on the visible evidence, the core requirements appear to be met.",
-  "missing_requirements": [],
-  "hallucinated_features": [
+  "generatedAt": "2026-03-01T10:03:21.549Z",
+  "summary": "The diff implements all three requirements: REQ-56 (LanguageContext fix with localStorage persistence, proper context wrapping in App.tsx, useCallback/useMemo to prevent stale closures), REQ-57 (VoiceReader.tsx floating button with Play/Pause/Resume/Stop, Web Speech API, language detection, graceful degradation, excluded from /signup and /otp), and REQ-58 (translation keys added to translations.ts). The implementation appears largely complete, though some acceptance criteria cannot be fully verified due to diff truncation.",
+  "missing_requirements": [
     {
-      "description": "Expandable/collapsible card interaction using expandedIndex state and ChevronDown/ChevronUp icons",
-      "reason": "The diff shows a useState for expandedIndex and imports ChevronDown/ChevronUp from lucide-react, suggesting an accordion/expand toggle was added to technique cards. This interactive expand/collapse behavior was not requested in REQ-50, which only asked for cards displaying all content sections without specifying they should be hidden behind a toggle.",
+      "id": "REQ-56",
+      "requirement": "Every page component (Home, About, Techniques, Farm, Shop, Cattle, Equipment, Contact, GovernmentSchemes, Signup, OtpVerification, CropSuggestions) and shared components (Header, Footer) must re-render with translated text when the language changes — no stale closures or direct imports of translations object bypassing the hook.",
+      "reason": "The LanguageContext fix is confirmed, and Header/Footer are mentioned in file summaries as using t() translations. However, the individual page components are not shown as modified in the diff. If they previously had stale closures or direct imports, those bugs may not have been fixed. The diff only confirms the context layer was corrected, not that all page components were audited and updated.",
       "evidence": [
-        "frontend/src/pages/Techniques.tsx"
+        "frontend/src/contexts/LanguageContext.tsx",
+        "frontend/src/App.tsx",
+        "frontend-file-summaries.txt"
       ]
     }
   ],
-  "confidence": 0.62,
+  "hallucinated_features": [],
+  "confidence": 0.72,
   "changed_files": [
     "frontend-file-summaries.txt",
-    "frontend/src/pages/Techniques.tsx",
+    "frontend/src/App.tsx",
+    "frontend/src/components/VoiceReader.tsx",
+    "frontend/src/contexts/CartContext.tsx",
+    "frontend/src/contexts/LanguageContext.tsx",
     "frontend/src/utils/translations.ts",
     "project_state.json"
   ]

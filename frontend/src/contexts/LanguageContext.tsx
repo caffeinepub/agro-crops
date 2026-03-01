@@ -1,49 +1,51 @@
-import React, { createContext, useContext, useState, useCallback } from 'react';
-import { translations } from '../utils/translations';
-
-export type LanguageCode = 'en' | 'hi' | 'mr';
+import React, { createContext, useContext, useState, useCallback, useMemo } from 'react';
+import { translations, Language, TranslationKey } from '../utils/translations';
 
 interface LanguageContextType {
-  language: LanguageCode;
-  setLanguage: (lang: LanguageCode) => void;
-  t: (key: string) => string;
+  language: Language;
+  setLanguage: (lang: Language) => void;
+  t: (key: TranslationKey) => string;
 }
 
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
-
-const STORAGE_KEY = 'agro-crops-language';
+const LanguageContext = createContext<LanguageContextType>({
+  language: 'en',
+  setLanguage: () => {},
+  t: (key) => key,
+});
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguageState] = useState<LanguageCode>(() => {
-    const stored = localStorage.getItem(STORAGE_KEY);
+  const [language, setLanguageState] = useState<Language>(() => {
+    const stored = localStorage.getItem('agro-language');
     if (stored === 'en' || stored === 'hi' || stored === 'mr') return stored;
     return 'en';
   });
 
-  const setLanguage = useCallback((lang: LanguageCode) => {
+  const setLanguage = useCallback((lang: Language) => {
+    localStorage.setItem('agro-language', lang);
     setLanguageState(lang);
-    localStorage.setItem(STORAGE_KEY, lang);
   }, []);
 
-  const t = useCallback((key: string): string => {
-    const langTranslations = translations[language] as Record<string, string>;
-    if (langTranslations && langTranslations[key]) {
-      return langTranslations[key];
-    }
-    // Fallback to English
-    const enTranslations = translations['en'] as Record<string, string>;
-    return enTranslations[key] || key;
-  }, [language]);
+  const t = useCallback(
+    (key: TranslationKey): string => {
+      const langMap = translations[language] as Record<string, string>;
+      const enMap = translations['en'] as Record<string, string>;
+      return langMap[key] || enMap[key] || key;
+    },
+    [language]
+  );
+
+  const value = useMemo(
+    () => ({ language, setLanguage, t }),
+    [language, setLanguage, t]
+  );
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+    <LanguageContext.Provider value={value}>
       {children}
     </LanguageContext.Provider>
   );
 }
 
 export function useLanguage(): LanguageContextType {
-  const ctx = useContext(LanguageContext);
-  if (!ctx) throw new Error('useLanguage must be used within a LanguageProvider');
-  return ctx;
+  return useContext(LanguageContext);
 }

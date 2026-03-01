@@ -7,45 +7,38 @@ export default function Footer() {
   const { t } = useLanguage();
   const year = new Date().getFullYear();
 
-  const navLinks = [
-    { label: t('home'), path: '/' },
-    { label: t('about'), path: '/about' },
-    { label: t('techniques'), path: '/techniques' },
-    { label: t('farm'), path: '/farm' },
-    { label: t('shop'), path: '/shop' },
-    { label: t('cattle'), path: '/cattle' },
-    { label: t('equipment'), path: '/equipment' },
-    { label: t('schemes'), path: '/schemes' },
-    { label: t('contact'), path: '/contact' },
-  ];
-
   return (
-    <footer className="bg-card border-t border-border mt-auto">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <footer className="bg-eco-dark text-white">
+      <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2 mb-3">
-              <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
-                <Leaf className="w-4 h-4 text-primary-foreground" />
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-10 h-10 bg-eco-primary rounded-full flex items-center justify-center">
+                <Leaf size={20} className="text-white" />
               </div>
-              <span className="font-bold text-lg text-foreground">Agro Crops</span>
+              <span className="font-display font-bold text-xl">Agro Crops</span>
             </div>
-            <p className="text-muted-foreground text-sm leading-relaxed">
-              Empowering farmers with sustainable practices and organic solutions for a greener tomorrow.
+            <p className="text-gray-300 text-sm leading-relaxed">
+              Empowering farmers with knowledge, tools, and resources for sustainable and profitable agriculture.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4">{t('quickLinks')}</h3>
+            <h3 className="font-semibold text-lg mb-4 text-eco-accent">{t('quickLinks')}</h3>
             <ul className="space-y-2">
-              {navLinks.map((link) => (
-                <li key={link.path}>
-                  <Link
-                    to={link.path}
-                    className="text-muted-foreground hover:text-primary text-sm transition-colors"
-                  >
+              {[
+                { to: '/', label: t('home') },
+                { to: '/about', label: t('about') },
+                { to: '/techniques', label: t('techniques') },
+                { to: '/farm', label: t('farm') },
+                { to: '/shop', label: t('shop') },
+                { to: '/schemes', label: t('schemes') },
+                { to: '/crop-suggestions', label: t('cropSuggestions') },
+              ].map(link => (
+                <li key={link.to}>
+                  <Link to={link.to} className="text-gray-300 hover:text-eco-accent text-sm transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -55,32 +48,30 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4">{t('contactUs')}</h3>
+            <h3 className="font-semibold text-lg mb-4 text-eco-accent">{t('contactInfo')}</h3>
             <ul className="space-y-3">
-              <li className="flex items-center gap-2 text-sm text-muted-foreground">
-                <Mail className="w-4 h-4 text-primary flex-shrink-0" />
-                <a href="mailto:kharatchaitanya03@gmail.com" className="hover:text-primary transition-colors">
+              <li className="flex items-center gap-2 text-sm text-gray-300">
+                <Mail size={16} className="text-eco-accent flex-shrink-0" />
+                <a href="mailto:kharatchaitanya03@gmail.com" className="hover:text-eco-accent transition-colors">
                   kharatchaitanya03@gmail.com
                 </a>
               </li>
-              <li className="flex items-center gap-2 text-sm text-muted-foreground">
-                <Phone className="w-4 h-4 text-primary flex-shrink-0" />
-                <a href="tel:+918421016006" className="hover:text-primary transition-colors">
+              <li className="flex items-center gap-2 text-sm text-gray-300">
+                <Phone size={16} className="text-eco-accent flex-shrink-0" />
+                <a href="tel:+918421016006" className="hover:text-eco-accent transition-colors">
                   +91 8421016006
                 </a>
               </li>
-              <li className="flex items-start gap-2 text-sm text-muted-foreground">
-                <MapPin className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+              <li className="flex items-start gap-2 text-sm text-gray-300">
+                <MapPin size={16} className="text-eco-accent flex-shrink-0 mt-0.5" />
                 <span>Maharashtra, India</span>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-border mt-8 pt-6 text-center">
-          <p className="text-muted-foreground text-sm">
-            © {year} Agro Crops. All rights reserved.
-          </p>
+        <div className="border-t border-white/10 mt-8 pt-6 text-center text-sm text-gray-400">
+          <p>© {year} Agro Crops. {t('rights')}.</p>
         </div>
       </div>
     </footer>

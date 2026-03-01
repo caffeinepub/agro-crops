@@ -23,58 +23,58 @@ const products = [
   { id: 111, name: 'Organic Cabbage Seeds',        category: 'Seeds',       price: 70,  image: '/assets/generated/seed-cabbage.dim_200x200.png',      description: 'Compact cabbage seeds ideal for winter season planting.' },
   { id: 112, name: 'Organic Cauliflower Seeds',    category: 'Seeds',       price: 75,  image: '/assets/generated/seed-cauliflower.dim_200x200.png',  description: 'White-curd cauliflower seeds with good shelf life.' },
   { id: 113, name: 'Organic Pumpkin Seeds',        category: 'Seeds',       price: 90,  image: '/assets/generated/seed-pumpkin.dim_200x200.png',      description: 'Large-fruited pumpkin seeds for field and kitchen garden.' },
-  { id: 114, name: 'Organic Watermelon Seeds',     category: 'Seeds',       price: 140, image: '/assets/generated/seed-watermelon.dim_200x200.png',   description: 'Seedless-variety watermelon seeds for summer harvest.' },
-  { id: 115, name: 'Organic Radish Seeds',         category: 'Seeds',       price: 50,  image: '/assets/generated/seed-radish.dim_200x200.png',       description: 'Quick-maturing radish seeds ready in 25–30 days.' },
-  { id: 116, name: 'Organic Beetroot Seeds',       category: 'Seeds',       price: 65,  image: '/assets/generated/seed-beetroot.dim_200x200.png',     description: 'Deep-red beetroot seeds with high sugar content.' },
-  { id: 117, name: 'Organic Carrot Seeds',         category: 'Seeds',       price: 70,  image: '/assets/generated/seed-carrot.dim_200x200.png',       description: 'Nantes-type carrot seeds for smooth, sweet roots.' },
-  { id: 118, name: 'Organic Moong Seeds',          category: 'Seeds',       price: 85,  image: '/assets/generated/seed-moong.dim_200x200.png',        description: 'Green gram moong seeds for short-duration pulse crop.' },
+  { id: 114, name: 'Organic Radish Seeds',         category: 'Seeds',       price: 50,  image: '/assets/generated/seed-radish.dim_200x200.png',       description: 'Quick-maturing radish seeds ready in 25–30 days.' },
+  { id: 115, name: 'Organic Carrot Seeds',         category: 'Seeds',       price: 70,  image: '/assets/generated/seed-cauliflower.dim_200x200.png',  description: 'Nantes-type carrot seeds for smooth, sweet roots.' },
+  { id: 116, name: 'Organic Moong Seeds',          category: 'Seeds',       price: 85,  image: '/assets/generated/seed-okra.dim_200x200.png',         description: 'Green gram moong seeds for short-duration pulse crop.' },
+  { id: 117, name: 'Organic Mustard Seeds',        category: 'Seeds',       price: 65,  image: '/assets/generated/seed-fenugreek.dim_200x200.png',    description: 'Organic mustard seeds for oil and condiment use.' },
+  { id: 118, name: 'Organic Sunflower Seeds',      category: 'Seeds',       price: 95,  image: '/assets/generated/seed-pumpkin.dim_200x200.png',      description: 'High-oil sunflower seeds for commercial cultivation.' },
 
   // ── Vegetables (22 products) ─────────────────────────────────────────────
-  { id: 3,   name: 'Fresh Organic Vegetables Pack', category: 'Vegetables', price: 250, image: '/assets/generated/product-vegetables.dim_400x400.png',        description: 'Seasonal organic vegetables freshly harvested.' },
-  { id: 4,   name: 'Mixed Vegetable Box',           category: 'Vegetables', price: 350, image: '/assets/generated/product-vegetables.dim_400x400.png',        description: 'Assorted organic vegetables for weekly needs.' },
-  { id: 201, name: 'Organic Tomatoes (1 kg)',       category: 'Vegetables', price: 60,  image: '/assets/generated/product-tomato.dim_200x200.png',             description: 'Vine-ripened organic tomatoes, freshly picked.' },
-  { id: 202, name: 'Organic Potatoes (1 kg)',       category: 'Vegetables', price: 45,  image: '/assets/generated/product-potato.dim_200x200.png',             description: 'Farm-fresh organic potatoes with thin skin.' },
-  { id: 203, name: 'Organic Onions (1 kg)',         category: 'Vegetables', price: 40,  image: '/assets/generated/product-onion.dim_200x200.png',              description: 'Pungent organic onions grown without chemicals.' },
-  { id: 204, name: 'Organic Brinjal (500 g)',       category: 'Vegetables', price: 35,  image: '/assets/generated/product-brinjal.dim_200x200.png',            description: 'Glossy purple brinjal, tender and flavourful.' },
-  { id: 205, name: 'Organic Okra (500 g)',          category: 'Vegetables', price: 40,  image: '/assets/generated/product-okra.dim_200x200.png',               description: 'Crisp organic okra harvested at peak tenderness.' },
-  { id: 206, name: 'Organic Spinach (250 g)',       category: 'Vegetables', price: 30,  image: '/assets/generated/product-spinach.dim_200x200.png',            description: 'Baby spinach leaves, washed and ready to cook.' },
-  { id: 207, name: 'Organic Carrots (500 g)',       category: 'Vegetables', price: 50,  image: '/assets/generated/product-carrot.dim_200x200.png',             description: 'Sweet organic carrots rich in beta-carotene.' },
-  { id: 208, name: 'Organic Radish (500 g)',        category: 'Vegetables', price: 30,  image: '/assets/generated/product-radish.dim_200x200.png',             description: 'Crispy white radish with a mild peppery taste.' },
-  { id: 209, name: 'Organic Cabbage (1 pc)',        category: 'Vegetables', price: 55,  image: '/assets/generated/product-cabbage.dim_200x200.png',            description: 'Firm organic cabbage head, great for salads and stir-fry.' },
-  { id: 210, name: 'Organic Cauliflower (1 pc)',    category: 'Vegetables', price: 65,  image: '/assets/generated/product-cauliflower.dim_200x200.png',        description: 'White-curd organic cauliflower, chemical-free.' },
-  { id: 211, name: 'Organic Bitter Gourd (500 g)',  category: 'Vegetables', price: 45,  image: '/assets/generated/product-bitter-gourd.dim_200x200.png',       description: 'Medicinal bitter gourd with high nutritional value.' },
-  { id: 212, name: 'Organic Ridge Gourd (500 g)',   category: 'Vegetables', price: 40,  image: '/assets/generated/product-ridge-gourd.dim_200x200.png',        description: 'Tender ridge gourd ideal for curries and stir-fry.' },
-  { id: 213, name: 'Organic Pumpkin (1 kg)',        category: 'Vegetables', price: 50,  image: '/assets/generated/product-pumpkin.dim_200x200.png',            description: 'Sweet organic pumpkin, perfect for soups and curries.' },
-  { id: 214, name: 'Organic Green Peas (500 g)',    category: 'Vegetables', price: 70,  image: '/assets/generated/product-green-peas.dim_200x200.png',         description: 'Fresh shelled green peas, sweet and tender.' },
-  { id: 215, name: 'Organic Cucumber (500 g)',      category: 'Vegetables', price: 35,  image: '/assets/generated/product-cucumber.dim_200x200.png',           description: 'Cool and crunchy organic cucumbers for salads.' },
-  { id: 216, name: 'Organic Garlic (250 g)',        category: 'Vegetables', price: 80,  image: '/assets/generated/product-garlic.dim_200x200.png',             description: 'Aromatic organic garlic bulbs with intense flavour.' },
-  { id: 217, name: 'Organic Ginger (250 g)',        category: 'Vegetables', price: 75,  image: '/assets/generated/product-ginger.dim_200x200.png',             description: 'Fresh organic ginger root with strong aroma.' },
-  { id: 218, name: 'Organic Corn (2 pcs)',          category: 'Vegetables', price: 60,  image: '/assets/generated/product-corn.dim_200x200.png',               description: 'Sweet organic corn cobs, great for grilling and boiling.' },
-  { id: 219, name: 'Organic Fenugreek Leaves (250 g)', category: 'Vegetables', price: 25, image: '/assets/generated/product-fenugreek-leaves.dim_200x200.png', description: 'Fresh methi leaves with a slightly bitter, earthy taste.' },
-  { id: 220, name: 'Organic Capsicum (500 g)',      category: 'Vegetables', price: 90,  image: '/assets/generated/product-capsicum.dim_200x200.png',           description: 'Colourful organic bell peppers, crisp and sweet.' },
+  { id: 3,   name: 'Fresh Organic Vegetables Pack', category: 'Vegetables', price: 250, image: '/assets/generated/product-vegetables.dim_400x400.png',  description: 'Seasonal organic vegetables freshly harvested.' },
+  { id: 4,   name: 'Mixed Vegetable Box',           category: 'Vegetables', price: 350, image: '/assets/generated/product-vegetables.dim_400x400.png',  description: 'Assorted organic vegetables for weekly needs.' },
+  { id: 201, name: 'Organic Tomatoes (1 kg)',       category: 'Vegetables', price: 60,  image: '/assets/generated/product-tomato.dim_200x200.png',       description: 'Vine-ripened organic tomatoes, freshly picked.' },
+  { id: 202, name: 'Organic Potatoes (1 kg)',       category: 'Vegetables', price: 45,  image: '/assets/generated/product-potato.dim_200x200.png',       description: 'Farm-fresh organic potatoes with thin skin.' },
+  { id: 203, name: 'Organic Onions (1 kg)',         category: 'Vegetables', price: 40,  image: '/assets/generated/product-onion.dim_200x200.png',        description: 'Pungent organic onions grown without chemicals.' },
+  { id: 204, name: 'Organic Brinjal (500 g)',       category: 'Vegetables', price: 35,  image: '/assets/generated/product-brinjal.dim_200x200.png',      description: 'Glossy purple brinjal, tender and flavourful.' },
+  { id: 205, name: 'Organic Okra (500 g)',          category: 'Vegetables', price: 40,  image: '/assets/generated/product-okra.dim_200x200.png',         description: 'Crisp organic okra harvested at peak tenderness.' },
+  { id: 206, name: 'Organic Spinach (250 g)',       category: 'Vegetables', price: 30,  image: '/assets/generated/product-spinach.dim_200x200.png',      description: 'Baby spinach leaves, washed and ready to cook.' },
+  { id: 207, name: 'Organic Carrots (500 g)',       category: 'Vegetables', price: 50,  image: '/assets/generated/product-carrot.dim_200x200.png',       description: 'Sweet organic carrots rich in beta-carotene.' },
+  { id: 208, name: 'Organic Radish (500 g)',        category: 'Vegetables', price: 30,  image: '/assets/generated/product-radish.dim_200x200.png',       description: 'Crispy white radish with a mild peppery taste.' },
+  { id: 209, name: 'Organic Cabbage (1 pc)',        category: 'Vegetables', price: 55,  image: '/assets/generated/product-cabbage.dim_200x200.png',      description: 'Firm organic cabbage head, great for salads and stir-fry.' },
+  { id: 210, name: 'Organic Cauliflower (1 pc)',    category: 'Vegetables', price: 65,  image: '/assets/generated/product-cauliflower.dim_200x200.png',  description: 'White-curd organic cauliflower, chemical-free.' },
+  { id: 211, name: 'Organic Bitter Gourd (500 g)',  category: 'Vegetables', price: 45,  image: '/assets/generated/product-bitter-gourd.dim_200x200.png', description: 'Medicinal bitter gourd with high nutritional value.' },
+  { id: 212, name: 'Organic Ridge Gourd (500 g)',   category: 'Vegetables', price: 40,  image: '/assets/generated/product-ridge-gourd.dim_200x200.png',  description: 'Tender ridge gourd ideal for curries and stir-fry.' },
+  { id: 213, name: 'Organic Pumpkin (1 kg)',        category: 'Vegetables', price: 50,  image: '/assets/generated/product-pumpkin.dim_200x200.png',      description: 'Sweet organic pumpkin, perfect for soups and curries.' },
+  { id: 214, name: 'Organic Green Peas (500 g)',    category: 'Vegetables', price: 70,  image: '/assets/generated/product-green-peas.dim_200x200.png',   description: 'Fresh shelled green peas, sweet and tender.' },
+  { id: 215, name: 'Organic Cucumber (500 g)',      category: 'Vegetables', price: 35,  image: '/assets/generated/product-cucumber.dim_200x200.png',     description: 'Cool and crunchy organic cucumbers for salads.' },
+  { id: 216, name: 'Organic Capsicum (500 g)',      category: 'Vegetables', price: 90,  image: '/assets/generated/product-vegetables.dim_400x400.png',   description: 'Colourful organic bell peppers, crisp and sweet.' },
+  { id: 217, name: 'Organic Ginger (250 g)',        category: 'Vegetables', price: 75,  image: '/assets/generated/product-vegetables.dim_400x400.png',   description: 'Fresh organic ginger root with strong aroma.' },
+  { id: 218, name: 'Organic Garlic (250 g)',        category: 'Vegetables', price: 80,  image: '/assets/generated/product-vegetables.dim_400x400.png',   description: 'Aromatic organic garlic bulbs with intense flavour.' },
+  { id: 219, name: 'Organic Fenugreek Leaves (250 g)', category: 'Vegetables', price: 25, image: '/assets/generated/product-spinach.dim_200x200.png',  description: 'Fresh methi leaves with a slightly bitter, earthy taste.' },
+  { id: 220, name: 'Organic Corn (2 pcs)',          category: 'Vegetables', price: 60,  image: '/assets/generated/product-vegetables.dim_400x400.png',   description: 'Sweet organic corn cobs, great for grilling and boiling.' },
 
   // ── Fertilizers (21 products) ────────────────────────────────────────────
-  { id: 5,   name: 'Organic Compost Fertilizer',   category: 'Fertilizers', price: 450, image: '/assets/generated/product-fertilizer.dim_400x400.png',            description: 'Rich compost fertilizer for improved soil health.' },
-  { id: 6,   name: 'Vermicompost Fertilizer',      category: 'Fertilizers', price: 380, image: '/assets/generated/fert-vermicompost.dim_200x200.png',              description: 'Earthworm-based fertilizer for organic farming.' },
-  { id: 301, name: 'Neem Cake Fertilizer (1 kg)',  category: 'Fertilizers', price: 200, image: '/assets/generated/fert-neem-cake.dim_200x200.png',                 description: 'Neem cake enriches soil and repels soil-borne pests.' },
-  { id: 302, name: 'Bone Meal Fertilizer (1 kg)',  category: 'Fertilizers', price: 320, image: '/assets/generated/fert-bone-meal.dim_200x200.png',                 description: 'Slow-release phosphorus source for root development.' },
-  { id: 303, name: 'Cow Dung Manure (5 kg)',       category: 'Fertilizers', price: 150, image: '/assets/generated/fert-cow-dung-manure.dim_200x200.png',           description: 'Well-composted cow dung manure for all crops.' },
-  { id: 304, name: 'Bio-NPK Fertilizer (1 kg)',    category: 'Fertilizers', price: 280, image: '/assets/generated/fert-bio-npk.dim_200x200.png',                   description: 'Balanced bio-NPK blend for vegetative and flowering stages.' },
-  { id: 305, name: 'Seaweed Extract (500 ml)',     category: 'Fertilizers', price: 350, image: '/assets/generated/fert-seaweed-extract.dim_200x200.png',           description: 'Liquid seaweed extract boosts plant immunity and growth.' },
-  { id: 306, name: 'Humic Acid Granules (1 kg)',   category: 'Fertilizers', price: 420, image: '/assets/generated/fert-humic-acid.dim_200x200.png',                description: 'Humic acid improves nutrient uptake and soil structure.' },
-  { id: 307, name: 'Mycorrhiza Bio-Fertilizer (500 g)', category: 'Fertilizers', price: 480, image: '/assets/generated/fert-mycorrhiza.dim_200x200.png',          description: 'Mycorrhizal fungi enhance root absorption and drought tolerance.' },
-  { id: 308, name: 'Azospirillum Bio-Fertilizer (500 g)', category: 'Fertilizers', price: 260, image: '/assets/generated/fert-azospirillum.dim_200x200.png',      description: 'Nitrogen-fixing bacteria for cereals and vegetables.' },
-  { id: 309, name: 'Phosphate Solubilizing Bacteria (500 g)', category: 'Fertilizers', price: 270, image: '/assets/generated/fert-psb.dim_200x200.png',           description: 'PSB converts insoluble phosphate to plant-available form.' },
-  { id: 310, name: 'Potassium Mobilizing Bacteria (500 g)', category: 'Fertilizers', price: 275, image: '/assets/generated/fert-kmb.dim_200x200.png',             description: 'KMB releases potassium from soil minerals for plant uptake.' },
-  { id: 311, name: 'Compost Tea Concentrate (1 L)', category: 'Fertilizers', price: 310, image: '/assets/generated/fert-compost-tea.dim_200x200.png',             description: 'Liquid compost tea packed with beneficial microorganisms.' },
-  { id: 312, name: 'Green Manure Mix (500 g)',     category: 'Fertilizers', price: 130, image: '/assets/generated/fert-green-manure-mix.dim_200x200.png',          description: 'Dhaincha and sunhemp seed mix for green manuring.' },
-  { id: 313, name: 'Organic Potash (1 kg)',        category: 'Fertilizers', price: 340, image: '/assets/generated/fert-organic-potash.dim_200x200.png',            description: 'Natural potash source for fruit quality and disease resistance.' },
-  { id: 314, name: 'Organic Zinc Sulphate (500 g)', category: 'Fertilizers', price: 190, image: '/assets/generated/fert-zinc-sulphate.dim_200x200.png',           description: 'Corrects zinc deficiency and improves grain filling.' },
-  { id: 315, name: 'Sulphur Granules Organic (1 kg)', category: 'Fertilizers', price: 160, image: '/assets/generated/fert-sulphur-granules.dim_200x200.png',      description: 'Elemental sulphur lowers soil pH and controls fungal diseases.' },
-  { id: 316, name: 'Dolomite Lime (2 kg)',         category: 'Fertilizers', price: 120, image: '/assets/generated/fert-dolomite-lime.dim_200x200.png',             description: 'Raises soil pH and supplies calcium and magnesium.' },
-  { id: 317, name: 'Wood Ash Fertilizer (1 kg)',   category: 'Fertilizers', price: 100, image: '/assets/generated/fert-wood-ash.dim_200x200.png',                  description: 'Natural wood ash rich in potassium and trace minerals.' },
-  { id: 318, name: 'Castor Cake Fertilizer (1 kg)', category: 'Fertilizers', price: 220, image: '/assets/generated/fert-castor-cake.dim_200x200.png',             description: 'Castor cake enriches soil nitrogen and repels nematodes.' },
-  { id: 319, name: 'Trichoderma Bio-Fungicide (500 g)', category: 'Fertilizers', price: 390, image: '/assets/generated/fert-trichoderma.dim_200x200.png',         description: 'Beneficial fungi that protect roots from soil-borne pathogens.' },
+  { id: 5,   name: 'Organic Compost Fertilizer',   category: 'Fertilizers', price: 450, image: '/assets/generated/product-fertilizer.dim_400x400.png', description: 'Rich compost fertilizer for improved soil health.' },
+  { id: 6,   name: 'Vermicompost Fertilizer',      category: 'Fertilizers', price: 380, image: '/assets/generated/product-fertilizer.dim_400x400.png', description: 'Earthworm-based fertilizer for organic farming.' },
+  { id: 301, name: 'Neem Cake Fertilizer (1 kg)',  category: 'Fertilizers', price: 200, image: '/assets/generated/product-fertilizer.dim_400x400.png', description: 'Neem cake enriches soil and repels soil-borne pests.' },
+  { id: 302, name: 'Bone Meal Fertilizer (1 kg)',  category: 'Fertilizers', price: 320, image: '/assets/generated/product-fertilizer.dim_400x400.png', description: 'Slow-release phosphorus source for root development.' },
+  { id: 303, name: 'Cow Dung Manure (5 kg)',       category: 'Fertilizers', price: 150, image: '/assets/generated/product-fertilizer.dim_400x400.png', description: 'Well-composted cow dung manure for all crops.' },
+  { id: 304, name: 'Bio-NPK Fertilizer (1 kg)',    category: 'Fertilizers', price: 280, image: '/assets/generated/product-fertilizer.dim_400x400.png', description: 'Balanced bio-NPK blend for vegetative and flowering stages.' },
+  { id: 305, name: 'Seaweed Extract (500 ml)',     category: 'Fertilizers', price: 350, image: '/assets/generated/product-fertilizer.dim_400x400.png', description: 'Liquid seaweed extract boosts plant immunity and growth.' },
+  { id: 306, name: 'Humic Acid Granules (1 kg)',   category: 'Fertilizers', price: 420, image: '/assets/generated/product-fertilizer.dim_400x400.png', description: 'Humic acid improves nutrient uptake and soil structure.' },
+  { id: 307, name: 'Mycorrhiza Bio-Fertilizer (500 g)', category: 'Fertilizers', price: 480, image: '/assets/generated/product-fertilizer.dim_400x400.png', description: 'Mycorrhizal fungi enhance root absorption and drought tolerance.' },
+  { id: 308, name: 'Azospirillum Bio-Fertilizer (500 g)', category: 'Fertilizers', price: 260, image: '/assets/generated/product-fertilizer.dim_400x400.png', description: 'Nitrogen-fixing bacteria for cereals and vegetables.' },
+  { id: 309, name: 'Phosphate Solubilizing Bacteria (500 g)', category: 'Fertilizers', price: 270, image: '/assets/generated/product-fertilizer.dim_400x400.png', description: 'PSB converts insoluble phosphate to plant-available form.' },
+  { id: 310, name: 'Potassium Mobilizing Bacteria (500 g)', category: 'Fertilizers', price: 275, image: '/assets/generated/product-fertilizer.dim_400x400.png', description: 'KMB releases potassium from soil minerals for plant uptake.' },
+  { id: 311, name: 'Compost Tea Concentrate (1 L)', category: 'Fertilizers', price: 310, image: '/assets/generated/product-fertilizer.dim_400x400.png', description: 'Liquid compost tea packed with beneficial microorganisms.' },
+  { id: 312, name: 'Green Manure Mix (500 g)',     category: 'Fertilizers', price: 130, image: '/assets/generated/product-fertilizer.dim_400x400.png', description: 'Dhaincha and sunhemp seed mix for green manuring.' },
+  { id: 313, name: 'Organic Potash (1 kg)',        category: 'Fertilizers', price: 340, image: '/assets/generated/product-fertilizer.dim_400x400.png', description: 'Natural potash source for fruit quality and disease resistance.' },
+  { id: 314, name: 'Organic Zinc Sulphate (500 g)', category: 'Fertilizers', price: 190, image: '/assets/generated/product-fertilizer.dim_400x400.png', description: 'Corrects zinc deficiency and improves grain filling.' },
+  { id: 315, name: 'Sulphur Granules Organic (1 kg)', category: 'Fertilizers', price: 160, image: '/assets/generated/product-fertilizer.dim_400x400.png', description: 'Elemental sulphur lowers soil pH and controls fungal diseases.' },
+  { id: 316, name: 'Dolomite Lime (2 kg)',         category: 'Fertilizers', price: 120, image: '/assets/generated/product-fertilizer.dim_400x400.png', description: 'Raises soil pH and supplies calcium and magnesium.' },
+  { id: 317, name: 'Wood Ash Fertilizer (1 kg)',   category: 'Fertilizers', price: 100, image: '/assets/generated/product-fertilizer.dim_400x400.png', description: 'Natural wood ash rich in potassium and trace minerals.' },
+  { id: 318, name: 'Castor Cake Fertilizer (1 kg)', category: 'Fertilizers', price: 220, image: '/assets/generated/product-fertilizer.dim_400x400.png', description: 'Castor cake enriches soil nitrogen and repels nematodes.' },
+  { id: 319, name: 'Trichoderma Bio-Fungicide (500 g)', category: 'Fertilizers', price: 390, image: '/assets/generated/product-fertilizer.dim_400x400.png', description: 'Beneficial fungi that protect roots from soil-borne pathogens.' },
 ];
 
 const categories = ['Seeds', 'Vegetables', 'Fertilizers'];
@@ -93,7 +93,13 @@ export default function Shop() {
   });
 
   const handleAddToCart = (product: typeof products[0]) => {
-    addToCart({ id: product.id, name: product.name, price: product.price, image: product.image });
+    addToCart({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+      category: product.category,
+    });
     toast.success(t('addedToCart'));
   };
 
@@ -102,10 +108,10 @@ export default function Shop() {
       const next = new Set(prev);
       if (next.has(id)) {
         next.delete(id);
-        toast('Removed from wishlist');
+        toast(t('removedFromWishlist'));
       } else {
         next.add(id);
-        toast.success('Added to wishlist ❤️');
+        toast.success(t('addedToWishlist') + ' ❤️');
       }
       return next;
     });
@@ -136,14 +142,18 @@ export default function Shop() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row gap-4">
           <div className="relative flex-1 max-w-md">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-            <Input value={search} onChange={(e) => setSearch(e.target.value)} placeholder={t('searchProducts')} className="pl-10" />
+            <Input
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder={t('searchProducts')}
+              className="pl-10"
+            />
           </div>
           <div className="flex gap-2 flex-wrap">
             <Button
               variant={selectedCategory === '' ? 'default' : 'outline'}
               size="sm"
               onClick={() => setSelectedCategory('')}
-              className={selectedCategory === '' ? 'eco-btn' : ''}
             >
               {t('allCategories')}
             </Button>
@@ -153,7 +163,6 @@ export default function Shop() {
                 variant={selectedCategory === cat ? 'default' : 'outline'}
                 size="sm"
                 onClick={() => setSelectedCategory(cat)}
-                className={selectedCategory === cat ? 'eco-btn' : ''}
               >
                 {categoryLabels[cat]}
               </Button>
@@ -165,7 +174,6 @@ export default function Shop() {
       {/* Products */}
       <section className="py-12 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Count */}
           <p className="text-sm text-muted-foreground mb-6">
             Showing <span className="font-semibold text-foreground">{filtered.length}</span> product{filtered.length !== 1 ? 's' : ''}
             {selectedCategory ? ` in ${categoryLabels[selectedCategory]}` : ''}
@@ -177,53 +185,46 @@ export default function Shop() {
               <p>{t('noProductsFound')}</p>
             </div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {filtered.map((product) => (
-                <div key={product.id} className="eco-card rounded-xl border border-border bg-card overflow-hidden flex flex-col group">
+                <div key={product.id} className="rounded-xl border border-border bg-card overflow-hidden flex flex-col group hover:shadow-md transition-shadow">
                   {/* Image */}
-                  <div className="relative w-full h-48 bg-muted overflow-hidden">
+                  <div className="relative overflow-hidden bg-accent/20">
                     <img
                       src={product.image}
                       alt={product.name}
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                       onError={(e) => {
-                        const target = e.currentTarget;
-                        if (product.category === 'Seeds') {
-                          target.src = '/assets/generated/product-seeds.dim_400x400.png';
-                        } else if (product.category === 'Fertilizers') {
-                          target.src = '/assets/generated/product-fertilizer.dim_400x400.png';
-                        } else {
-                          target.src = '/assets/generated/product-vegetables.dim_400x400.png';
-                        }
+                        (e.target as HTMLImageElement).src = '/assets/generated/product-vegetables.dim_400x400.png';
                       }}
                     />
-                    {/* Wishlist button */}
                     <button
                       onClick={() => toggleWishlist(product.id)}
-                      className="absolute top-2 right-2 p-1.5 rounded-full bg-background/80 backdrop-blur-sm border border-border hover:bg-background transition-colors"
-                      aria-label={wishlist.has(product.id) ? 'Remove from wishlist' : 'Add to wishlist'}
+                      className={`absolute top-2 right-2 p-1.5 rounded-full shadow transition-colors ${
+                        wishlist.has(product.id)
+                          ? 'bg-red-500 text-white'
+                          : 'bg-white text-gray-400 hover:text-red-500'
+                      }`}
                     >
-                      <Heart
-                        className={`w-4 h-4 transition-colors ${wishlist.has(product.id) ? 'fill-red-500 text-red-500' : 'text-muted-foreground'}`}
-                      />
+                      <Heart className="w-4 h-4" fill={wishlist.has(product.id) ? 'currentColor' : 'none'} />
                     </button>
+                    <span className="absolute top-2 left-2 bg-primary text-primary-foreground text-xs px-2 py-0.5 rounded-full font-medium">
+                      {product.category}
+                    </span>
                   </div>
 
                   {/* Content */}
                   <div className="p-4 flex flex-col flex-1">
-                    <span className="text-xs font-medium text-primary bg-primary/10 px-2 py-0.5 rounded-full w-fit mb-2">
-                      {categoryLabels[product.category]}
-                    </span>
-                    <h3 className="font-semibold text-foreground mb-1 leading-tight">{product.name}</h3>
-                    <p className="text-sm text-muted-foreground mb-4 flex-1">{product.description}</p>
+                    <h3 className="font-semibold text-foreground text-sm mb-1 line-clamp-2">{product.name}</h3>
+                    <p className="text-muted-foreground text-xs mb-3 line-clamp-2 flex-1">{product.description}</p>
                     <div className="flex items-center justify-between mt-auto">
-                      <span className="text-lg font-bold text-primary">₹{product.price}</span>
+                      <span className="text-primary font-bold text-lg">₹{product.price}</span>
                       <Button
                         size="sm"
-                        className="eco-btn"
                         onClick={() => handleAddToCart(product)}
+                        className="bg-primary hover:bg-primary/90 text-primary-foreground"
                       >
-                        <ShoppingCart className="w-3.5 h-3.5 mr-1.5" />
+                        <ShoppingCart className="w-3 h-3 mr-1" />
                         {t('addToCart')}
                       </Button>
                     </div>

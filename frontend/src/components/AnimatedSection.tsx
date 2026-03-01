@@ -1,50 +1,44 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-type AnimationType = 'fadeIn' | 'slideUp' | 'zoomIn' | 'slideInLeft' | 'slideInRight';
-
 interface AnimatedSectionProps {
   children: React.ReactNode;
-  animation?: AnimationType;
+  animation?: 'fadeIn' | 'slideUp' | 'zoomIn' | 'slideInLeft' | 'slideInRight';
   delay?: number;
-  className?: string;
   threshold?: number;
+  className?: string;
 }
 
 export default function AnimatedSection({
   children,
   animation = 'fadeIn',
   delay = 0,
+  threshold = 0.1,
   className = '',
-  threshold = 0.15,
 }: AnimatedSectionProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setVisible(true);
-          observer.unobserve(el);
+          observer.disconnect();
         }
       },
       { threshold }
     );
-
-    observer.observe(el);
+    if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
   }, [threshold]);
 
-  const animClass = visible ? `animate-${animation}` : 'anim-hidden';
+  const animClass = visible ? `animate-${animation}` : 'opacity-0';
 
   return (
     <div
       ref={ref}
       className={`${animClass} ${className}`}
-      style={visible ? { animationDelay: `${delay}ms` } : {}}
+      style={{ animationDelay: `${delay}ms`, animationFillMode: 'both' }}
     >
       {children}
     </div>

@@ -1,14 +1,17 @@
 # Specification
 
 ## Summary
-**Goal:** Expand the Organic Farming Techniques page with 9 additional techniques and enrich all existing technique cards with deeper structured content.
+**Goal:** Fix the language switcher so UI text updates instantly across all pages, and add a voice text-to-speech reader that works in English, Hindi, and Marathi for uneducated/hearing-impaired farmers.
 
 **Planned changes:**
-- Add 9 new technique cards to the Techniques page: Green Manuring 🌿, Mulching 🍂, Vermicomposting 🪱, Drip Irrigation 💧, Intercropping 🌾, Biological Pest Control 🐞, Soil pH Management 🧪, Rainwater Harvesting 🌧️, and Seed Treatment & Selection 🌱
-- Update the 3 existing technique cards (Composting, Pest Control, Crop Rotation) with enriched content structure
-- Each technique card (new and existing) must display: emoji icon, technique name, 2–3 sentence overview, step-by-step process (3–5 numbered steps), key benefits list (≥3 bullet points), recommended tools/inputs (2–4 items), and a pro tip callout
-- Display all cards in a responsive grid (1 column mobile, 2 tablet, 3 desktop)
-- Wrap each card with the existing AnimatedSection component for slideUp scroll-entry animation
-- Keep the existing "Explore Categories" CTA button at the bottom of the page
+- Audit and fix `LanguageContext`, `LanguageProvider`, and `useLanguage` hook so language changes trigger immediate re-renders across all pages and components without a page reload.
+- Ensure the selected language is persisted to and restored from `localStorage`.
+- Verify all page components (Home, About, Techniques, Farm, Shop, Cattle, Equipment, Contact, GovernmentSchemes, Signup, OtpVerification, CropSuggestions) and shared components (Header, Footer) use the `useLanguage` hook and re-render on language change.
+- Create a reusable `VoiceReader` component with a fixed floating action button (bottom-right corner) featuring Play, Pause/Resume, and Stop controls using the browser's Web Speech API (`window.speechSynthesis`).
+- Set the utterance language to `en-IN`, `hi-IN`, or `mr-IN` based on the currently selected language from `LanguageContext`.
+- Display a translated tooltip above the voice button ("Read Aloud" / "पढ़ें" / "वाचा").
+- Show a friendly message if `speechSynthesis` is not supported in the browser.
+- Integrate `VoiceReader` into the authenticated layout so it appears on all pages except Signup and OTP.
+- Add translation keys `readAloud`, `pause`, `resume`, `stop`, and `voiceNotSupported` to `translations.ts` for all three languages.
 
-**User-visible outcome:** Users visiting the Organic Farming Techniques page will see 12 richly detailed technique cards with step-by-step guidance, benefits, tools, and pro tips, all presented in an animated responsive grid layout.
+**User-visible outcome:** Farmers can switch between English, Hindi, and Marathi and see all page text update instantly. A floating speaker button on every authenticated page lets them hear the page content read aloud in their chosen language, supporting uneducated or low-literacy users.

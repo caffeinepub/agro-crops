@@ -1,35 +1,29 @@
 import React from 'react';
-import { useLanguage, LanguageCode } from '../contexts/LanguageContext';
+import { useLanguage } from '../contexts/LanguageContext';
+import type { Language } from '../utils/translations';
 
-const languages: { code: LanguageCode; label: string; fullLabel: string }[] = [
-  { code: 'en', label: 'EN', fullLabel: 'English' },
-  { code: 'hi', label: 'हि', fullLabel: 'हिंदी' },
-  { code: 'mr', label: 'म', fullLabel: 'मराठी' },
-];
-
-interface LanguageSwitcherProps {
-  className?: string;
-}
-
-export default function LanguageSwitcher({ className = '' }: LanguageSwitcherProps) {
+export default function LanguageSwitcher() {
   const { language, setLanguage } = useLanguage();
 
+  const langs: { code: Language; label: string }[] = [
+    { code: 'en', label: 'EN' },
+    { code: 'hi', label: 'HI' },
+    { code: 'mr', label: 'MR' },
+  ];
+
   return (
-    <div className={`flex items-center gap-1 ${className}`}>
-      {languages.map((lang) => (
+    <div className="flex items-center gap-1 bg-eco-light rounded-full px-1 py-1">
+      {langs.map(({ code, label }) => (
         <button
-          key={lang.code}
-          onClick={() => setLanguage(lang.code)}
-          title={lang.fullLabel}
-          className={`
-            px-2 py-1 rounded text-xs font-semibold transition-all duration-200 border
-            ${language === lang.code
-              ? 'bg-primary text-primary-foreground border-primary shadow-sm'
-              : 'bg-transparent text-foreground border-border hover:bg-accent hover:text-accent-foreground'
-            }
-          `}
+          key={code}
+          onClick={() => setLanguage(code)}
+          className={`px-2 py-0.5 rounded-full text-xs font-semibold transition-all ${
+            language === code
+              ? 'bg-eco-primary text-white shadow'
+              : 'text-eco-dark hover:bg-eco-primary/20'
+          }`}
         >
-          {lang.label}
+          {label}
         </button>
       ))}
     </div>
