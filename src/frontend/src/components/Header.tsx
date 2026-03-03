@@ -175,9 +175,12 @@ export default function Header() {
                           ₹{cartTotal.toFixed(2)}
                         </span>
                       </div>
-                      {/* Opens the full CheckoutModal — does NOT close the sheet yet */}
+                      {/* Close cart sheet first, then open checkout modal to avoid z-index conflict */}
                       <Button
-                        onClick={() => setCheckoutModalOpen(true)}
+                        onClick={() => {
+                          setCartOpen(false);
+                          setTimeout(() => setCheckoutModalOpen(true), 300);
+                        }}
                         className="w-full bg-eco-primary hover:bg-eco-dark text-white"
                       >
                         <Leaf size={16} className="mr-2" />

@@ -40,11 +40,11 @@ const SEED_IMAGES = {
 };
 
 const VEGETABLE_IMAGES = {
-  tomato: "/assets/generated/vegetable-tomato.dim_400x400.png",
-  spinach: "/assets/generated/vegetable-spinach.dim_400x400.png",
+  tomato: "/assets/generated/shop-product-tomato.dim_300x300.png",
+  spinach: "/assets/generated/shop-product-spinach.dim_300x300.png",
   eggplant: "/assets/generated/vegetable-eggplant.dim_400x400.png",
-  carrot: "/assets/generated/vegetable-carrot.dim_400x400.png",
-  brinjal: "/assets/generated/vegetable-brinjal.dim_400x400.png",
+  carrot: "/assets/generated/shop-product-carrot.dim_300x300.png",
+  brinjal: "/assets/generated/shop-product-brinjal.dim_300x300.png",
   potato: "/assets/generated/shop-product-potato.dim_300x300.png",
   potato2: "/assets/generated/shop-product-potato.dim_300x300.png",
   onion: "/assets/generated/shop-product-onion.dim_300x300.png",

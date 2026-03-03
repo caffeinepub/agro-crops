@@ -16,7 +16,6 @@
  */
 
 import { Button } from "@/components/ui/button";
-import emailjs from "@emailjs/browser";
 import {
   AlertCircle,
   CheckCircle2,
@@ -27,6 +26,21 @@ import {
 } from "lucide-react";
 import type React from "react";
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
+
+// EmailJS is loaded via CDN script in index.html — access it through window
+declare global {
+  interface Window {
+    emailjs: {
+      send: (
+        serviceId: string,
+        templateId: string,
+        templateParams: Record<string, string>,
+        publicKey: string,
+      ) => Promise<{ status: number; text: string }>;
+    };
+  }
+}
 
 // ═══════════════════════════════════════════════════════════════════════════
 // EMAILJS CONFIGURATION — Replace these with your actual keys
@@ -165,8 +179,8 @@ export default function CheckoutModal({
     };
 
     try {
-      // Send via EmailJS — uses ONLY public key (no server needed)
-      await emailjs.send(
+      // Send via EmailJS (loaded from CDN) — uses ONLY public key (no server needed)
+      await window.emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
         templateParams,
@@ -199,8 +213,9 @@ export default function CheckoutModal({
   // Don't render anything when closed
   if (!isOpen) return null;
 
-  // ── Render ───────────────────────────────────────────────────────────────
-  return (
+  // ── Render — use a portal so the modal is mounted on document.body,
+  //    completely outside the Header's stacking context (fixes "behind cart" bug)
+  return createPortal(
     /* Overlay */
     <div
       className="fixed inset-0 bg-black/50 z-[100] flex items-center justify-center p-4 backdrop-blur-sm"
@@ -510,6 +525,7 @@ export default function CheckoutModal({
           </form>
         )}
       </dialog>
-    </div>
+    </div>,
+    document.body,
   );
 }
