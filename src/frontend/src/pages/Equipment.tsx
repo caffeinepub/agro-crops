@@ -420,6 +420,227 @@ const equipmentData: EquipmentItem[] = [
     youtubeSearch:
       "mulching+machine+operation+crop+residue+management+tutorial",
   },
+  {
+    id: "cultivator",
+    name: "Cultivator",
+    emoji: "⛏️",
+    image: "/assets/generated/equipment-cultivator.dim_400x300.png",
+    category: "Tillage",
+    desc: "Inter-row weed control and soil aeration between rows of growing crops. Ideal for breaking soil crust and incorporating surface-applied organic matter without disturbing crop roots.",
+    uses: [
+      "Inter-row weeding",
+      "Soil aeration",
+      "Fertilizer incorporation",
+      "Seedbed maintenance",
+    ],
+    power: "Tractor-mounted (35–55 HP)",
+    suitable: "All farm sizes",
+    terrain: "Flat to gently sloped",
+    specs: [
+      { label: "Working Width", value: "1.5–3.0 m" },
+      { label: "Tine Spacing", value: "20–30 cm" },
+      { label: "Working Depth", value: "5–15 cm" },
+      { label: "Tractor Req.", value: "35–55 HP" },
+    ],
+    tutorialTitle: "Cultivator Operation for Weed Control & Soil Health",
+    tutorialDesc:
+      "Step-by-step guide on using a cultivator for inter-row weeding, soil aeration, and incorporating organic matter for better crop yields.",
+    youtubeSearch:
+      "cultivator+operation+weed+control+inter+cultivation+tutorial",
+  },
+  {
+    id: "subsoiler",
+    name: "Subsoiler",
+    emoji: "⬇️",
+    image: "/assets/generated/equipment-subsoiler.dim_400x300.png",
+    category: "Tillage",
+    desc: "Breaks through hardpan layers at 40–60 cm depth to improve water infiltration and root penetration. Critical for farms with compacted subsoils from repeated tillage at the same depth.",
+    uses: [
+      "Hardpan breaking",
+      "Deep water infiltration",
+      "Root penetration",
+      "Compaction relief",
+    ],
+    power: "Tractor-mounted (60+ HP)",
+    suitable: "Medium to large farms",
+    terrain: "Flat agricultural land",
+    specs: [
+      { label: "Working Depth", value: "40–60 cm" },
+      { label: "Tine Spacing", value: "60–90 cm" },
+      { label: "Number of Tines", value: "1–5" },
+      { label: "Tractor Req.", value: "60–90 HP" },
+    ],
+    tutorialTitle:
+      "Subsoiler Operation for Deep Tillage & Soil Compaction Relief",
+    tutorialDesc:
+      "Learn how to use a subsoiler to break hardpan, improve water infiltration, and relieve soil compaction for better root development and higher yields.",
+    youtubeSearch: "subsoiler+deep+tillage+operation+tutorial+farming",
+  },
+  {
+    id: "disc-harrow",
+    name: "Disc Harrow",
+    emoji: "🔵",
+    image: "/assets/generated/equipment-disc-harrow.dim_400x300.png",
+    category: "Tillage",
+    desc: "Cuts and inverts soil using angled discs for primary and secondary tillage. Excellent for breaking crop residues, preparing seedbeds in heavy soils, and controlling weeds between crops.",
+    uses: [
+      "Primary tillage",
+      "Residue cutting",
+      "Seedbed preparation",
+      "Weed control",
+    ],
+    power: "Tractor-mounted (45–65 HP)",
+    suitable: "Medium to large farms",
+    terrain: "All terrain types",
+    specs: [
+      { label: "Disc Diameter", value: "46–61 cm" },
+      { label: "Number of Discs", value: "8–32" },
+      { label: "Working Depth", value: "10–20 cm" },
+      { label: "Tractor Req.", value: "45–65 HP" },
+    ],
+    tutorialTitle: "Disc Harrow Setup & Operation for Soil Preparation",
+    tutorialDesc:
+      "Comprehensive guide to disc harrow gang angle adjustment, depth setting, and field operation for effective primary and secondary tillage.",
+    youtubeSearch: "disc+harrow+operation+soil+preparation+tutorial+farming",
+  },
+  {
+    id: "veg-transplanter",
+    name: "Vegetable Transplanter",
+    emoji: "🥬",
+    image: "/assets/generated/equipment-veg-transplanter.dim_400x300.png",
+    category: "Seeding",
+    desc: "Mechanizes transplanting of vegetable seedlings like cabbage, cauliflower, onion, and tomato. Reduces transplanting labor by 70% and ensures uniform planting depth and spacing for better crop establishment.",
+    uses: [
+      "Vegetable transplanting",
+      "Uniform depth planting",
+      "Reduced labor cost",
+      "Timely planting",
+    ],
+    power: "2-row: Manual / 4-row: Engine",
+    suitable: "Vegetable farms",
+    terrain: "Flat prepared beds",
+    specs: [
+      { label: "Row Spacing", value: "30–60 cm" },
+      { label: "Plant Spacing", value: "15–40 cm" },
+      { label: "Rows", value: "2–4 rows" },
+      { label: "Capacity", value: "0.05–0.15 ha/hr" },
+    ],
+    tutorialTitle: "Vegetable Transplanter Operation & Seedling Preparation",
+    tutorialDesc:
+      "How to prepare seedlings, load transplanting cups, set planting depth, and operate the vegetable transplanter for onion, cabbage, and tomato crops.",
+    youtubeSearch: "vegetable+transplanter+operation+tutorial+onion+cabbage",
+  },
+  {
+    id: "fertigation",
+    name: "Fertigation System",
+    emoji: "💉",
+    image: "/assets/generated/equipment-fertigation.dim_400x300.png",
+    category: "Irrigation",
+    desc: "Injects soluble organic fertilizers directly into the drip or sprinkler irrigation system, delivering nutrients precisely at the root zone. Improves nutrient use efficiency by up to 40% compared to soil application.",
+    uses: [
+      "Liquid fertilizer injection",
+      "Nutrient management",
+      "Micronutrient delivery",
+      "pH management",
+    ],
+    power: "Venturi injector (no power) / 0.5 HP motor pump",
+    suitable: "All farm sizes with drip/sprinkler",
+    terrain: "All terrain types",
+    specs: [
+      { label: "Injection Rate", value: "0.5–50 litres/hr" },
+      { label: "Tank Capacity", value: "100–500 litres" },
+      { label: "Pressure", value: "1–4 kg/cm²" },
+      { label: "Nutrient Efficiency", value: "Up to 40% better" },
+    ],
+    tutorialTitle: "Fertigation System Setup & Operation for Organic Farming",
+    tutorialDesc:
+      "Complete guide to setting up a Venturi injector or pump-based fertigation system, mixing organic liquid fertilizers, and scheduling nutrient delivery.",
+    youtubeSearch:
+      "fertigation+system+setup+drip+irrigation+organic+fertilizer+tutorial",
+  },
+  {
+    id: "power-weeder",
+    name: "Power Weeder",
+    emoji: "🌿",
+    image: "/assets/generated/equipment-power-weeder.dim_400x300.png",
+    category: "Crop Protection",
+    desc: "A self-propelled or tractor-mounted tool for mechanical weed control between crop rows without chemicals. Eliminates herbicide use, preserves beneficial soil organisms, and reduces labor cost by 60%.",
+    uses: [
+      "Chemical-free weeding",
+      "Inter-row cultivation",
+      "Soil surface loosening",
+      "Organic farming standard",
+    ],
+    power: "2–4 HP engine (self-propelled)",
+    suitable: "Small to medium farms",
+    terrain: "Flat to gently sloped",
+    specs: [
+      { label: "Working Width", value: "25–50 cm" },
+      { label: "Engine", value: "2–4 HP petrol/diesel" },
+      { label: "Weight", value: "30–70 kg" },
+      { label: "Capacity", value: "0.05–0.15 ha/hr" },
+    ],
+    tutorialTitle: "Power Weeder Operation for Organic Weed Management",
+    tutorialDesc:
+      "How to use a power weeder for chemical-free weed control between vegetable and cereal crop rows, including safety tips and maintenance.",
+    youtubeSearch: "power+weeder+operation+organic+weed+management+tutorial",
+  },
+  {
+    id: "grain-cleaner",
+    name: "Grain Cleaner / Winnower",
+    emoji: "🌬️",
+    image: "/assets/generated/equipment-grain-cleaner.dim_400x300.png",
+    category: "Post-Harvest",
+    desc: "Separates grain from chaff, dust, and lightweight impurities using air current and vibrating sieves. Improves grain quality, increases market value, and reduces drying time by removing moisture-holding debris.",
+    uses: [
+      "Grain cleaning",
+      "Chaff removal",
+      "Grain grading",
+      "Quality improvement",
+    ],
+    power: "0.5–1 HP motor / Manual",
+    suitable: "All farm sizes",
+    terrain: "Stationary use",
+    specs: [
+      { label: "Capacity", value: "200–800 kg/hr" },
+      { label: "Cleaning Efficiency", value: ">95%" },
+      { label: "Sieve Sizes", value: "2–8 mm" },
+      { label: "Power", value: "0.5–1 HP" },
+    ],
+    tutorialTitle: "Grain Cleaner & Winnower Operation for Quality Grain",
+    tutorialDesc:
+      "Step-by-step guide to operating a grain cleaner and winnower for wheat, rice, and other cereals — achieving market-grade grain quality.",
+    youtubeSearch:
+      "grain+cleaner+winnower+operation+tutorial+wheat+rice+quality",
+  },
+  {
+    id: "solar-pump",
+    name: "Solar Water Pump",
+    emoji: "☀️",
+    image: "/assets/generated/equipment-solar-pump.dim_400x300.png",
+    category: "Irrigation",
+    desc: "Uses solar panels to power water pumps for irrigation, eliminating electricity costs entirely. Ideal for areas with unreliable grid power. The PM-KUSUM scheme provides 60% subsidy to farmers for installation.",
+    uses: [
+      "Electricity-free irrigation",
+      "Remote field pumping",
+      "Drip/sprinkler supply",
+      "Livestock watering",
+    ],
+    power: "1–5 HP solar-powered DC pump",
+    suitable: "All farm sizes",
+    terrain: "All terrain types",
+    specs: [
+      { label: "Panel Capacity", value: "1.2–6 kW" },
+      { label: "Flow Rate", value: "20,000–80,000 litres/day" },
+      { label: "Head", value: "10–50 metres" },
+      { label: "Subsidy", value: "Up to 60% (PM-KUSUM)" },
+    ],
+    tutorialTitle: "Solar Water Pump Installation & Operation for Farmers",
+    tutorialDesc:
+      "Complete guide to solar pump installation, panel orientation, controller setup, and PM-KUSUM scheme application for subsidy-backed solar irrigation.",
+    youtubeSearch:
+      "solar+water+pump+installation+operation+tutorial+farming+india",
+  },
 ];
 
 const categories: Category[] = [
@@ -783,7 +1004,7 @@ export default function Equipment() {
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-white/90 text-sm">
               <div className="flex items-center gap-2 bg-white/15 px-4 py-2 rounded-full">
-                <span>📋</span> {equipmentData.length}+ Equipment Items
+                <span>📋</span> 23+ Equipment Items
               </div>
               <div className="flex items-center gap-2 bg-white/15 px-4 py-2 rounded-full">
                 <span>🎬</span> Tutorial Videos for Each Tool

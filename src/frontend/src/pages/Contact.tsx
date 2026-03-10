@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import AnimatedSection from "../components/AnimatedSection";
+import { useLanguage } from "../contexts/LanguageContext";
 import { useActor } from "../hooks/useActor";
 
 interface FormData {
@@ -23,6 +24,7 @@ const initialForm: FormData = { name: "", email: "", message: "" };
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/xpwzgdjk";
 
 export default function Contact() {
+  const { t } = useLanguage();
   const [form, setForm] = useState<FormData>(initialForm);
   const [errors, setErrors] = useState<Partial<FormData>>({});
   const [submitted, setSubmitted] = useState(false);
@@ -33,15 +35,15 @@ export default function Contact() {
 
   const validate = (): boolean => {
     const newErrors: Partial<FormData> = {};
-    if (!form.name.trim()) newErrors.name = "Name is required";
+    if (!form.name.trim()) newErrors.name = t("nameRequired");
     if (!form.email.trim()) {
-      newErrors.email = "Email is required";
+      newErrors.email = t("emailRequired");
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
-      newErrors.email = "Please enter a valid email address";
+      newErrors.email = t("invalidEmail");
     }
-    if (!form.message.trim()) newErrors.message = "Message is required";
+    if (!form.message.trim()) newErrors.message = t("messageRequired");
     else if (form.message.trim().length < 10)
-      newErrors.message = "Message must be at least 10 characters";
+      newErrors.message = t("messageTooShort");
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -119,19 +121,19 @@ export default function Contact() {
   const contactInfo = [
     {
       icon: <Mail className="w-5 h-5" />,
-      label: "Email",
+      label: t("email"),
       value: "kharatchaitanya03@gmail.com",
       href: "mailto:kharatchaitanya03@gmail.com",
     },
     {
       icon: <Phone className="w-5 h-5" />,
-      label: "Phone",
+      label: t("phone"),
       value: "+91 8421016006",
       href: "tel:+918421016006",
     },
     {
       icon: <MapPin className="w-5 h-5" />,
-      label: "Address",
+      label: t("address"),
       value: "Agro Crops HQ, Green Valley, India",
       href: null,
     },
@@ -143,15 +145,13 @@ export default function Contact() {
       <section className="gradient-green py-16 px-4 text-center">
         <AnimatedSection animation="fadeIn">
           <div className="inline-flex items-center gap-2 bg-white/20 text-white px-4 py-2 rounded-full text-sm font-medium mb-4">
-            📬 Get In Touch
+            📬 {t("contactPageTag")}
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 font-merriweather">
-            Growing Together for a<br />
-            <span className="text-green-light">Greener Tomorrow</span>
+            {t("contactHeroTitle")}
           </h1>
           <p className="text-white/85 text-lg max-w-2xl mx-auto">
-            Have questions about organic farming? We're here to help you every
-            step of the way.
+            {t("contactHeroSubtitle")}
           </p>
         </AnimatedSection>
       </section>
@@ -165,11 +165,10 @@ export default function Contact() {
               <AnimatedSection animation="slideInLeft">
                 <div>
                   <h2 className="text-2xl font-bold text-foreground mb-2 font-merriweather">
-                    Contact Information
+                    {t("contactInfoTitle")}
                   </h2>
                   <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                    Reach out to us through any of the channels below. Our team
-                    of agricultural experts is ready to assist you.
+                    {t("contactInfoSubtitle")}
                   </p>
                 </div>
               </AnimatedSection>
@@ -208,20 +207,20 @@ export default function Contact() {
               <AnimatedSection animation="slideInLeft" delay={300}>
                 <div className="gradient-green rounded-2xl p-6 text-white">
                   <h3 className="font-bold text-lg mb-2 font-merriweather">
-                    Office Hours
+                    {t("officeHoursTitle")}
                   </h3>
                   <div className="space-y-1 text-white/85 text-sm">
                     <div className="flex justify-between">
-                      <span>Monday – Friday</span>
+                      <span>{t("mondayFriday")}</span>
                       <span className="font-medium">9:00 AM – 6:00 PM</span>
                     </div>
                     <div className="flex justify-between">
-                      <span>Saturday</span>
+                      <span>{t("saturday")}</span>
                       <span className="font-medium">9:00 AM – 2:00 PM</span>
                     </div>
                     <div className="flex justify-between">
-                      <span>Sunday</span>
-                      <span className="font-medium">Closed</span>
+                      <span>{t("sunday")}</span>
+                      <span className="font-medium">{t("closed")}</span>
                     </div>
                   </div>
                 </div>
@@ -238,24 +237,23 @@ export default function Contact() {
                         <CheckCircle className="w-10 h-10 text-white" />
                       </div>
                       <h3 className="text-2xl font-bold text-foreground mb-3 font-merriweather">
-                        Message Sent!
+                        {t("messageSentTitle")}
                       </h3>
                       <p className="text-muted-foreground mb-6 max-w-sm">
-                        Your message has been sent successfully! We will get
-                        back to you soon.
+                        {t("messageSentSubtitle")}
                       </p>
                       <button
                         type="button"
                         onClick={() => setSubmitted(false)}
                         className="btn-outline-green"
                       >
-                        Send Another Message
+                        {t("sendAnotherMessage")}
                       </button>
                     </div>
                   ) : (
                     <>
                       <h2 className="text-2xl font-bold text-foreground mb-6 font-merriweather">
-                        Send Us a Message
+                        {t("sendUsMessage")}
                       </h2>
 
                       {submitError && (
@@ -274,7 +272,7 @@ export default function Contact() {
                             htmlFor="contact-name"
                             className="block text-sm font-medium text-foreground mb-1.5"
                           >
-                            Full Name{" "}
+                            {t("fullName")}{" "}
                             <span className="text-destructive">*</span>
                           </label>
                           <input
@@ -283,7 +281,7 @@ export default function Contact() {
                             name="name"
                             value={form.name}
                             onChange={handleChange}
-                            placeholder="Enter your full name"
+                            placeholder={t("enterFullName")}
                             disabled={isSubmitting}
                             className={`search-input ${errors.name ? "border-destructive focus:border-destructive" : ""}`}
                           />
@@ -300,7 +298,7 @@ export default function Contact() {
                             htmlFor="contact-email"
                             className="block text-sm font-medium text-foreground mb-1.5"
                           >
-                            Email Address{" "}
+                            {t("emailAddress")}{" "}
                             <span className="text-destructive">*</span>
                           </label>
                           <input
@@ -309,7 +307,7 @@ export default function Contact() {
                             name="email"
                             value={form.email}
                             onChange={handleChange}
-                            placeholder="Enter your email address"
+                            placeholder={t("enterEmail")}
                             disabled={isSubmitting}
                             className={`search-input ${errors.email ? "border-destructive focus:border-destructive" : ""}`}
                           />
@@ -326,14 +324,15 @@ export default function Contact() {
                             htmlFor="contact-message"
                             className="block text-sm font-medium text-foreground mb-1.5"
                           >
-                            Message <span className="text-destructive">*</span>
+                            {t("message")}{" "}
+                            <span className="text-destructive">*</span>
                           </label>
                           <textarea
                             id="contact-message"
                             name="message"
                             value={form.message}
                             onChange={handleChange}
-                            placeholder="Tell us how we can help you..."
+                            placeholder={t("tellUsHowHelp")}
                             rows={5}
                             disabled={isSubmitting}
                             className={`search-input resize-none ${errors.message ? "border-destructive focus:border-destructive" : ""}`}
@@ -353,12 +352,12 @@ export default function Contact() {
                           {isSubmitting ? (
                             <>
                               <Loader2 className="w-4 h-4 animate-spin" />
-                              Sending...
+                              {t("sending")}
                             </>
                           ) : (
                             <>
                               <Send className="w-4 h-4" />
-                              Send Message
+                              {t("send")}
                             </>
                           )}
                         </button>
@@ -379,13 +378,10 @@ export default function Contact() {
             <div className="text-center">
               <div className="text-5xl mb-4">🌱</div>
               <h2 className="text-3xl font-bold text-foreground mb-4 font-merriweather">
-                "The Earth Does Not Belong to Us,
-                <br />
-                We Belong to the Earth"
+                {t("motivationalQuote")}
               </h2>
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                Every organic farm is a step toward a healthier planet. Join the
-                Agro Crops community and be part of the change.
+                {t("motivationalText")}
               </p>
             </div>
           </AnimatedSection>
@@ -396,39 +392,27 @@ export default function Contact() {
       <section className="section-padding bg-background">
         <div className="max-w-3xl mx-auto">
           <AnimatedSection animation="slideUp">
-            <h2 className="section-title text-foreground">
-              Frequently Asked Questions
-            </h2>
+            <h2 className="section-title text-foreground">{t("faqTitle")}</h2>
           </AnimatedSection>
           <div className="space-y-4 mt-8">
-            {[
-              {
-                q: "How do I get started with organic farming?",
-                a: "Start by testing your soil, removing synthetic inputs, and transitioning gradually. Our Farm page has detailed crop-wise guidance to help you begin.",
-              },
-              {
-                q: "Where can I buy organic seeds and fertilizers?",
-                a: "Visit our Shop page for a curated selection of certified organic seeds, vegetables, and natural fertilizers delivered to your doorstep.",
-              },
-              {
-                q: "Are there government subsidies for organic farming?",
-                a: "Yes! Check our Home page for information on PM-KISAN, PKVY, and other government schemes that support organic farmers.",
-              },
-              {
-                q: "How long does it take to transition to organic farming?",
-                a: "Typically 2–3 years for full certification. However, you can start seeing soil health improvements within the first season.",
-              },
-            ].map((faq, i) => (
-              <AnimatedSection key={faq.q} animation="slideUp" delay={i * 80}>
+            {(
+              [
+                { qKey: "faqQ1", aKey: "faqA1" },
+                { qKey: "faqQ2", aKey: "faqA2" },
+                { qKey: "faqQ3", aKey: "faqA3" },
+                { qKey: "faqQ4", aKey: "faqA4" },
+              ] as const
+            ).map(({ qKey, aKey }, i) => (
+              <AnimatedSection key={qKey} animation="slideUp" delay={i * 80}>
                 <div className="eco-card p-5">
                   <h3 className="font-semibold text-foreground mb-2 flex items-start gap-2">
                     <span className="text-primary font-bold flex-shrink-0">
                       Q.
                     </span>
-                    {faq.q}
+                    {t(qKey)}
                   </h3>
                   <p className="text-muted-foreground text-sm leading-relaxed pl-5">
-                    {faq.a}
+                    {t(aKey)}
                   </p>
                 </div>
               </AnimatedSection>

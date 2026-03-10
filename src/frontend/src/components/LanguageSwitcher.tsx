@@ -4,29 +4,16 @@ import type { Language } from "../utils/translations";
 
 export default function LanguageSwitcher() {
   const { language, setLanguage } = useLanguage();
-
-  const langs: { code: Language; label: string }[] = [
-    { code: "en", label: "EN" },
-    { code: "hi", label: "HI" },
-    { code: "mr", label: "MR" },
-  ];
-
   return (
-    <div className="flex items-center gap-1 bg-eco-light rounded-full px-1 py-1">
-      {langs.map(({ code, label }) => (
-        <button
-          type="button"
-          key={code}
-          onClick={() => setLanguage(code)}
-          className={`px-2 py-0.5 rounded-full text-xs font-semibold transition-all ${
-            language === code
-              ? "bg-eco-primary text-white shadow"
-              : "text-eco-dark hover:bg-eco-primary/20"
-          }`}
-        >
-          {label}
-        </button>
-      ))}
-    </div>
+    <select
+      value={language}
+      onChange={(e) => setLanguage(e.target.value as Language)}
+      data-ocid="header.language.select"
+      className="text-sm font-medium border border-eco-primary/30 rounded-full px-3 py-1.5 bg-eco-light text-eco-dark focus:outline-none focus:ring-2 focus:ring-eco-primary/50 cursor-pointer"
+    >
+      <option value="en">English</option>
+      <option value="hi">हिंदी</option>
+      <option value="mr">मराठी</option>
+    </select>
   );
 }

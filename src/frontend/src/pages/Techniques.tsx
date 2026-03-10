@@ -323,6 +323,97 @@ const techniques = [
     ],
     proTip: "Always use seeds with >85% germination rate for commercial crops.",
   },
+  {
+    id: 13,
+    icon: "🌙",
+    name: "Biodynamic Farming",
+    overview:
+      "A holistic, ecological farming approach that treats the farm as a self-sustaining organism guided by cosmic forces, lunar cycles, and homeopathic preparations.",
+    steps: [
+      "Follow the biodynamic calendar for planting (root/flower/fruit/leaf days)",
+      "Prepare BD500 (horn manure) by burying cow manure in horn over winter",
+      "Prepare BD501 (horn silica) using ground quartz crystal in cow horn over summer",
+      "Apply BD preparations through dynamic stirring for 1 hour in water",
+      "Use compound preparations (BD502–507) in the compost pile",
+      "Integrate animals, crops, and forests as one living farm organism",
+    ],
+    benefits: [
+      "Builds long-term soil fertility naturally",
+      "Enhances crop vitality and taste quality",
+      "No synthetic inputs required",
+      "Builds biodiversity and ecosystem balance",
+      "Premium market price for biodynamic certified produce",
+    ],
+    tools: [
+      "Biodynamic calendar (Stella Natura)",
+      "BD preparations 500–508",
+      "Flow-form stirrer for dynamization",
+      "Compost with six BD preparations",
+    ],
+    proTip:
+      "Apply BD500 in the evening on root days and BD501 in the early morning on flower or fruit days for maximum effectiveness.",
+  },
+  {
+    id: 14,
+    icon: "🌳",
+    name: "Agroforestry",
+    overview:
+      "Integrate trees, shrubs, and woody perennials with crops and/or livestock in the same land to create productive, diverse, and sustainable land-use systems.",
+    steps: [
+      "Design the system based on goals (timber, fruits, shade, fodder, windbreak)",
+      "Choose compatible tree-crop-livestock combinations",
+      "Plant trees on bunds, borders, or in alleys between crop rows",
+      "Manage tree spacing to minimize crop shading",
+      "Prune trees regularly to maintain light balance",
+      "Harvest tree products progressively while maintaining crop production",
+    ],
+    benefits: [
+      "Sequesters carbon — 2 to 5 tonnes CO₂/ha/year",
+      "Improves microclimate and reduces temperature extremes",
+      "Diversified income from multiple products",
+      "Prevents soil erosion and improves water retention",
+      "Biodiversity hotspot — birds, insects, pollinators",
+    ],
+    tools: [
+      "Tree nursery (local species)",
+      "Pruning saw and loppers",
+      "Contour marking equipment",
+      "Farm planning map",
+    ],
+    proTip:
+      "Silvopasture (trees + livestock) and alley cropping (trees in rows with crops between) are the two most productive agroforestry systems for Indian conditions.",
+  },
+  {
+    id: 15,
+    icon: "♻️",
+    name: "Permaculture Principles",
+    overview:
+      "Design agricultural and human settlements that mimic the diversity, stability, and resilience of natural ecosystems using 12 core principles developed by Bill Mollison and David Holmgren.",
+    steps: [
+      "Observe and interact with your land for at least one full season before designing",
+      "Map your farm into Zones 0–5 based on frequency of use and intensity",
+      "Design guilds — plant communities where each plant benefits the others",
+      "Implement water harvesting (swales, ponds, dams) on contour lines",
+      "Create stacking functions — each element serves multiple purposes",
+      "Build edge effects — maximize the highly productive boundaries",
+      "Apply succession planting: pioneer → intermediate → climax plants",
+    ],
+    benefits: [
+      "Extremely low input after system establishment",
+      "Self-regulating pest and disease control",
+      "Perpetual food production system",
+      "Regenerates degraded land over time",
+      "Mimics nature — highly resilient to climate variability",
+    ],
+    tools: [
+      "A-frame level for contour mapping",
+      "Broadfork for minimal-disturbance soil prep",
+      "Swale spade for water harvesting",
+      "Seed saving jars and root cellar",
+    ],
+    proTip:
+      "Start with Zone 1 (closest to home) — intensive gardens, herb spirals, and chicken tractors — before expanding to outer zones for optimal energy efficiency.",
+  },
 ];
 
 export default function Techniques() {

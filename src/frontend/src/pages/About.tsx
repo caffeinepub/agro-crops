@@ -34,11 +34,11 @@ const team = [
   },
 ];
 
-const stats = [
-  { value: "10,000+", label: "Farmers Helped" },
-  { value: "20+", label: "Crop Varieties" },
-  { value: "18", label: "Gov. Schemes Listed" },
-  { value: "15", label: "Livestock Guides" },
+const statsData = [
+  { value: "10,000+", key: "farmersHelped" as const },
+  { value: "20+", key: "cropVarieties" as const },
+  { value: "18", key: "govSchemesListed" as const },
+  { value: "15", key: "livestockGuides" as const },
 ];
 
 export default function About() {
@@ -53,8 +53,7 @@ export default function About() {
             {t("aboutUs")}
           </h1>
           <p className="text-white/80 max-w-2xl mx-auto text-lg">
-            Dedicated to empowering Indian farmers with knowledge, technology,
-            and sustainable practices.
+            {t("aboutHeroSubtitle")}
           </p>
         </AnimatedSection>
       </section>
@@ -63,13 +62,13 @@ export default function About() {
       <section className="py-12 bg-eco-light">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {stats.map((s, i) => (
-              <AnimatedSection key={s.label} animation="zoomIn" delay={i * 100}>
+            {statsData.map((s, i) => (
+              <AnimatedSection key={s.key} animation="zoomIn" delay={i * 100}>
                 <div className="bg-white rounded-xl p-6 text-center shadow-sm">
                   <div className="text-3xl font-display font-bold text-eco-primary mb-1">
                     {s.value}
                   </div>
-                  <div className="text-gray-600 text-sm">{s.label}</div>
+                  <div className="text-gray-600 text-sm">{t(s.key)}</div>
                 </div>
               </AnimatedSection>
             ))}
@@ -92,11 +91,7 @@ export default function About() {
                   </h2>
                 </div>
                 <p className="text-gray-700 leading-relaxed">
-                  To provide Indian farmers with comprehensive, accessible, and
-                  actionable agricultural knowledge that enables them to adopt
-                  sustainable farming practices, increase productivity, and
-                  improve their livelihoods through modern techniques and
-                  government support.
+                  {t("missionText")}
                 </p>
               </div>
             </AnimatedSection>
@@ -111,10 +106,7 @@ export default function About() {
                   </h2>
                 </div>
                 <p className="text-gray-700 leading-relaxed">
-                  A future where every Indian farmer has access to the best
-                  agricultural knowledge, tools, and resources, enabling them to
-                  build profitable, sustainable farms that contribute to food
-                  security and environmental health for generations to come.
+                  {t("visionText")}
                 </p>
               </div>
             </AnimatedSection>
@@ -130,9 +122,7 @@ export default function About() {
               <h2 className="text-3xl font-display font-bold text-eco-dark mb-3">
                 {t("ourTeam")}
               </h2>
-              <p className="text-gray-600">
-                The passionate people behind Agro Crops
-              </p>
+              <p className="text-gray-600">{t("teamSubtitle")}</p>
             </div>
           </AnimatedSection>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -183,11 +173,7 @@ export default function About() {
             <h2 className="text-3xl font-display font-bold mb-4">
               {t("joinUs")}
             </h2>
-            <p className="text-white/80 mb-6">
-              Join thousands of farmers who are already benefiting from our
-              platform. Together, we can build a more sustainable agricultural
-              future.
-            </p>
+            <p className="text-white/80 mb-6">{t("joinUsText")}</p>
             <a
               href="mailto:kharatchaitanya03@gmail.com"
               className="eco-btn-secondary inline-flex items-center gap-2"

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -6,69 +6,59 @@
 
 @layer base {
   :root {
-    --background: 0 0% 99%;
-    --foreground: 150 30% 12%;
-    --card: 0 0% 100%;
-    --card-foreground: 150 30% 12%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 150 30% 12%;
-    --primary: 145 52% 28%;
-    --primary-foreground: 0 0% 99%;
-    --secondary: 145 40% 42%;
-    --secondary-foreground: 150 30% 12%;
-    --muted: 120 10% 94%;
-    --muted-foreground: 145 15% 42%;
-    --accent: 120 20% 94%;
-    --accent-foreground: 150 30% 12%;
+    /* Dark futuristic base tokens */
+    --background: 145 25% 4%;
+    --foreground: 120 30% 92%;
+    --card: 145 20% 7%;
+    --card-foreground: 120 30% 92%;
+    --popover: 145 20% 7%;
+    --popover-foreground: 120 30% 92%;
+    --primary: 100 72% 58%;
+    --primary-foreground: 145 25% 4%;
+    --secondary: 135 45% 38%;
+    --secondary-foreground: 120 30% 92%;
+    --muted: 145 18% 10%;
+    --muted-foreground: 145 12% 55%;
+    --accent: 90 80% 58%;
+    --accent-foreground: 145 25% 4%;
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 99%;
-    --border: 120 12% 88%;
-    --input: 120 12% 88%;
-    --ring: 145 52% 28%;
+    --border: 145 25% 14%;
+    --input: 145 25% 12%;
+    --ring: 100 72% 58%;
     --radius: 0.75rem;
-    --chart-1: 145 52% 28%;
-    --chart-2: 145 40% 42%;
+    --chart-1: 100 72% 58%;
+    --chart-2: 135 45% 48%;
     --chart-3: 80 55% 52%;
     --chart-4: 200 45% 45%;
     --chart-5: 30 65% 52%;
 
-    /* Eco color tokens as CSS variables */
-    --eco-primary: 145 52% 28%;
-    --eco-secondary: 145 40% 42%;
-    --eco-dark: 145 45% 14%;
-    --eco-light: 120 18% 96%;
-    --eco-accent: 80 50% 58%;
-  }
+    /* Eco color tokens */
+    --eco-primary: 100 72% 58%;
+    --eco-secondary: 135 45% 42%;
+    --eco-dark: 145 25% 4%;
+    --eco-light: 145 20% 7%;
+    --eco-accent: 90 80% 58%;
 
-  .dark {
-    --background: 145 20% 8%;
-    --foreground: 120 10% 95%;
-    --card: 145 18% 11%;
-    --card-foreground: 120 10% 95%;
-    --popover: 145 18% 11%;
-    --popover-foreground: 120 10% 95%;
-    --primary: 145 40% 52%;
-    --primary-foreground: 145 20% 8%;
-    --secondary: 145 30% 32%;
-    --secondary-foreground: 120 10% 95%;
-    --muted: 145 15% 18%;
-    --muted-foreground: 145 12% 55%;
-    --accent: 145 18% 18%;
-    --accent-foreground: 120 10% 95%;
-    --destructive: 0 72% 51%;
-    --destructive-foreground: 0 0% 99%;
-    --border: 145 20% 22%;
-    --input: 145 20% 22%;
-    --ring: 145 40% 52%;
+    /* Futuristic glow tokens (direct oklch/rgba for box-shadow) */
+    --glow-lime: 120, 230, 60;
+    --glow-green: 50, 180, 80;
+    --glow-intense: 150, 255, 80;
   }
 
   * {
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground;
-    font-family: "Nunito", sans-serif;
+    font-family: "Outfit", sans-serif;
+    background-color: hsl(145, 25%, 4%);
+    min-height: 100vh;
   }
 
   h1,
@@ -77,176 +67,67 @@
   h4,
   h5,
   h6 {
-    font-family: "Montserrat", sans-serif;
+    font-family: "Sora", sans-serif;
+    font-weight: 700;
   }
 }
 
-@layer components {
-  .eco-btn-primary {
-    @apply font-semibold px-6 py-3 rounded-xl transition-colors duration-200 cursor-pointer;
-    background-color: hsl(var(--eco-primary));
-    color: hsl(var(--primary-foreground));
-  }
-
-  .eco-btn-primary:hover {
-    background-color: hsl(var(--eco-dark));
-  }
-
-  .eco-btn-secondary {
-    @apply font-semibold px-6 py-3 rounded-xl border-2 transition-colors duration-200 cursor-pointer;
-    background-color: white;
-    color: hsl(var(--eco-primary));
-    border-color: hsl(var(--eco-primary));
-  }
-
-  .eco-btn-secondary:hover {
-    background-color: hsl(var(--eco-light));
-  }
-
-  .eco-btn {
-    @apply font-semibold px-4 py-2 rounded-lg transition-colors duration-200;
-    background-color: hsl(var(--eco-primary));
-    color: white;
-  }
-
-  .eco-btn:hover {
-    background-color: hsl(var(--eco-dark));
-  }
-
-  .eco-card {
-    @apply bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-200;
-    border: 1px solid hsl(var(--eco-primary) / 0.1);
-  }
-
-  .section-padding {
-    @apply py-16 px-4;
-  }
-
-  .section-title {
-    @apply text-3xl font-display font-bold text-center mb-10;
-  }
-
-  .gradient-green {
-    background: linear-gradient(
-      135deg,
-      hsl(var(--eco-primary)),
-      hsl(var(--eco-secondary))
-    );
-  }
-
-  .gradient-hero {
-    background: linear-gradient(
-      135deg,
-      hsl(var(--eco-dark) / 0.85),
-      hsl(var(--eco-primary) / 0.5)
-    );
-  }
-
-  .search-input {
-    @apply w-full px-4 py-3 rounded-xl focus:outline-none bg-background text-foreground placeholder:text-muted-foreground transition-colors;
-    border: 1px solid hsl(var(--eco-primary) / 0.3);
-  }
-
-  .search-input:focus {
-    border-color: hsl(var(--eco-primary));
-    box-shadow: 0 0 0 2px hsl(var(--eco-primary) / 0.2);
-  }
-
-  .btn-outline-green {
-    @apply font-semibold px-6 py-2 rounded-xl transition-colors duration-200;
-    border: 2px solid hsl(var(--eco-primary));
-    color: hsl(var(--eco-primary));
-  }
-
-  .btn-outline-green:hover {
-    background-color: hsl(var(--eco-primary));
-    color: white;
-  }
+/* ============================================
+   GLOBAL SECTION OVERRIDES
+   Force all page sections to use dark theme
+   ============================================ */
+.bg-white {
+  background-color: hsl(145, 20%, 7%) !important;
 }
 
-@layer utilities {
-  .font-display {
-    font-family: "Montserrat", sans-serif;
-  }
-
-  .text-eco-primary {
-    color: hsl(var(--eco-primary));
-  }
-
-  .text-eco-secondary {
-    color: hsl(var(--eco-secondary));
-  }
-
-  .text-eco-dark {
-    color: hsl(var(--eco-dark));
-  }
-
-  .text-eco-accent {
-    color: hsl(var(--eco-accent));
-  }
-
-  .text-eco-light {
-    color: hsl(var(--eco-light));
-  }
-
-  .bg-eco-primary {
-    background-color: hsl(var(--eco-primary));
-  }
-
-  .bg-eco-secondary {
-    background-color: hsl(var(--eco-secondary));
-  }
-
-  .bg-eco-dark {
-    background-color: hsl(var(--eco-dark));
-  }
-
-  .bg-eco-light {
-    background-color: hsl(var(--eco-light));
-  }
-
-  .bg-eco-accent {
-    background-color: hsl(var(--eco-accent));
-  }
-
-  .bg-green-pale {
-    background-color: hsl(var(--eco-light));
-  }
-
-  .border-eco-primary {
-    border-color: hsl(var(--eco-primary));
-  }
-
-  .hover\:bg-eco-primary:hover {
-    background-color: hsl(var(--eco-primary));
-  }
-
-  .hover\:bg-eco-dark:hover {
-    background-color: hsl(var(--eco-dark));
-  }
-
-  .hover\:text-eco-primary:hover {
-    color: hsl(var(--eco-primary));
-  }
-
-  .hover\:text-eco-accent:hover {
-    color: hsl(var(--eco-accent));
-  }
-
-  .text-green-light {
-    color: hsl(145 55% 58%);
-  }
-
-  .shadow-green {
-    box-shadow: 0 4px 14px hsl(var(--eco-primary) / 0.3);
-  }
-
-  .shadow-card-hover {
-    box-shadow: 0 8px 30px hsl(var(--eco-primary) / 0.15);
-  }
+.bg-eco-light {
+  background-color: hsl(145, 18%, 9%) !important;
 }
 
-/* Keyframe Animations */
+.bg-eco-primary {
+  background: linear-gradient(135deg, hsl(135, 45%, 28%), hsl(100, 60%, 38%)) !important;
+}
+
+.eco-card,
+.bg-white.rounded-2xl,
+.bg-white.rounded-xl {
+  background-color: hsl(145, 20%, 7%) !important;
+}
+
+/* Text color fixes for dark theme */
+.text-gray-600 {
+  color: hsl(145, 12%, 65%) !important;
+}
+
+.text-gray-700 {
+  color: hsl(145, 12%, 70%) !important;
+}
+
+.text-gray-400 {
+  color: hsl(145, 10%, 50%) !important;
+}
+
+/* ============================================
+   CUSTOM SCROLLBAR
+   ============================================ */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(145, 25%, 6%);
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(100, 60%, 35%);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(100, 72%, 50%);
+  box-shadow: 0 0 8px rgba(var(--glow-lime), 0.6);
+}
+
+/* ============================================
+   FUTURISTIC KEYFRAME ANIMATIONS
+   ============================================ */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -259,7 +140,7 @@
 @keyframes slideUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(40px);
   }
   to {
     opacity: 1;
@@ -270,7 +151,7 @@
 @keyframes zoomIn {
   from {
     opacity: 0;
-    transform: scale(0.92);
+    transform: scale(0.88);
   }
   to {
     opacity: 1;
@@ -281,7 +162,7 @@
 @keyframes slideInLeft {
   from {
     opacity: 0;
-    transform: translateX(-30px);
+    transform: translateX(-40px);
   }
   to {
     opacity: 1;
@@ -292,7 +173,7 @@
 @keyframes slideInRight {
   from {
     opacity: 0;
-    transform: translateX(30px);
+    transform: translateX(40px);
   }
   to {
     opacity: 1;
@@ -300,40 +181,534 @@
   }
 }
 
+@keyframes floatY {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes glowPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 15px rgba(var(--glow-lime), 0.3), 0 0 30px
+      rgba(var(--glow-lime), 0.15);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(var(--glow-lime), 0.6), 0 0 60px
+      rgba(var(--glow-lime), 0.3);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes rotateGlow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes particleFloat {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120px) translateX(30px) scale(0.5);
+    opacity: 0;
+  }
+}
+
+@keyframes scanLine {
+  0% {
+    top: -10%;
+  }
+  100% {
+    top: 110%;
+  }
+}
+
 .animate-fadeIn {
-  animation: fadeIn 0.6s ease-out both;
+  animation: fadeIn 0.7s ease-out both;
 }
-
 .animate-slideUp {
-  animation: slideUp 0.6s ease-out both;
+  animation: slideUp 0.7s ease-out both;
 }
-
 .animate-zoomIn {
-  animation: zoomIn 0.5s ease-out both;
+  animation: zoomIn 0.6s ease-out both;
 }
-
 .animate-slideInLeft {
-  animation: slideInLeft 0.6s ease-out both;
+  animation: slideInLeft 0.7s ease-out both;
 }
-
 .animate-slideInRight {
-  animation: slideInRight 0.6s ease-out both;
+  animation: slideInRight 0.7s ease-out both;
+}
+.animate-floatY {
+  animation: floatY 3s ease-in-out infinite;
+}
+.animate-glowPulse {
+  animation: glowPulse 2.5s ease-in-out infinite;
+}
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out both;
 }
 
-/* Scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
+/* ============================================
+   GLASSMORPHISM UTILITIES
+   ============================================ */
+.glass {
+  background: rgba(10, 25, 15, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(var(--glow-lime), 0.1);
 }
 
-::-webkit-scrollbar-track {
-  background: hsl(var(--eco-light));
+.glass-card {
+  background: rgba(8, 20, 12, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(var(--glow-lime), 0.12);
+  border-radius: 16px;
 }
 
-::-webkit-scrollbar-thumb {
-  background: hsl(var(--eco-secondary));
-  border-radius: 3px;
+.glass-strong {
+  background: rgba(5, 15, 8, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(var(--glow-lime), 0.2);
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--eco-primary));
+/* ============================================
+   GLOW UTILITIES
+   ============================================ */
+.glow-lime {
+  box-shadow: 0 0 15px rgba(var(--glow-lime), 0.35), 0 0 35px
+    rgba(var(--glow-lime), 0.15);
+}
+
+.glow-green {
+  box-shadow: 0 0 15px rgba(var(--glow-green), 0.35), 0 0 35px
+    rgba(var(--glow-green), 0.15);
+}
+
+.glow-text-lime {
+  text-shadow: 0 0 10px rgba(var(--glow-lime), 0.7), 0 0 25px
+    rgba(var(--glow-lime), 0.4);
+}
+
+.glow-border {
+  border: 1px solid rgba(var(--glow-lime), 0.4);
+  box-shadow: 0 0 12px rgba(var(--glow-lime), 0.15), inset 0 0 12px
+    rgba(var(--glow-lime), 0.05);
+}
+
+/* ============================================
+   3D CARD SYSTEM
+   ============================================ */
+.card-3d {
+  perspective: 800px;
+  transform-style: preserve-3d;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow
+    0.4s ease;
+  border: 1px solid rgba(var(--glow-lime), 0.1);
+  border-radius: 16px;
+  background: rgba(8, 20, 12, 0.8);
+  backdrop-filter: blur(12px);
+}
+
+.card-3d:hover {
+  transform: translateY(-10px) rotateX(3deg) rotateY(-1deg);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 25px
+    rgba(var(--glow-lime), 0.25), 0 0 50px rgba(var(--glow-lime), 0.1);
+  border-color: rgba(var(--glow-lime), 0.35);
+}
+
+.card-3d-subtle {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  border: 1px solid rgba(var(--glow-lime), 0.08);
+  border-radius: 14px;
+  background: rgba(8, 22, 12, 0.85);
+}
+
+.card-3d-subtle:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 20px
+    rgba(var(--glow-lime), 0.2);
+  border-color: rgba(var(--glow-lime), 0.28);
+}
+
+/* ============================================
+   FUTURISTIC BUTTON SYSTEM
+   ============================================ */
+.eco-btn-primary {
+  font-family: "Sora", sans-serif;
+  font-weight: 600;
+  padding: 0.65rem 1.75rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, hsl(100, 65%, 45%), hsl(135, 55%, 35%));
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 20px rgba(var(--glow-lime), 0.25);
+  letter-spacing: 0.01em;
+}
+
+.eco-btn-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.15),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.eco-btn-primary:hover::before {
+  left: 100%;
+}
+
+.eco-btn-primary:hover {
+  transform: scale(1.04) translateY(-2px);
+  box-shadow: 0 8px 30px rgba(var(--glow-lime), 0.4), 0 0 20px
+    rgba(var(--glow-lime), 0.2);
+  background: linear-gradient(135deg, hsl(100, 72%, 50%), hsl(135, 60%, 40%));
+}
+
+.eco-btn-secondary {
+  font-family: "Sora", sans-serif;
+  font-weight: 600;
+  padding: 0.65rem 1.75rem;
+  border-radius: 9999px;
+  background: transparent;
+  color: hsl(var(--primary));
+  border: 1.5px solid hsl(var(--primary));
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  letter-spacing: 0.01em;
+}
+
+.eco-btn-secondary:hover {
+  background: hsl(var(--primary));
+  color: hsl(145, 25%, 4%);
+  transform: scale(1.04) translateY(-2px);
+  box-shadow: 0 8px 30px rgba(var(--glow-lime), 0.35);
+}
+
+.eco-btn {
+  font-family: "Sora", sans-serif;
+  font-weight: 600;
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, hsl(100, 65%, 40%), hsl(135, 55%, 30%));
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  box-shadow: 0 3px 15px rgba(var(--glow-lime), 0.2);
+}
+
+.eco-btn:hover {
+  transform: scale(1.04) translateY(-2px);
+  box-shadow: 0 6px 24px rgba(var(--glow-lime), 0.38);
+  background: linear-gradient(135deg, hsl(100, 70%, 45%), hsl(135, 60%, 35%));
+}
+
+.btn-outline-green {
+  font-family: "Sora", sans-serif;
+  font-weight: 600;
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px;
+  border: 1.5px solid hsl(var(--primary));
+  color: hsl(var(--primary));
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.btn-outline-green:hover {
+  background: hsl(var(--primary));
+  color: hsl(145, 25%, 4%);
+  box-shadow: 0 6px 24px rgba(var(--glow-lime), 0.35);
+  transform: translateY(-2px);
+}
+
+/* ============================================
+   FORM / INPUT STYLES
+   ============================================ */
+.search-input {
+  width: 100%;
+  padding: 0.75rem 1.1rem;
+  border-radius: 12px;
+  background: rgba(8, 22, 12, 0.9);
+  color: hsl(var(--foreground));
+  border: 1px solid rgba(var(--glow-lime), 0.2);
+  outline: none;
+  font-family: "Outfit", sans-serif;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+.search-input::placeholder {
+  color: hsl(145, 12%, 45%);
+}
+
+.search-input:focus {
+  border-color: rgba(var(--glow-lime), 0.5);
+  box-shadow: 0 0 0 3px rgba(var(--glow-lime), 0.12), 0 0 15px
+    rgba(var(--glow-lime), 0.08);
+}
+
+/* ============================================
+   SECTION UTILITIES
+   ============================================ */
+.section-padding {
+  padding: 4rem 1rem;
+}
+
+.section-title {
+  font-family: "Sora", sans-serif;
+  font-size: 1.875rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: hsl(var(--foreground));
+}
+
+.gradient-green {
+  background: linear-gradient(135deg, hsl(135, 45%, 28%), hsl(100, 60%, 38%));
+}
+
+.gradient-hero {
+  background: linear-gradient(
+    135deg,
+    rgba(5, 15, 8, 0.92),
+    rgba(15, 40, 20, 0.6)
+  );
+}
+
+/* Futuristic section background */
+.section-dark {
+  background: hsl(145, 25%, 4%);
+}
+
+.section-alt {
+  background: hsl(145, 20%, 6%);
+}
+
+.section-card {
+  background: rgba(8, 22, 12, 0.85);
+  border: 1px solid rgba(var(--glow-lime), 0.1);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+}
+
+/* ============================================
+   ECO COLOR UTILITIES (remapped to dark)
+   ============================================ */
+.text-eco-primary {
+  color: hsl(var(--eco-primary));
+}
+.text-eco-secondary {
+  color: hsl(var(--eco-secondary));
+}
+.text-eco-dark {
+  color: hsl(120, 30%, 92%);
+}
+.text-eco-accent {
+  color: hsl(var(--eco-accent));
+}
+.text-eco-light {
+  color: hsl(120, 30%, 92%);
+}
+.text-green-light {
+  color: hsl(100, 65%, 60%);
+}
+
+.shadow-green {
+  box-shadow: 0 4px 20px rgba(var(--glow-lime), 0.25);
+}
+.shadow-card-hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 0 20px
+    rgba(var(--glow-lime), 0.15);
+}
+.border-eco-primary {
+  border-color: hsl(var(--eco-primary));
+}
+
+.hover\:bg-eco-primary:hover {
+  background: linear-gradient(135deg, hsl(100, 65%, 45%), hsl(135, 55%, 35%));
+}
+.hover\:bg-eco-dark:hover {
+  background-color: hsl(145, 25%, 4%);
+}
+.hover\:text-eco-primary:hover {
+  color: hsl(var(--eco-primary));
+}
+.hover\:text-eco-accent:hover {
+  color: hsl(var(--eco-accent));
+}
+
+/* ============================================
+   HERO ANIMATED BACKGROUND
+   ============================================ */
+.hero-bg {
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(
+      ellipse 80% 60% at 50% 40%,
+      rgba(40, 120, 60, 0.25) 0%,
+      rgba(10, 30, 15, 0.8) 60%,
+      rgba(4, 12, 7, 0.95) 100%
+    ), hsl(145, 25%, 3%);
+}
+
+.hero-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+      circle at 20% 30%,
+      rgba(var(--glow-lime), 0.06) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(var(--glow-green), 0.06) 0%,
+      transparent 50%
+    );
+  animation: glowPulse 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Animated grid overlay */
+.grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(
+      rgba(var(--glow-lime), 0.04) 1px,
+      transparent 1px
+    ), linear-gradient(90deg, rgba(var(--glow-lime), 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+/* Scan line effect */
+.scan-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(var(--glow-lime), 0.3),
+    transparent
+  );
+  animation: scanLine 6s linear infinite;
+  pointer-events: none;
+}
+
+/* ============================================
+   FUTURISTIC BADGE
+   ============================================ */
+.badge-futuristic {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 14px;
+  border-radius: 9999px;
+  background: rgba(var(--glow-lime), 0.08);
+  border: 1px solid rgba(var(--glow-lime), 0.3);
+  color: hsl(var(--primary));
+  font-family: "Sora", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+/* ============================================
+   SECTION DIVIDER
+   ============================================ */
+.section-divider {
+  width: 100%;
+  height: 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-divider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(var(--glow-lime), 0.6),
+    transparent
+  );
+}
+
+/* ============================================
+   SHADCN OVERRIDES FOR DARK THEME
+   ============================================ */
+[data-radix-popper-content-wrapper] > * {
+  background: hsl(145, 20%, 7%) !important;
+  border-color: rgba(var(--glow-lime), 0.15) !important;
 }

@@ -151,6 +151,91 @@ export const translations = {
     resume: "Resume",
     stop: "Stop",
     voiceNotSupported: "Voice reading is not supported in your browser.",
+    // Home page
+    whyOrganicTitle: "Why Choose Organic Farming?",
+    regionCropGuideTitle: "Region-wise Crop Guide",
+    regionCropGuideSubtitle: "Discover the best crops for your region",
+    schemeHighlightsTitle: "Government Scheme Highlights",
+    schemeHighlightsSubtitle: "Key schemes supporting Indian farmers",
+    viewAllSchemes: "View All Schemes",
+    futureOfFarmingTitle: "Future of Farming",
+    futureOfFarmingSubtitle: "Embracing technology for sustainable agriculture",
+    precisionAg: "Precision Agriculture",
+    precisionAgDesc:
+      "Using IoT sensors and data analytics for optimized crop management",
+    droneTech: "Drone Technology",
+    droneTechDesc:
+      "Aerial monitoring and precision spraying for large-scale farms",
+    aiInsights: "AI-Powered Insights",
+    aiInsightsDesc:
+      "Machine learning for crop disease detection and yield prediction",
+    contactCalloutTitle: "Have Questions? Contact Us!",
+    contactUsLink: "Contact Us",
+    // About page
+    aboutHeroSubtitle:
+      "Dedicated to empowering Indian farmers with knowledge, technology, and sustainable practices.",
+    missionText:
+      "To provide Indian farmers with comprehensive, accessible, and actionable agricultural knowledge that enables them to adopt sustainable farming practices, increase productivity, and improve their livelihoods through modern techniques and government support.",
+    visionText:
+      "A future where every Indian farmer has access to the best agricultural knowledge, tools, and resources, enabling them to build profitable, sustainable farms that contribute to food security and environmental health for generations to come.",
+    teamSubtitle: "The passionate people behind Agro Crops",
+    joinUsText:
+      "Join thousands of farmers who are already benefiting from our platform. Together, we can build a more sustainable agricultural future.",
+    farmersHelped: "Farmers Helped",
+    cropVarieties: "Crop Varieties",
+    govSchemesListed: "Gov. Schemes Listed",
+    livestockGuides: "Livestock Guides",
+    // Contact page
+    contactPageTag: "Get In Touch",
+    contactHeroTitle: "Growing Together for a Greener Tomorrow",
+    contactHeroSubtitle:
+      "Have questions about organic farming? We're here to help you every step of the way.",
+    contactInfoTitle: "Contact Information",
+    contactInfoSubtitle:
+      "Reach out to us through any of the channels below. Our team of agricultural experts is ready to assist you.",
+    officeHoursTitle: "Office Hours",
+    mondayFriday: "Monday – Friday",
+    saturday: "Saturday",
+    sunday: "Sunday",
+    closed: "Closed",
+    sendUsMessage: "Send Us a Message",
+    messageSentTitle: "Message Sent!",
+    messageSentSubtitle:
+      "Your message has been sent successfully! We will get back to you soon.",
+    sendAnotherMessage: "Send Another Message",
+    fullName: "Full Name",
+    emailAddress: "Email Address",
+    enterFullName: "Enter your full name",
+    enterEmail: "Enter your email address",
+    tellUsHowHelp: "Tell us how we can help you...",
+    faqTitle: "Frequently Asked Questions",
+    faqQ1: "How do I get started with organic farming?",
+    faqA1:
+      "Start by testing your soil, removing synthetic inputs, and transitioning gradually. Our Farm page has detailed crop-wise guidance to help you begin.",
+    faqQ2: "Where can I buy organic seeds and fertilizers?",
+    faqA2:
+      "Visit our Shop page for a curated selection of certified organic seeds, vegetables, and natural fertilizers delivered to your doorstep.",
+    faqQ3: "Are there government subsidies for organic farming?",
+    faqA3:
+      "Yes! Check our Home page for information on PM-KISAN, PKVY, and other government schemes that support organic farmers.",
+    faqQ4: "How long does it take to transition to organic farming?",
+    faqA4:
+      "Typically 2–3 years for full certification. However, you can start seeing soil health improvements within the first season.",
+    motivationalQuote:
+      '"The Earth Does Not Belong to Us, We Belong to the Earth"',
+    motivationalText:
+      "Every organic farm is a step toward a healthier planet. Join the Agro Crops community and be part of the change.",
+    nameRequired: "Name is required",
+    emailRequired: "Email is required",
+    invalidEmail: "Please enter a valid email address",
+    messageRequired: "Message is required",
+    messageTooShort: "Message must be at least 10 characters",
+    // Header
+    logout: "Logout",
+    yourCartIsEmpty: "Your cart is empty",
+    // Common
+    phone: "Phone",
+    address: "Address",
   },
   hi: {
     home: "होम",
@@ -286,6 +371,87 @@ export const translations = {
     resume: "जारी रखें",
     stop: "बंद करें",
     voiceNotSupported: "आपके ब्राउज़र में आवाज़ पठन समर्थित नहीं है।",
+    // Home page
+    whyOrganicTitle: "जैविक खेती क्यों चुनें?",
+    regionCropGuideTitle: "क्षेत्र-वार फसल मार्गदर्शिका",
+    regionCropGuideSubtitle: "अपने क्षेत्र के लिए सर्वोत्तम फसलें खोजें",
+    schemeHighlightsTitle: "सरकारी योजना की मुख्य बातें",
+    schemeHighlightsSubtitle: "भारतीय किसानों का समर्थन करने वाली प्रमुख योजनाएं",
+    viewAllSchemes: "सभी योजनाएं देखें",
+    futureOfFarmingTitle: "खेती का भविष्य",
+    futureOfFarmingSubtitle: "टिकाऊ कृषि के लिए प्रौद्योगिकी को अपनाना",
+    precisionAg: "सटीक कृषि",
+    precisionAgDesc: "अनुकूलित फसल प्रबंधन के लिए IoT सेंसर और डेटा विश्लेषण का उपयोग",
+    droneTech: "ड्रोन तकनीक",
+    droneTechDesc: "बड़े पैमाने के खेतों के लिए हवाई निगरानी और सटीक छिड़काव",
+    aiInsights: "AI-आधारित अंतर्दृष्टि",
+    aiInsightsDesc: "फसल रोग पहचान और उपज भविष्यवाणी के लिए मशीन लर्निंग",
+    contactCalloutTitle: "सवाल हैं? हमसे संपर्क करें!",
+    contactUsLink: "संपर्क करें",
+    // About page
+    aboutHeroSubtitle:
+      "भारतीय किसानों को ज्ञान, प्रौद्योगिकी और टिकाऊ प्रथाओं के साथ सशक्त बनाने के लिए समर्पित।",
+    missionText:
+      "भारतीय किसानों को व्यापक, सुलभ और कार्रवाई योग्य कृषि ज्ञान प्रदान करना जो उन्हें टिकाऊ खेती प्रथाओं को अपनाने, उत्पादकता बढ़ाने और आधुनिक तकनीकों और सरकारी समर्थन के माध्यम से अपनी आजीविका में सुधार करने में सक्षम बनाए।",
+    visionText:
+      "एक ऐसा भविष्य जहां हर भारतीय किसान के पास सर्वोत्तम कृषि ज्ञान, उपकरण और संसाधनों तक पहुंच हो, जिससे वे लाभदायक, टिकाऊ खेत बना सकें जो आने वाली पीढ़ियों के लिए खाद्य सुरक्षा और पर्यावरण स्वास्थ्य में योगदान दें।",
+    teamSubtitle: "एग्रो क्रॉप्स के पीछे के जुनूनी लोग",
+    joinUsText:
+      "हजारों किसानों से जुड़ें जो पहले से ही हमारे मंच से लाभ उठा रहे हैं। मिलकर, हम एक अधिक टिकाऊ कृषि भविष्य बना सकते हैं।",
+    farmersHelped: "किसानों की मदद",
+    cropVarieties: "फसल किस्में",
+    govSchemesListed: "सरकारी योजनाएं सूचीबद्ध",
+    livestockGuides: "पशुधन मार्गदर्शिकाएं",
+    // Contact page
+    contactPageTag: "संपर्क करें",
+    contactHeroTitle: "हरे कल के लिए मिलकर बढ़ें",
+    contactHeroSubtitle:
+      "जैविक खेती के बारे में सवाल हैं? हम हर कदम पर आपकी मदद के लिए यहां हैं।",
+    contactInfoTitle: "संपर्क जानकारी",
+    contactInfoSubtitle:
+      "नीचे दिए गए किसी भी चैनल से हमसे संपर्क करें। हमारी कृषि विशेषज्ञों की टीम आपकी सहायता के लिए तैयार है।",
+    officeHoursTitle: "कार्यालय समय",
+    mondayFriday: "सोमवार – शुक्रवार",
+    saturday: "शनिवार",
+    sunday: "रविवार",
+    closed: "बंद",
+    sendUsMessage: "हमें संदेश भेजें",
+    messageSentTitle: "संदेश भेजा गया!",
+    messageSentSubtitle:
+      "आपका संदेश सफलतापूर्वक भेज दिया गया है! हम जल्द ही आपसे संपर्क करेंगे।",
+    sendAnotherMessage: "एक और संदेश भेजें",
+    fullName: "पूरा नाम",
+    emailAddress: "ईमेल पता",
+    enterFullName: "अपना पूरा नाम दर्ज करें",
+    enterEmail: "अपना ईमेल पता दर्ज करें",
+    tellUsHowHelp: "हमें बताएं कि हम आपकी कैसे मदद कर सकते हैं...",
+    faqTitle: "अक्सर पूछे जाने वाले प्रश्न",
+    faqQ1: "जैविक खेती कैसे शुरू करें?",
+    faqA1:
+      "अपनी मिट्टी परीक्षण करके, सिंथेटिक इनपुट हटाकर और धीरे-धीरे संक्रमण करके शुरुआत करें। हमारे फार्म पृष्ठ में विस्तृत फसल-वार मार्गदर्शन है।",
+    faqQ2: "जैविक बीज और उर्वरक कहाँ से खरीदें?",
+    faqA2:
+      "प्रमाणित जैविक बीज, सब्जियां और प्राकृतिक उर्वरकों के चयन के लिए हमारे शॉप पृष्ठ पर जाएं।",
+    faqQ3: "क्या जैविक खेती के लिए सरकारी सब्सिडी है?",
+    faqA3:
+      "हां! PM-KISAN, PKVY और अन्य सरकारी योजनाओं की जानकारी के लिए हमारे होम पृष्ठ पर जाएं।",
+    faqQ4: "जैविक खेती में संक्रमण में कितना समय लगता है?",
+    faqA4:
+      "पूर्ण प्रमाणीकरण के लिए आमतौर पर 2-3 साल। हालांकि, पहले सीज़न में ही मिट्टी के स्वास्थ्य में सुधार दिखने लगता है।",
+    motivationalQuote: '"पृथ्वी हमारी नहीं है, हम पृथ्वी के हैं"',
+    motivationalText:
+      "हर जैविक खेत एक स्वस्थ ग्रह की दिशा में एक कदम है। एग्रो क्रॉप्स समुदाय से जुड़ें और बदलाव का हिस्सा बनें।",
+    nameRequired: "नाम आवश्यक है",
+    emailRequired: "ईमेल आवश्यक है",
+    invalidEmail: "कृपया एक वैध ईमेल पता दर्ज करें",
+    messageRequired: "संदेश आवश्यक है",
+    messageTooShort: "संदेश कम से कम 10 अक्षरों का होना चाहिए",
+    // Header
+    logout: "लॉग आउट",
+    yourCartIsEmpty: "आपका कार्ट खाली है",
+    // Common
+    phone: "फ़ोन",
+    address: "पता",
   },
   mr: {
     home: "मुख्यपृष्ठ",
@@ -420,6 +586,87 @@ export const translations = {
     resume: "पुन्हा सुरू",
     stop: "थांबा",
     voiceNotSupported: "तुमच्या ब्राउझरमध्ये आवाज वाचन समर्थित नाही.",
+    // Home page
+    whyOrganicTitle: "सेंद्रिय शेती का निवडावी?",
+    regionCropGuideTitle: "प्रदेशनिहाय पीक मार्गदर्शिका",
+    regionCropGuideSubtitle: "तुमच्या प्रदेशासाठी सर्वोत्तम पिके शोधा",
+    schemeHighlightsTitle: "सरकारी योजनांचे ठळक मुद्दे",
+    schemeHighlightsSubtitle: "भारतीय शेतकऱ्यांना आधार देणाऱ्या प्रमुख योजना",
+    viewAllSchemes: "सर्व योजना पहा",
+    futureOfFarmingTitle: "शेतीचे भविष्य",
+    futureOfFarmingSubtitle: "शाश्वत शेतीसाठी तंत्रज्ञान स्वीकारणे",
+    precisionAg: "अचूक शेती",
+    precisionAgDesc: "इष्टतम पीक व्यवस्थापनासाठी IoT सेन्सर आणि डेटा विश्लेषणाचा वापर",
+    droneTech: "ड्रोन तंत्रज्ञान",
+    droneTechDesc: "मोठ्या शेतांसाठी हवाई देखरेख आणि अचूक फवारणी",
+    aiInsights: "AI-आधारित अंतर्दृष्टी",
+    aiInsightsDesc: "पीक रोग ओळख आणि उत्पादन अंदाजासाठी मशीन लर्निंग",
+    contactCalloutTitle: "प्रश्न आहेत? आमच्याशी संपर्क करा!",
+    contactUsLink: "संपर्क करा",
+    // About page
+    aboutHeroSubtitle:
+      "भारतीय शेतकऱ्यांना ज्ञान, तंत्रज्ञान आणि शाश्वत पद्धतींनी सक्षम करण्यासाठी समर्पित.",
+    missionText:
+      "भारतीय शेतकऱ्यांना सर्वसमावेशक, सुलभ आणि कृती करण्यायोग्य कृषी ज्ञान प्रदान करणे जे त्यांना शाश्वत शेती पद्धती अवलंबण्यास, उत्पादकता वाढवण्यास आणि आधुनिक तंत्रे व सरकारी सहाय्याद्वारे त्यांची उपजीविका सुधारण्यास सक्षम करेल.",
+    visionText:
+      "एक असे भविष्य जिथे प्रत्येक भारतीय शेतकऱ्याला सर्वोत्तम कृषी ज्ञान, साधने आणि संसाधनांचा प्रवेश असेल, ज्यामुळे ते फायदेशीर, शाश्वत शेत तयार करू शकतात जे येणाऱ्या पिढ्यांसाठी अन्न सुरक्षा आणि पर्यावरण आरोग्यात योगदान देतात.",
+    teamSubtitle: "एग्रो क्रॉप्समागील उत्साही लोक",
+    joinUsText:
+      "हजारो शेतकऱ्यांसोबत सामील व्हा जे आधीच आमच्या व्यासपीठाचा फायदा घेत आहेत. एकत्रितपणे, आपण अधिक शाश्वत कृषी भविष्य तयार करू शकतो.",
+    farmersHelped: "शेतकऱ्यांना मदत",
+    cropVarieties: "पीक जाती",
+    govSchemesListed: "सरकारी योजना सूचीबद्ध",
+    livestockGuides: "पशुधन मार्गदर्शिका",
+    // Contact page
+    contactPageTag: "संपर्क साधा",
+    contactHeroTitle: "हिरव्या उद्यासाठी एकत्र वाढूया",
+    contactHeroSubtitle:
+      "सेंद्रिय शेतीबद्दल प्रश्न आहेत? आम्ही प्रत्येक पावलावर तुम्हाला मदत करण्यासाठी येथे आहोत.",
+    contactInfoTitle: "संपर्क माहिती",
+    contactInfoSubtitle:
+      "खाली दिलेल्या कोणत्याही माध्यमातून आमच्याशी संपर्क साधा. आमची कृषी तज्ञांची टीम तुम्हाला मदत करण्यास तयार आहे.",
+    officeHoursTitle: "कार्यालयीन वेळ",
+    mondayFriday: "सोमवार – शुक्रवार",
+    saturday: "शनिवार",
+    sunday: "रविवार",
+    closed: "बंद",
+    sendUsMessage: "आम्हाला संदेश पाठवा",
+    messageSentTitle: "संदेश पाठवला!",
+    messageSentSubtitle:
+      "तुमचा संदेश यशस्वीरित्या पाठवला गेला आहे! आम्ही लवकरच तुमच्याशी संपर्क करू.",
+    sendAnotherMessage: "आणखी एक संदेश पाठवा",
+    fullName: "पूर्ण नाव",
+    emailAddress: "ईमेल पत्ता",
+    enterFullName: "तुमचे पूर्ण नाव प्रविष्ट करा",
+    enterEmail: "तुमचा ईमेल पत्ता प्रविष्ट करा",
+    tellUsHowHelp: "आम्ही तुम्हाला कसे मदत करू शकतो ते सांगा...",
+    faqTitle: "वारंवार विचारले जाणारे प्रश्न",
+    faqQ1: "सेंद्रिय शेती कशी सुरू करावी?",
+    faqA1:
+      "तुमची माती तपासून, कृत्रिम घटक काढून आणि हळूहळू संक्रमण करून सुरुवात करा. आमच्या शेत पृष्ठावर सविस्तर पीक-निहाय मार्गदर्शन आहे.",
+    faqQ2: "सेंद्रिय बियाणे आणि खते कुठे खरेदी करावीत?",
+    faqA2:
+      "प्रमाणित सेंद्रिय बियाणे, भाज्या आणि नैसर्गिक खतांच्या निवडीसाठी आमच्या शॉप पृष्ठाला भेट द्या.",
+    faqQ3: "सेंद्रिय शेतीसाठी सरकारी अनुदान आहे का?",
+    faqA3:
+      "होय! PM-KISAN, PKVY आणि इतर सरकारी योजनांच्या माहितीसाठी आमच्या मुख्यपृष्ठाला भेट द्या.",
+    faqQ4: "सेंद्रिय शेतीत संक्रमणास किती वेळ लागतो?",
+    faqA4:
+      "पूर्ण प्रमाणीकरणासाठी साधारणतः 2-3 वर्षे लागतात. तथापि, पहिल्या हंगामातच माती आरोग्यात सुधारणा दिसू लागते.",
+    motivationalQuote: '"पृथ्वी आपली नाही, आपण पृथ्वीचे आहोत"',
+    motivationalText:
+      "प्रत्येक सेंद्रिय शेत एका निरोगी ग्रहाच्या दिशेने एक पाऊल आहे. एग्रो क्रॉप्स समुदायात सामील व्हा आणि बदलाचा भाग व्हा.",
+    nameRequired: "नाव आवश्यक आहे",
+    emailRequired: "ईमेल आवश्यक आहे",
+    invalidEmail: "कृपया वैध ईमेल पत्ता प्रविष्ट करा",
+    messageRequired: "संदेश आवश्यक आहे",
+    messageTooShort: "संदेश किमान 10 अक्षरांचा असावा",
+    // Header
+    logout: "लॉग आउट",
+    yourCartIsEmpty: "तुमची कार्ट रिकामी आहे",
+    // Common
+    phone: "फोन",
+    address: "पत्ता",
   },
 } as const;
 

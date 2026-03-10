@@ -11,6 +11,8 @@ interface CropInfo {
   waterRequirement: string;
   organicTips: string[];
   pestsAndDiseases: string;
+  growthDuration?: string;
+  marketPrice?: string;
 }
 
 interface RegionData {
@@ -38,6 +40,8 @@ const regionCropData: Record<string, RegionData> = {
           "Intercrop with legumes like cowpea to fix nitrogen",
         ],
         pestsAndDiseases: "Pyrilla, early shoot borer, red rot, smut",
+        growthDuration: "12–18 months",
+        marketPrice: "₹290–350/quintal",
       },
       {
         name: "Cotton",
@@ -52,6 +56,8 @@ const regionCropData: Record<string, RegionData> = {
           "Practice crop rotation with soybean or chickpea",
         ],
         pestsAndDiseases: "Bollworm, whitefly, leaf curl virus, root rot",
+        growthDuration: "150–180 days",
+        marketPrice: "₹5,800–7,000/quintal",
       },
       {
         name: "Soybean",
@@ -66,6 +72,8 @@ const regionCropData: Record<string, RegionData> = {
           "Use yellow sticky traps for whitefly monitoring",
         ],
         pestsAndDiseases: "Girdle beetle, stem fly, yellow mosaic virus",
+        growthDuration: "90–110 days",
+        marketPrice: "₹3,950–4,600/quintal",
       },
       {
         name: "Jowar (Sorghum)",
@@ -80,6 +88,8 @@ const regionCropData: Record<string, RegionData> = {
           "Intercrop with pigeonpea for better land use",
         ],
         pestsAndDiseases: "Shoot fly, stem borer, grain mold, downy mildew",
+        growthDuration: "100–115 days",
+        marketPrice: "₹2,950–3,200/quintal",
       },
       {
         name: "Turmeric",
@@ -94,6 +104,8 @@ const regionCropData: Record<string, RegionData> = {
           "Use Pseudomonas fluorescens for disease management",
         ],
         pestsAndDiseases: "Rhizome rot, leaf blotch, shoot borer",
+        growthDuration: "8–9 months",
+        marketPrice: "₹7,000–15,000/quintal",
       },
       {
         name: "Onion",
@@ -108,6 +120,8 @@ const regionCropData: Record<string, RegionData> = {
           "Spray diluted cow urine (10%) for thrips control",
         ],
         pestsAndDiseases: "Thrips, purple blotch, basal rot, downy mildew",
+        growthDuration: "90–120 days",
+        marketPrice: "₹800–2,500/quintal (seasonal)",
       },
       {
         name: "Grapes",
@@ -122,6 +136,8 @@ const regionCropData: Record<string, RegionData> = {
           "Maintain proper canopy management for air circulation",
         ],
         pestsAndDiseases: "Downy mildew, powdery mildew, mealy bug, thrips",
+        growthDuration: "5–6 months",
+        marketPrice: "₹1,500–4,000/quintal",
       },
       {
         name: "Pomegranate",
@@ -137,6 +153,8 @@ const regionCropData: Record<string, RegionData> = {
         ],
         pestsAndDiseases:
           "Fruit borer, bacterial blight, Alternaria fruit spot",
+        growthDuration: "5–7 months",
+        marketPrice: "₹2,500–6,000/quintal",
       },
     ],
   },
@@ -158,6 +176,8 @@ const regionCropData: Record<string, RegionData> = {
           "Seed treatment with Trichoderma for root diseases",
         ],
         pestsAndDiseases: "Yellow rust, brown rust, aphids, loose smut",
+        growthDuration: "120–130 days",
+        marketPrice: "₹2,015–2,200/quintal (MSP)",
       },
       {
         name: "Rice (Paddy)",
@@ -173,6 +193,8 @@ const regionCropData: Record<string, RegionData> = {
         ],
         pestsAndDiseases:
           "Brown plant hopper, stem borer, blast, sheath blight",
+        growthDuration: "100–140 days",
+        marketPrice: "₹2,183–2,300/quintal (MSP)",
       },
       {
         name: "Maize",
@@ -187,6 +209,8 @@ const regionCropData: Record<string, RegionData> = {
           "Intercrop with legumes for soil health",
         ],
         pestsAndDiseases: "Fall armyworm, stem borer, turcicum leaf blight",
+        growthDuration: "90–110 days",
+        marketPrice: "₹1,870–2,100/quintal",
       },
       {
         name: "Sunflower",
@@ -201,6 +225,8 @@ const regionCropData: Record<string, RegionData> = {
           "Maintain proper spacing for air circulation",
         ],
         pestsAndDiseases: "Head borer, Alternaria leaf spot, downy mildew",
+        growthDuration: "85–95 days",
+        marketPrice: "₹5,800–6,400/quintal",
       },
       {
         name: "Potato",
@@ -215,6 +241,8 @@ const regionCropData: Record<string, RegionData> = {
           "Apply Bordeaux mixture for late blight prevention",
         ],
         pestsAndDiseases: "Late blight, early blight, aphids, tuber moth",
+        growthDuration: "80–100 days",
+        marketPrice: "₹700–1,500/quintal",
       },
       {
         name: "Chickpea (Gram)",
@@ -229,6 +257,8 @@ const regionCropData: Record<string, RegionData> = {
           "Use pheromone traps for pod borer monitoring",
         ],
         pestsAndDiseases: "Pod borer, wilt, Ascochyta blight",
+        growthDuration: "90–110 days",
+        marketPrice: "₹5,440–6,000/quintal",
       },
       {
         name: "Mustard",
@@ -244,6 +274,8 @@ const regionCropData: Record<string, RegionData> = {
         ],
         pestsAndDiseases:
           "Aphids, white rust, Alternaria blight, powdery mildew",
+        growthDuration: "110–130 days",
+        marketPrice: "₹5,050–5,500/quintal",
       },
       {
         name: "Sugarcane",
@@ -258,6 +290,8 @@ const regionCropData: Record<string, RegionData> = {
           "Trash mulching to conserve moisture",
         ],
         pestsAndDiseases: "Pyrilla, top borer, red rot, smut",
+        growthDuration: "12–18 months",
+        marketPrice: "₹290–350/quintal",
       },
     ],
   },
@@ -2410,6 +2444,684 @@ const regionCropData: Record<string, RegionData> = {
           "Neem oil spray",
         ],
         pestsAndDiseases: "Aphids, whitefly, fruit borer, leaf spot",
+        growthDuration: "45–90 days",
+        marketPrice: "₹500–3,000/quintal",
+      },
+    ],
+  },
+  Goa: {
+    climate: "Tropical humid with heavy monsoon",
+    description:
+      "Goa has a coastal tropical climate with heavy monsoon rainfall, ideal for coconut, cashew, paddy, and spice cultivation.",
+    crops: [
+      {
+        name: "Rice (Paddy)",
+        emoji: "🌾",
+        sowingSeason: "June – July (Kharif)",
+        soilType: "Clay loam to laterite",
+        expectedYield: "15–18 quintals/acre",
+        waterRequirement: "High (2500–3000 mm monsoon)",
+        organicTips: [
+          "SRI method to reduce water use",
+          "Green manure (Sesbania) before transplanting",
+          "Azolla as biofertilizer",
+        ],
+        pestsAndDiseases: "Blast, sheath blight, brown plant hopper",
+        growthDuration: "100–120 days",
+        marketPrice: "₹2,183–2,300/quintal (MSP)",
+      },
+      {
+        name: "Coconut",
+        emoji: "🥥",
+        sowingSeason: "June – September",
+        soilType: "Sandy loam coastal to laterite",
+        expectedYield: "80–100 nuts/palm/year",
+        waterRequirement: "Moderate (1500–2000 mm)",
+        organicTips: [
+          "Compost 50 kg/palm/year",
+          "Trichoderma for bud rot prevention",
+          "Intercrop with banana or turmeric",
+        ],
+        pestsAndDiseases: "Rhinoceros beetle, red palm weevil, bud rot",
+        growthDuration: "Year-round",
+        marketPrice: "₹22–35/nut",
+      },
+      {
+        name: "Cashew Nut",
+        emoji: "🌰",
+        sowingSeason: "May – June (planting)",
+        soilType: "Sandy laterite",
+        expectedYield: "8–10 quintals/acre",
+        waterRequirement: "Low to moderate (600–1200 mm)",
+        organicTips: [
+          "Apply compost 10 kg/tree/year",
+          "Neem oil spray for tea mosquito bug",
+          "Intercrop young cashew with banana",
+        ],
+        pestsAndDiseases: "Tea mosquito bug, stem and root rot, thrips",
+        growthDuration: "90 days (Feb–May harvest)",
+        marketPrice: "₹8,000–15,000/quintal",
+      },
+      {
+        name: "Banana",
+        emoji: "🍌",
+        sowingSeason: "Year-round (best June – July)",
+        soilType: "Well-drained loamy to clay loam",
+        expectedYield: "20–30 tonnes/acre",
+        waterRequirement: "High (1200–2200 mm)",
+        organicTips: [
+          "FYM 25 kg/plant at planting",
+          "Pseudomonas for Panama wilt",
+          "Mulch with dry leaves",
+        ],
+        pestsAndDiseases: "Panama wilt, Sigatoka leaf spot, banana weevil",
+        growthDuration: "10–12 months",
+        marketPrice: "₹600–1,200/quintal",
+      },
+      {
+        name: "Mango",
+        emoji: "🥭",
+        sowingSeason: "June – August (planting)",
+        soilType: "Deep well-drained laterite loam",
+        expectedYield: "5–8 tonnes/acre (mature)",
+        waterRequirement: "Low to moderate (750–1500 mm)",
+        organicTips: [
+          "Compost 50 kg/tree/year",
+          "Pheromone traps for fruit fly",
+          "Neem oil for powdery mildew",
+        ],
+        pestsAndDiseases:
+          "Mango hopper, fruit fly, powdery mildew, anthracnose",
+        growthDuration: "3–5 months fruiting",
+        marketPrice: "₹1,500–5,000/quintal",
+      },
+      {
+        name: "Jackfruit",
+        emoji: "🍈",
+        sowingSeason: "Year-round",
+        soilType: "Well-drained laterite loam",
+        expectedYield: "15–20 tonnes/acre",
+        waterRequirement: "Moderate to High (1200–2000 mm)",
+        organicTips: [
+          "Compost 20 kg/tree/year",
+          "Trichoderma for root rot prevention",
+          "Mulch the basin around tree",
+        ],
+        pestsAndDiseases: "Shoot borer, fruit fly, soft rot",
+        growthDuration: "3–4 months fruiting",
+        marketPrice: "₹1,000–3,000/quintal",
+      },
+      {
+        name: "Arecanut",
+        emoji: "🌴",
+        sowingSeason: "May – June (planting)",
+        soilType: "Well-drained laterite to loamy",
+        expectedYield: "1–2 tonnes/acre (dry)",
+        waterRequirement: "High (1500–2500 mm)",
+        organicTips: [
+          "Compost 12 kg/palm/year",
+          "Trichoderma for foot rot",
+          "Intercrop with pepper or banana",
+        ],
+        pestsAndDiseases: "Yellow leaf disease, bud rot, inflorescence dieback",
+        growthDuration: "Year-round",
+        marketPrice: "₹350–500/kg",
+      },
+      {
+        name: "Vegetables (Mixed)",
+        emoji: "🥦",
+        sowingSeason: "Year-round (season-specific)",
+        soilType: "Well-drained loamy to sandy loam",
+        expectedYield: "Varies by crop",
+        waterRequirement: "Moderate (500–800 mm)",
+        organicTips: [
+          "Apply FYM 15 t/ha",
+          "Yellow sticky traps for pests",
+          "Neem oil spray for mite control",
+        ],
+        pestsAndDiseases: "Aphids, whitefly, fruit borer, leaf spot",
+        growthDuration: "45–90 days",
+        marketPrice: "₹500–3,000/quintal",
+      },
+    ],
+  },
+  Manipur: {
+    climate: "Sub-tropical humid with monsoon",
+    description:
+      "Manipur has sub-tropical humid climate with fertile valley plains and hilly terrain, ideal for rice, vegetables, and horticulture.",
+    crops: [
+      {
+        name: "Rice (Paddy)",
+        emoji: "🌾",
+        sowingSeason: "May – June (transplanting)",
+        soilType: "Clay loam to heavy clay (valley)",
+        expectedYield: "15–20 quintals/acre",
+        waterRequirement: "High (1200–1800 mm)",
+        organicTips: [
+          "SRI method in valley lands",
+          "Green manure before transplanting",
+          "Azolla as biofertilizer",
+        ],
+        pestsAndDiseases: "Blast, sheath blight, brown plant hopper",
+        growthDuration: "120–140 days",
+        marketPrice: "₹2,183–2,300/quintal (MSP)",
+      },
+      {
+        name: "Maize",
+        emoji: "🌽",
+        sowingSeason: "March – April (spring)",
+        soilType: "Well-drained loamy hill slopes",
+        expectedYield: "15–20 quintals/acre",
+        waterRequirement: "Moderate (600–900 mm)",
+        organicTips: [
+          "Compost 8 t/ha at land preparation",
+          "Trichogramma for stem borer",
+          "Intercrop with legumes",
+        ],
+        pestsAndDiseases: "Fall armyworm, stem borer, leaf blight",
+        growthDuration: "90–110 days",
+        marketPrice: "₹1,870–2,100/quintal",
+      },
+      {
+        name: "Potato",
+        emoji: "🥔",
+        sowingSeason: "October – November (Rabi)",
+        soilType: "Sandy loam to loam",
+        expectedYield: "60–100 quintals/acre",
+        waterRequirement: "Moderate (500–700 mm)",
+        organicTips: [
+          "FYM 20 t/ha",
+          "Certified disease-free seed tubers",
+          "Bordeaux mixture for late blight",
+        ],
+        pestsAndDiseases: "Late blight, early blight, aphids",
+        growthDuration: "80–100 days",
+        marketPrice: "₹700–1,500/quintal",
+      },
+      {
+        name: "Mustard",
+        emoji: "🌼",
+        sowingSeason: "October – November (Rabi)",
+        soilType: "Well-drained loamy",
+        expectedYield: "5–7 quintals/acre",
+        waterRequirement: "Low to moderate (250–400 mm)",
+        organicTips: [
+          "FYM 5 t/ha",
+          "Neem oil for aphids",
+          "Intercrop with wheat",
+        ],
+        pestsAndDiseases: "Aphids, white rust, Alternaria blight",
+        growthDuration: "110–130 days",
+        marketPrice: "₹5,050–5,500/quintal",
+      },
+      {
+        name: "Ginger",
+        emoji: "🫚",
+        sowingSeason: "April – May",
+        soilType: "Well-drained loamy to sandy loam",
+        expectedYield: "40–60 quintals/acre (fresh)",
+        waterRequirement: "Moderate (1500–2000 mm)",
+        organicTips: [
+          "FYM 25 t/ha",
+          "Trichoderma for rhizome rot",
+          "Mulch with dry leaves",
+        ],
+        pestsAndDiseases: "Rhizome rot, leaf spot, shoot borer",
+        growthDuration: "8–10 months",
+        marketPrice: "₹2,500–5,000/quintal",
+      },
+      {
+        name: "Banana",
+        emoji: "🍌",
+        sowingSeason: "Year-round (best March – April)",
+        soilType: "Well-drained loamy to clay loam",
+        expectedYield: "15–25 tonnes/acre",
+        waterRequirement: "High (1200–2000 mm)",
+        organicTips: [
+          "FYM 25 kg/plant",
+          "Pseudomonas for Panama wilt",
+          "Mulch with dry leaves",
+        ],
+        pestsAndDiseases: "Panama wilt, Sigatoka leaf spot, banana weevil",
+        growthDuration: "10–12 months",
+        marketPrice: "₹600–1,200/quintal",
+      },
+      {
+        name: "Vegetables (Mixed)",
+        emoji: "🥦",
+        sowingSeason: "Year-round (season-specific)",
+        soilType: "Well-drained loamy",
+        expectedYield: "Varies by crop",
+        waterRequirement: "Moderate (500–800 mm)",
+        organicTips: [
+          "FYM 15 t/ha",
+          "Yellow sticky traps for pests",
+          "Neem oil spray",
+        ],
+        pestsAndDiseases: "Aphids, whitefly, fruit borer, leaf spot",
+        growthDuration: "45–90 days",
+        marketPrice: "₹500–3,000/quintal",
+      },
+      {
+        name: "Chilli",
+        emoji: "🌶️",
+        sowingSeason: "February – March (nursery)",
+        soilType: "Well-drained sandy loam to loam",
+        expectedYield: "8–12 quintals/acre (dry)",
+        waterRequirement: "Moderate (600–800 mm)",
+        organicTips: [
+          "FYM 20 t/ha before transplanting",
+          "Yellow sticky traps for thrips",
+          "Neem oil for mite control",
+        ],
+        pestsAndDiseases: "Thrips, mites, fruit borer, leaf curl virus",
+        growthDuration: "100–120 days",
+        marketPrice: "₹5,000–12,000/quintal (dry)",
+      },
+    ],
+  },
+  Meghalaya: {
+    climate: "Subtropical highland, high rainfall",
+    description:
+      "Meghalaya receives among the highest rainfall in the world, suitable for tea, ginger, turmeric, and various horticulture crops.",
+    crops: [
+      {
+        name: "Rice (Paddy)",
+        emoji: "🌾",
+        sowingSeason: "May – June",
+        soilType: "Clay loam to laterite",
+        expectedYield: "12–18 quintals/acre",
+        waterRequirement: "High (1500–2500 mm)",
+        organicTips: [
+          "SRI method",
+          "Green manure before transplanting",
+          "Azolla as biofertilizer",
+        ],
+        pestsAndDiseases: "Blast, sheath blight, brown plant hopper",
+        growthDuration: "120–140 days",
+        marketPrice: "₹2,183–2,300/quintal (MSP)",
+      },
+      {
+        name: "Maize",
+        emoji: "🌽",
+        sowingSeason: "April – May",
+        soilType: "Well-drained loamy hill slopes",
+        expectedYield: "12–16 quintals/acre",
+        waterRequirement: "Moderate (600–900 mm)",
+        organicTips: [
+          "Compost 8 t/ha",
+          "Trichogramma for stem borer",
+          "Intercrop with legumes",
+        ],
+        pestsAndDiseases: "Fall armyworm, stem borer, leaf blight",
+        growthDuration: "90–110 days",
+        marketPrice: "₹1,870–2,100/quintal",
+      },
+      {
+        name: "Potato",
+        emoji: "🥔",
+        sowingSeason: "February – March",
+        soilType: "Sandy loam to loam",
+        expectedYield: "60–100 quintals/acre",
+        waterRequirement: "Moderate (500–700 mm)",
+        organicTips: [
+          "FYM 20 t/ha",
+          "Certified disease-free seed tubers",
+          "Bordeaux mixture for late blight",
+        ],
+        pestsAndDiseases: "Late blight, early blight, aphids, tuber moth",
+        growthDuration: "80–100 days",
+        marketPrice: "₹700–1,500/quintal",
+      },
+      {
+        name: "Ginger",
+        emoji: "🫚",
+        sowingSeason: "April – May",
+        soilType: "Well-drained loamy to sandy loam",
+        expectedYield: "40–60 quintals/acre (fresh)",
+        waterRequirement: "Moderate (1500–2000 mm)",
+        organicTips: [
+          "FYM 25 t/ha",
+          "Trichoderma for rhizome rot",
+          "Mulch with dry leaves",
+        ],
+        pestsAndDiseases: "Rhizome rot, leaf spot, shoot borer",
+        growthDuration: "8–10 months",
+        marketPrice: "₹2,500–5,000/quintal",
+      },
+      {
+        name: "Turmeric",
+        emoji: "🟡",
+        sowingSeason: "May – June",
+        soilType: "Well-drained loamy or sandy loam",
+        expectedYield: "20–25 quintals/acre (dry)",
+        waterRequirement: "Moderate (1500 mm)",
+        organicTips: [
+          "Neem cake 250 kg/ha",
+          "Mulch with paddy straw",
+          "Pseudomonas fluorescens for rhizome rot",
+        ],
+        pestsAndDiseases: "Rhizome rot, leaf blotch, shoot borer",
+        growthDuration: "8–9 months",
+        marketPrice: "₹7,000–15,000/quintal",
+      },
+      {
+        name: "Tea",
+        emoji: "🍵",
+        sowingSeason: "March – May (planting)",
+        soilType: "Well-drained acidic loamy (pH 4.5–5.5)",
+        expectedYield: "1000–1500 kg/acre (made tea)",
+        waterRequirement: "High (2000–3000 mm)",
+        organicTips: [
+          "Compost 5 t/ha",
+          "Shade trees for microclimate",
+          "Neem oil for red spider mite",
+        ],
+        pestsAndDiseases: "Red spider mite, tea mosquito bug, blister blight",
+        growthDuration: "Year-round flush",
+        marketPrice: "₹120–280/kg",
+      },
+      {
+        name: "Banana",
+        emoji: "🍌",
+        sowingSeason: "Year-round (best March – April)",
+        soilType: "Well-drained loamy to clay loam",
+        expectedYield: "15–25 tonnes/acre",
+        waterRequirement: "High (1200–2000 mm)",
+        organicTips: [
+          "FYM 25 kg/plant",
+          "Pseudomonas for Panama wilt",
+          "Mulch with dry leaves",
+        ],
+        pestsAndDiseases: "Panama wilt, Sigatoka leaf spot, banana weevil",
+        growthDuration: "10–12 months",
+        marketPrice: "₹600–1,200/quintal",
+      },
+      {
+        name: "Off-season Vegetables",
+        emoji: "🥦",
+        sowingSeason: "March – April, September – October",
+        soilType: "Well-drained loamy",
+        expectedYield: "Varies by crop",
+        waterRequirement: "Moderate (500–800 mm)",
+        organicTips: [
+          "FYM 15 t/ha",
+          "Yellow sticky traps for pests",
+          "Neem oil spray",
+        ],
+        pestsAndDiseases: "Aphids, whitefly, fruit borer, leaf spot",
+        growthDuration: "45–90 days",
+        marketPrice: "₹800–4,000/quintal",
+      },
+    ],
+  },
+  Tripura: {
+    climate: "Tropical humid",
+    description:
+      "Tripura has a tropical humid climate with rich forest cover, suitable for rice, rubber, tea, and horticulture.",
+    crops: [
+      {
+        name: "Rice (Paddy)",
+        emoji: "🌾",
+        sowingSeason: "June – July (Aman), November – December (Boro)",
+        soilType: "Clay loam to heavy clay",
+        expectedYield: "15–20 quintals/acre",
+        waterRequirement: "High (1200–1600 mm)",
+        organicTips: [
+          "SRI method",
+          "Green manure before transplanting",
+          "Azolla as biofertilizer",
+        ],
+        pestsAndDiseases: "Blast, sheath blight, brown plant hopper",
+        growthDuration: "100–140 days",
+        marketPrice: "₹2,183–2,300/quintal (MSP)",
+      },
+      {
+        name: "Rubber",
+        emoji: "🌳",
+        sowingSeason: "May – June (planting)",
+        soilType: "Well-drained laterite to loamy",
+        expectedYield: "400–600 kg/acre (dry rubber)",
+        waterRequirement: "High (1800–2500 mm)",
+        organicTips: [
+          "Compost 10 kg/tree/year",
+          "Cover crops to prevent erosion",
+          "Bordeaux mixture for panel diseases",
+        ],
+        pestsAndDiseases: "Abnormal leaf fall, pink disease, panel canker",
+        growthDuration: "Year-round tapping",
+        marketPrice: "₹130–180/kg",
+      },
+      {
+        name: "Tea",
+        emoji: "🍵",
+        sowingSeason: "March – May (planting)",
+        soilType: "Well-drained acidic loamy (pH 4.5–5.5)",
+        expectedYield: "1200–1800 kg/acre (made tea)",
+        waterRequirement: "High (1500–2500 mm)",
+        organicTips: [
+          "Compost 5 t/ha",
+          "Shade trees for microclimate",
+          "Neem oil for red spider mite",
+        ],
+        pestsAndDiseases: "Red spider mite, tea mosquito bug, blister blight",
+        growthDuration: "Year-round flush",
+        marketPrice: "₹120–280/kg",
+      },
+      {
+        name: "Jute",
+        emoji: "🌿",
+        sowingSeason: "March – May",
+        soilType: "Well-drained alluvial loamy",
+        expectedYield: "15–20 quintals/acre (dry fibre)",
+        waterRequirement: "High (1000–1500 mm)",
+        organicTips: [
+          "FYM 5 t/ha",
+          "Trichoderma seed treatment",
+          "Crop rotation with rice",
+        ],
+        pestsAndDiseases: "Stem rot, root rot, semilooper",
+        growthDuration: "100–120 days",
+        marketPrice: "₹4,500–5,500/quintal",
+      },
+      {
+        name: "Maize",
+        emoji: "🌽",
+        sowingSeason: "March – April, June – July",
+        soilType: "Well-drained loamy",
+        expectedYield: "15–20 quintals/acre",
+        waterRequirement: "Moderate (500–700 mm)",
+        organicTips: [
+          "Compost 8 t/ha",
+          "Trichogramma for stem borer",
+          "Intercrop with legumes",
+        ],
+        pestsAndDiseases: "Fall armyworm, stem borer, leaf blight",
+        growthDuration: "90–110 days",
+        marketPrice: "₹1,870–2,100/quintal",
+      },
+      {
+        name: "Banana",
+        emoji: "🍌",
+        sowingSeason: "Year-round (best June – July)",
+        soilType: "Well-drained loamy to clay loam",
+        expectedYield: "20–28 tonnes/acre",
+        waterRequirement: "High (1200–2200 mm)",
+        organicTips: [
+          "FYM 25 kg/plant",
+          "Pseudomonas for Panama wilt",
+          "Mulch with dry leaves",
+        ],
+        pestsAndDiseases: "Panama wilt, Sigatoka leaf spot, banana weevil",
+        growthDuration: "10–12 months",
+        marketPrice: "₹600–1,200/quintal",
+      },
+      {
+        name: "Pineapple",
+        emoji: "🍍",
+        sowingSeason: "May – June (planting)",
+        soilType: "Well-drained sandy loam",
+        expectedYield: "10–12 tonnes/acre",
+        waterRequirement: "Moderate (1000–1500 mm)",
+        organicTips: [
+          "FYM 10 t/ha",
+          "Neem oil for mealybug control",
+          "Mulch with dry leaves",
+        ],
+        pestsAndDiseases: "Mealybug, root rot, wilt",
+        growthDuration: "12–15 months",
+        marketPrice: "₹800–1,500/quintal",
+      },
+      {
+        name: "Vegetables (Mixed)",
+        emoji: "🥦",
+        sowingSeason: "Year-round (season-specific)",
+        soilType: "Well-drained loamy",
+        expectedYield: "Varies by crop",
+        waterRequirement: "Moderate (500–800 mm)",
+        organicTips: [
+          "FYM 15 t/ha",
+          "Yellow sticky traps for pests",
+          "Neem oil spray",
+        ],
+        pestsAndDiseases: "Aphids, whitefly, fruit borer, leaf spot",
+        growthDuration: "45–90 days",
+        marketPrice: "₹500–3,000/quintal",
+      },
+    ],
+  },
+  "Jammu & Kashmir": {
+    climate: "Temperate to alpine",
+    description:
+      "Jammu & Kashmir is famous for apple orchards, saffron cultivation, walnut, and cherry production in its diverse agro-climatic zones.",
+    crops: [
+      {
+        name: "Apple",
+        emoji: "🍎",
+        sowingSeason: "January – February (pruning season)",
+        soilType: "Well-drained loamy to sandy loam",
+        expectedYield: "8–12 tonnes/acre (mature orchard)",
+        waterRequirement: "Moderate (1000–1500 mm)",
+        organicTips: [
+          "Compost 50 kg/tree/year",
+          "Pheromone traps for codling moth",
+          "Bordeaux mixture for scab management",
+        ],
+        pestsAndDiseases: "Codling moth, woolly apple aphid, scab, fire blight",
+        growthDuration: "5–6 months",
+        marketPrice: "₹2,000–8,000/quintal",
+      },
+      {
+        name: "Saffron",
+        emoji: "🌸",
+        sowingSeason: "September – October (corm planting)",
+        soilType: "Well-drained light loam (karewa soil)",
+        expectedYield: "1–2 kg/acre (dry saffron)",
+        waterRequirement: "Low (300–400 mm)",
+        organicTips: [
+          "Compost 5 t/ha before corm planting",
+          "Avoid waterlogging at all stages",
+          "Hand harvest stigmas in morning hours",
+        ],
+        pestsAndDiseases: "Corm rot, corm fly, nematodes",
+        growthDuration: "5–6 months",
+        marketPrice: "₹2,00,000–3,50,000/kg",
+      },
+      {
+        name: "Walnut",
+        emoji: "🌰",
+        sowingSeason: "January – February (pruning)",
+        soilType: "Deep well-drained loamy",
+        expectedYield: "5–8 tonnes/acre (mature orchard)",
+        waterRequirement: "Moderate (800–1200 mm)",
+        organicTips: [
+          "Compost 50 kg/tree/year",
+          "Bordeaux mixture for blight prevention",
+          "Regular pruning for light penetration",
+        ],
+        pestsAndDiseases: "Blight, leaf spot, codling moth",
+        growthDuration: "3–4 months fruiting",
+        marketPrice: "₹8,000–15,000/quintal",
+      },
+      {
+        name: "Cherry",
+        emoji: "🍒",
+        sowingSeason: "January – February (pruning)",
+        soilType: "Well-drained loamy to sandy loam",
+        expectedYield: "4–6 tonnes/acre (mature orchard)",
+        waterRequirement: "Moderate (800–1200 mm)",
+        organicTips: [
+          "Compost 30 kg/tree/year",
+          "Netting to protect from birds",
+          "Bordeaux mixture for leaf spot",
+        ],
+        pestsAndDiseases: "Cherry fruit fly, brown rot, leaf spot",
+        growthDuration: "3–4 months",
+        marketPrice: "₹2,000–6,000/quintal",
+      },
+      {
+        name: "Wheat",
+        emoji: "🌾",
+        sowingSeason: "October – November (Rabi)",
+        soilType: "Well-drained loamy (Jammu plains)",
+        expectedYield: "15–18 quintals/acre",
+        waterRequirement: "Moderate (400–500 mm)",
+        organicTips: [
+          "FYM 10 t/ha before sowing",
+          "Azotobacter bio-fertilizer",
+          "Trichoderma seed treatment",
+        ],
+        pestsAndDiseases: "Yellow rust, aphids, loose smut",
+        growthDuration: "120–130 days",
+        marketPrice: "₹2,015–2,200/quintal (MSP)",
+      },
+      {
+        name: "Maize",
+        emoji: "🌽",
+        sowingSeason: "April – May",
+        soilType: "Well-drained loamy",
+        expectedYield: "12–16 quintals/acre",
+        waterRequirement: "Moderate (500–700 mm)",
+        organicTips: [
+          "Compost 8 t/ha",
+          "Trichogramma for stem borer",
+          "Intercrop with legumes",
+        ],
+        pestsAndDiseases: "Fall armyworm, stem borer, leaf blight",
+        growthDuration: "90–110 days",
+        marketPrice: "₹1,870–2,100/quintal",
+      },
+      {
+        name: "Pea",
+        emoji: "🫛",
+        sowingSeason: "October – November (Rabi)",
+        soilType: "Well-drained loamy to sandy loam",
+        expectedYield: "30–40 quintals/acre (green pods)",
+        waterRequirement: "Low to moderate (350–500 mm)",
+        organicTips: [
+          "Rhizobium inoculation",
+          "Compost 5 t/ha before sowing",
+          "Neem-based spray for pod borer",
+        ],
+        pestsAndDiseases: "Pod borer, powdery mildew, root rot",
+        growthDuration: "80–100 days",
+        marketPrice: "₹600–1,200/quintal",
+      },
+      {
+        name: "Off-season Vegetables",
+        emoji: "🥦",
+        sowingSeason: "March – April, August – September",
+        soilType: "Well-drained loamy",
+        expectedYield: "Varies by crop",
+        waterRequirement: "Moderate (500–800 mm)",
+        organicTips: [
+          "FYM 15 t/ha",
+          "Yellow sticky traps for pests",
+          "Neem oil spray",
+        ],
+        pestsAndDiseases: "Aphids, whitefly, fruit borer, leaf spot",
+        growthDuration: "45–90 days",
+        marketPrice: "₹800–4,000/quintal",
       },
     ],
   },
@@ -2464,7 +3176,7 @@ const howItWorks = [
     icon: "📍",
     title: "Select Your Region",
     description:
-      "Choose your state or region from the dropdown. Our database covers 20+ Indian states with region-specific agricultural data.",
+      "Choose your state or region from the dropdown. Our database covers 25+ Indian states with region-specific agricultural data.",
   },
   {
     step: 2,
@@ -2521,7 +3233,7 @@ export default function CropSuggestions() {
             </p>
             <div className="flex flex-wrap gap-4 justify-center text-white/80 text-sm">
               <span className="flex items-center gap-1">
-                <span>✅</span> 20+ Indian States
+                <span>✅</span> 25+ Indian States
               </span>
               <span className="flex items-center gap-1">
                 <span>✅</span> 8+ Crops Per Region
@@ -2716,6 +3428,26 @@ export default function CropSuggestions() {
                           {crop.expectedYield}
                         </div>
                       </div>
+                      {crop.growthDuration && (
+                        <div className="bg-muted/50 rounded-lg p-3">
+                          <div className="text-xs text-muted-foreground mb-1 flex items-center gap-1">
+                            <span>⏱️</span> Growth Duration
+                          </div>
+                          <div className="text-xs font-medium text-foreground leading-tight">
+                            {crop.growthDuration}
+                          </div>
+                        </div>
+                      )}
+                      {crop.marketPrice && (
+                        <div className="bg-muted/50 rounded-lg p-3">
+                          <div className="text-xs text-muted-foreground mb-1 flex items-center gap-1">
+                            <span>💰</span> Market Price
+                          </div>
+                          <div className="text-xs font-medium text-primary leading-tight font-semibold">
+                            {crop.marketPrice}
+                          </div>
+                        </div>
+                      )}
                     </div>
 
                     {/* Organic Tips */}
